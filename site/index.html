@@ -12,24 +12,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manual N1MM+ em Português</title>
 <meta name="description" content="Tradução não-oficial para português do Brasil do manual do N1MM Logger+, software de log para contests de radioamador, mantida pela comunidade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/home.css">
 <link rel="icon" href="assets/favicon-32.jpg" sizes="32x32">
 <link rel="icon" href="assets/favicon.jpg" sizes="192x192">
 <link rel="apple-touch-icon" href="assets/favicon.jpg">
 </head>
-<body>
+<body class="tema-moderno">
 
-<div class="topo">
-  <div class="marca">
-    <a href="index.html" class="marca-titulo">
-      <img src="assets/gg52-logo.png" alt="GG52 Floripa DX" class="logo-gg52">
-      Manual N1MM+ em Português
+<header class="nav-home">
+  <div class="nav-home-inner">
+    <a href="index.html" class="nav-home-marca">
+      <img src="assets/gg52-logo.png" alt="GG52 Floripa DX">
+      <span>Manual N1MM+ PT-BR</span>
     </a>
-    <a href="https://n1mmwp.hamdocs.com/" target="_blank" rel="noopener">Site original (EN) &rarr;</a>
+    <nav class="nav-home-links">
+      <a href="setup/index.html">Manual</a>
+      <a href="https://n1mmwp.hamdocs.com/" target="_blank" rel="noopener" class="btn-fantasma">Site original (EN) ↗</a>
+    </nav>
   </div>
-</div>
+</header>
 
-<div class="aviso-traducao">
+<section class="hero">
+  <div class="hero-pontos" aria-hidden="true"></div>
+  <div class="hero-conteudo">
+    <span class="hero-logo-selo">
+      <img src="assets/gg52-logo.png" alt="">
+      Um projeto GG52 Floripa DX
+    </span>
+    <span class="selo">🇧🇷 Tradução comunitária · não-oficial</span>
+    <h1>O manual do <span class="destaque">N1MM Logger+</span><br>agora em português</h1>
+    <p class="hero-sub">
+      O N1MM Logger+ é um dos softwares de log para contest mais usados do mundo — mas a documentação
+      oficial só existe em inglês. Este projeto traduz o manual para o português do Brasil, mantendo os
+      termos de interface exatamente como aparecem na tela do programa.
+    </p>
+    <div class="hero-cta">
+      <a href="setup/index.html" class="btn-primario">Explorar o manual <span aria-hidden="true">→</span></a>
+      <a href="https://n1mmwp.hamdocs.com/" target="_blank" rel="noopener" class="btn-secundario">Ver original em inglês</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>10</strong><span>páginas traduzidas</span></div>
+      <div class="stat"><strong>100%</strong><span>seção Setup completa</span></div>
+      <div class="stat"><strong>PT-BR</strong><span>feito por hams, para hams</span></div>
+    </div>
+  </div>
+
+  <figure class="produto-shot">
+    <img src="assets/img/ch-Entry-CallHistoryLookup.png" alt="Entry Window do N1MM Logger+ com dados de Call History Lookup" loading="lazy">
+    <figcaption>A Entry Window do N1MM Logger+ — uma das dezenas de janelas cobertas pelo manual traduzido</figcaption>
+  </figure>
+
+  <div class="hero-onda-wrap" aria-hidden="true">
+    <svg class="hero-onda" viewBox="0 0 2880 60" preserveAspectRatio="none">
+      <path d="M0,30 C180,60 360,60 720,30 C1080,0 1260,0 1440,30 C1620,60 1800,60 2160,30 C2520,0 2700,0 2880,30 L2880,60 L0,60 Z" fill="var(--fundo)"></path>
+    </svg>
+  </div>
+</section>
+
+<div class="aviso-traducao aviso-faixa">
   <div class="conteudo">
     📖 Este site é uma <strong>tradução não-oficial</strong>, feita e mantida pela comunidade brasileira de radioamadorismo,
     do manual do <strong>N1MM Logger+</strong>. Não tem vínculo com o N1MM Logger+ Team.
@@ -38,28 +82,97 @@
   </div>
 </div>
 
-<main>
-  <h1>Manual N1MM+ em Português (PT-BR)</h1>
+<main class="conteudo-principal">
+  <section class="secao-manual">
+    <div class="secao-cabecalho">
+      <h2>Seção Setup — completa</h2>
+      <p>Instalação, hardware, contests, teclado, macros, áudio, aparência, interfaceamento, idioma e histórico de indicativos.</p>
+    </div>
 
-  <p>O <strong>N1MM Logger+</strong> é um dos softwares de log para contests mais usados por radioamadores no mundo todo.
-  A documentação oficial existe apenas em inglês — este projeto traduz o manual para o português do Brasil,
-  mantendo os termos de interface do programa (nomes de menus, campos e diálogos) em inglês, já que o
-  próprio programa não tem uma interface totalmente traduzida.</p>
+    <div class="grade-cards">
+      <a class="card-pagina" href="setup/software-setup/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg></span>
+        <h3>Software Setup</h3>
+        <p>Instalação, múltiplos indicativos e múltiplas configurações.</p>
+      </a>
 
-  <div class="caixa-info">
-    A seção <strong>Setup</strong> do manual está <strong>completa</strong>: instalação, Configurer, configuração de
-    contests, atalhos de teclado, teclas de função e macros, áudio, skins, interfaceamento de hardware,
-    localização da interface e histórico de indicativos — 10 páginas traduzidas na íntegra.
-    As demais seções do manual completo serão traduzidas progressivamente.
-  </div>
+      <a class="card-pagina" href="setup/the-configurer/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><circle cx="9" cy="6" r="2"/><line x1="4" y1="12" x2="20" y2="12"/><circle cx="15" cy="12" r="2"/><line x1="4" y1="18" x2="20" y2="18"/><circle cx="7" cy="18" r="2"/></svg></span>
+        <h3>The Configurer</h3>
+        <p>Hardware, portas, PTT, modos digitais e muito mais.</p>
+      </a>
 
-  <h2>Seções do manual</h2>
-  <ul class="lista-manual">
-    <li><a href="setup/index.html">Setup</a> — instalação, Configurer, configuração de contests, atalhos, teclas de função, áudio, skins, interfaceamento e histórico de indicativos.</li>
-  </ul>
+      <a class="card-pagina" href="setup/contest-setup/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a3 3 0 0 0 3 5"/><path d="M17 5h3a3 3 0 0 1-3 5"/></svg></span>
+        <h3>Contest Setup Dialog</h3>
+        <p>Bancos de dados, logs e categorias Cabrillo.</p>
+      </a>
 
-  <p>Para todo o restante do manual (Getting Started, contests e rádios suportados, modos de operação, apêndices e FAQs),
-  consulte o <a href="https://n1mmwp.hamdocs.com/" target="_blank" rel="noopener">site oficial em inglês</a> por enquanto.</p>
+      <a class="card-pagina" href="setup/keyboard-shortcuts/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><line x1="6" y1="10" x2="6.01" y2="10"/><line x1="10" y1="10" x2="10.01" y2="10"/><line x1="14" y1="10" x2="14.01" y2="10"/><line x1="18" y1="10" x2="18.01" y2="10"/><line x1="7" y1="14" x2="17" y2="14"/></svg></span>
+        <h3>Keyboard Shortcuts</h3>
+        <p>Todos os atalhos de teclado do programa.</p>
+      </a>
+
+      <a class="card-pagina" href="setup/function-keys/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3a3 3 0 0 0-3 3v3a2 2 0 0 1-2 2 2 2 0 0 1 2 2v3a3 3 0 0 0 3 3"/><path d="M16 3a3 3 0 0 1 3 3v3a2 2 0 0 0 2 2 2 2 0 0 0-2 2v3a3 3 0 0 1-3 3"/></svg></span>
+        <h3>Function Keys &amp; Macros</h3>
+        <p>Mensagens de CW/SSB/RTTY e a referência de macros.</p>
+      </a>
+
+      <a class="card-pagina" href="setup/audio-setup-window/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></span>
+        <h3>Audio Setup Window</h3>
+        <p>Áudio, monitoramento de CW e texto-para-voz.</p>
+      </a>
+
+      <a class="card-pagina" href="setup/skins-colors-and-fonts-window/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20c1.5 0 2-1 2-2s-.5-1.5-.5-2 .5-1 1.5-1h2A5 5 0 0 0 22 12 10 10 0 0 0 12 2z"/><circle cx="7" cy="10" r="1.1"/><circle cx="11" cy="7" r="1.1"/><circle cx="15.5" cy="8.5" r="1.1"/><circle cx="17" cy="13" r="1.1"/></svg></span>
+        <h3>Skins, Colors and Fonts</h3>
+        <p>Aparência do programa: cores, fontes e skins.</p>
+      </a>
+
+      <a class="card-pagina" href="setup/interfacing/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 7V2M15 7V2"/><path d="M7 7h10v4a5 5 0 0 1-10 0V7z"/><path d="M12 16v6"/></svg></span>
+        <h3>Interfacing</h3>
+        <p>Cabos, CW/PTT, antenas e controle de rotor.</p>
+      </a>
+
+      <a class="card-pagina" href="setup/localization/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></span>
+        <h3>Localization</h3>
+        <p>Como traduzir a própria interface do N1MM+.</p>
+      </a>
+
+      <a class="card-pagina" href="setup/call-history/index.html">
+        <span class="card-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 8 8 8"/><polyline points="12 7 12 12 16 14"/></svg></span>
+        <h3>Call History</h3>
+        <p>Histórico de indicativos e consulta reversa.</p>
+      </a>
+    </div>
+
+    <div class="secao-rodape">
+      <a href="setup/index.html" class="link-ver-tudo">Ver índice completo da seção Setup →</a>
+    </div>
+  </section>
+
+  <section class="secao-sobre">
+    <div class="sobre-card">
+      <img src="assets/gg52-logo.png" alt="GG52 Floripa DX" class="sobre-logo">
+      <div class="sobre-texto">
+        <h2>Sobre o projeto</h2>
+        <p>
+          Mantido pela comunidade brasileira de radioamadorismo, este é um projeto do <strong>GG52 Floripa DX</strong>,
+          iniciativa de <strong>PP5KJ</strong>. Não tem vínculo com o N1MM Logger+ Team — é uma tradução voluntária,
+          feita por operadores para operadores.
+        </p>
+        <p>
+          Para o restante do manual (Getting Started, contests e rádios suportados, modos de operação, apêndices e FAQs),
+          consulte por enquanto o <a href="https://n1mmwp.hamdocs.com/" target="_blank" rel="noopener">site oficial em inglês</a>.
+        </p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer class="rodape">
