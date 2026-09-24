@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Function Keys, Messages and Macros — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, da seção de teclas de função, mensagens e macros do manual oficial do N1MM Logger+.">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="icon" href="../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/favicon.jpg">
+<style>
+  .tabela-atalhos { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.92em; }
+  .tabela-atalhos td, .tabela-atalhos th { border: 1px solid var(--borda); padding: 6px 10px; text-align: left; vertical-align: top; }
+  .tabela-atalhos tr:nth-child(even) { background: var(--fundo-alt); }
+  .bloco-mc { background: var(--fundo-alt); border: 1px solid var(--borda); border-radius: 4px; padding: 10px 14px; font-family: Consolas, monospace; font-size: 0.88em; white-space: pre-wrap; margin: 1em 0; }
+</style>
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="../../index.html">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Setup</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Nomes de macros, arquivos, menus e exemplos de código foram mantidos como no original (são literais do programa); o texto explicativo foi traduzido.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/setup/function-keys/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/setup/function-keys</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="../../index.html">Início</a> &raquo;
+    <a href="../index.html">Setup</a> &raquo;
+    Function Keys, Messages and Macros
+  </nav>
+
+  <h1>Function Keys, Messages and Macros <span class="tag-en">EN: Function Keys, Messages and Macros</span></h1>
+
+  <div class="sumario">
+    <strong>Nesta página</strong>
+    <ul>
+      <li><a href="#definitions-and-fundamentals">Definitions and Fundamentals</a></li>
+      <li><a href="#the-function-key-message-editor">The Function Key Message Editor</a></li>
+      <li><a href="#function-key-message-file-contents">Function Key Message File Contents</a></li>
+      <li><a href="#function-key-examples">Function Key Examples</a></li>
+      <li><a href="#per-operator-function-key-files">Per-Operator Function Key Files</a></li>
+      <li><a href="#special-measures-for-ssb-function-keys">Special Measures for SSB Function Keys</a></li>
+      <li><a href="#macros">Macros</a></li>
+      <li><a href="#quoted-strings">Quoted Strings</a></li>
+      <li><a href="#esm-enter-sends-message">ESM – Enter Sends Message</a></li>
+    </ul>
+  </div>
+
+  <h2 id="definitions-and-fundamentals">Definitions and Fundamentals (Definições e Fundamentos)</h2>
+
+  <p>Uma das coisas que diferencia programas de log para contest de loggers genéricos é a capacidade de enviar mensagens armazenadas, economizando energia (e voz) em contests longos. O N1MM Logger pode enviar mensagens armazenadas em contests de CW, SSB e digitais. Essas mensagens podem incorporar macros, expressões curtas que executam tarefas do programa automaticamente.</p>
+
+  <p>Vai ajudar entender, em termos gerais, como as capacidades de envio de mensagens do N1MM Logger estão organizadas. A arquitetura tem três componentes principais: Function Key Files, Messages e Macros.</p>
+
+  <ul>
+    <li><strong>Function Key Files</strong> são arquivos de texto com extensão .mc, editáveis com um editor de texto (Notepad) ou com o Function Key Editor interno do programa
+      <ul><li>Cada linha de um Function Key File é um Comentário ou uma Mensagem
+        <ul><li>Comentários começam com # na primeira coluna, e ajudam a explicar as mensagens ao redor. Aparecem em texto preto no Function Key Editor</li></ul>
+      </li></ul>
+    </li>
+    <li><strong>Messages</strong> são linhas de texto no arquivo que não começam com # na primeira coluna
+      <ul>
+        <li>Mensagens começam com um rótulo (o texto que aparece no botão na Entry Window), seguido de vírgula ",", seguido da mensagem em si. Sem vírgula, a parte da mensagem é considerada vazia</li>
+        <li>Mensagens podem conter texto comum, macros, ou — em mensagens para contests de fonia — nomes de arquivos WAV (arquivos com mensagens de voz gravadas pelo usuário)</li>
+        <li>O rótulo é arbitrário — não determina a qual tecla de função a mensagem corresponde. Pode ajudar começar o rótulo com o nome da tecla de função, mas isso é só conveniência para o operador</li>
+        <li>A associação entre mensagens e teclas de função é determinada exclusivamente pela posição da mensagem no arquivo, não pelo conteúdo do rótulo</li>
+        <li>As primeiras 12 linhas de mensagem são as Run Messages, atribuídas em sequência às teclas F1–F12 quando você está em modo Run. Aparecem em azul no Function Key Editor</li>
+        <li>As 12 linhas seguintes (13–24) são as Search and Pounce Messages, também atribuídas em sequência a F1–F12, mas só em modo Search and Pounce. Aparecem em verde no Function Key Editor</li>
+      </ul>
+    </li>
+    <li><strong>Macros</strong> são expressões especiais entre chaves "{...}"
+      <ul>
+        <li>Também existem alguns macros de um único caractere: !, *, #, @</li>
+        <li>Macros disparam uma ação do programa ou se expandem em uma string de texto a transmitir em CW ou modos digitais</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>O programa vem com três arquivos padrão de mensagens de tecla de função, um para cada modo: <em>SSB Default Messages.mc</em>, <em>CW Default Messages.mc</em> e <em>Digi Default Messages.mc</em>. Eles são atribuídos automaticamente ao abrir um novo contest (File &gt; New Log in database), conforme indicado na aba Associated Files da <a href="../contest-setup/index.html">Contest Setup Dialog</a>. Você pode editar as mensagens dos arquivos padrão, exportá-las para um novo arquivo .mc, ou carregar mensagens de um arquivo .mc existente (por exemplo, baixado da galeria &gt;File &gt;Sample Function Key Files do site). Mais detalhes adiante.</p>
+
+  <div class="caixa-alerta">
+    <strong>Um Macro não é uma Mensagem</strong>
+    <p>No início do uso de computadores para contest de radioamador, o termo "macro" era usado para designar <strong>qualquer</strong> mensagem armazenada. Aqui seguimos uma convenção diferente — para nós, Macro é um componente de mensagem que dispara uma ação do programa ou se expande em uma string de texto a transmitir em CW ou modos digitais. O uso da extensão .mc nos arquivos de mensagens de tecla de função é um resquício daquela época. Não se deixe confundir.</p>
+  </div>
+
+  <div class="caixa-alerta">
+    <strong>A Tecla de Função CQ (F1) é Especial</strong>
+    <p>F1 normalmente é a tecla de CQ. Se você usar F1 para outra finalidade, pode ter surpresas.</p>
+    <ul>
+      <li>Ao acionar a tecla de CQ, o programa muda automaticamente para o modo Run, esteja em Run ou S&amp;P no momento</li>
+      <li>A frequência atual é lembrada como a frequência de CQ</li>
+      <li>Mudar a frequência do rádio para longe da frequência de CQ muda o programa automaticamente de volta para S&amp;P (a menos que configurado de outra forma)</li>
+      <li>Dependendo das opções de configuração, voltar à última frequência de CQ usada pode mudar o programa automaticamente para Run</li>
+      <li>Alternar entre Run e S&amp;P muda quais definições de mensagem são usadas (1–12 para Run, 13–24 para S&amp;P)</li>
+    </ul>
+    <p>Tudo isso funciona bem quando você usa F1 para enviar seu CQ, mas pode dar resultados inesperados se você usar F1 para outra coisa.</p>
+  </div>
+
+  <div class="caixa-info">
+    <strong>Mudança Importante para Quem Vem do N1MM Classic</strong>
+    <p>O N1MM Logger Classic procurava seus arquivos wav a partir do diretório do programa N1MM Logger. Normalmente os usuários colocavam seus arquivos wav em uma subpasta chamada wav dentro do diretório do programa. Para chamar um arquivo wav dessa subpasta, você especificava o nome no formato wav\nomedoarquivo.wav (ou wav\{OPERATOR}\nomedoarquivo.wav, para arquivos por operador) nas mensagens de tecla de função.</p>
+    <p>O N1MM Logger Plus procura seus arquivos wav a partir da subpasta wav criada pelo instalador dentro do diretório de arquivos de usuário do N1MM Logger+ (*não* o diretório do programa). Para chamar um arquivo wav dessa subpasta, especifique o nome do arquivo nas mensagens de tecla de função apenas como nomedoarquivo.wav, ou seja, sem o wav\ inicial (ou, usando a macro {OPERATOR}, como {OPERATOR}\nomedoarquivo.wav, também sem o wav\ inicial). Se você editar seus arquivos de mensagem removendo o wav\ inicial dos nomes de arquivo, vai conseguir acessar os arquivos wav colocados na subpasta wav.</p>
+    <p>Alternativamente, se você quiser continuar usando os mesmos arquivos de mensagem do Classic sem remover todos aqueles wav\ iniciais, pode criar uma nova subpasta wav dentro da subpasta wav já existente na área de arquivos de usuário do N1MM Logger+ (por exemplo, com a área de arquivos de usuário no local padrão, esses arquivos wav ficariam em Documents\N1MM Logger+\wav\wav\nomedoarquivo.wav, ou Documents\N1MM Logger+\wav\wav\{OPERATOR}\nomedoarquivo.wav — note os dois níveis de wav\ no caminho) e, depois de colocar seus arquivos wav nessa nova subpasta (ou em subpastas por operador dentro dela, se usar a macro {OPERATOR}), você pode chamar esses arquivos wav usando seus antigos arquivos de mensagem de tecla de função sem alterá-los.</p>
+  </div>
+
+  <h2 id="the-function-key-message-editor">The Function Key Message Editor (O Editor de Mensagens de Tecla de Função)</h2>
+
+  <p>O Function Key Message Editor é a ferramenta principal para gerenciar suas mensagens de tecla de função. Ele oferece a melhor forma de atribuir, gerenciar e editar arquivos de mensagens de tecla de função, em uma janela de edição parecida com o Notepad. Você pode importar e exportar arquivos de mensagens, editá-los e salvá-los.</p>
+
+  <p>A forma mais fácil de abrir o Function Key Message Editor é digitando Alt+K na Entry Window, ou simplesmente clicando com o botão direito nos botões de mensagem da Entry Window. O editor mostra o arquivo de mensagens associado ao modo de operação atual (CW, SSB ou digital). Para abrir os arquivos de mensagens dos outros modos, use Config &gt; Change CW/SSB/Digital Function Key Definitions e selecione o modo desejado.</p>
+
+  <div class="caixa-info">
+    <strong>Modo de operação desconhecido?</strong>
+    <p>Se, ao clicar com o botão direito em um botão de mensagem ou pressionar Alt+K, aparecer um erro dizendo que o editor de tecla de função não pode ser aberto porque o modo de operação não está definido, ou se o editor abrir mas com as mensagens do modo errado, você precisa primeiro definir o modo de operação (CW, SSB ou digital) antes de abrir o editor. Faça isso digitando o modo (CW, SSB, RTTY ou PSK) no campo de indicativo e pressionando Enter. Depois disso, clicar com o botão direito em um botão de mensagem ou pressionar Alt+K abre o editor com as mensagens do modo que você definiu.</p>
+  </div>
+
+  <p>A janela do Function Key Editor:</p>
+
+  <img src="../../assets/img/fk-MessageEditor-DefaultCwMessages-1.png" alt="Janela do Function Key Message Editor mostrando as mensagens padrão de CW">
+
+  <h3 id="the-save-and-cancel-buttons">The Save and Cancel Buttons (Botões Save e Cancel)</h3>
+
+  <ul>
+    <li><strong>Save</strong> atribui as mensagens ao contest atual e as salva no arquivo indicado na barra de título do editor. Para salvar em outro arquivo, use Export. <strong>Nota: é fácil alterar sem querer um arquivo padrão de tecla de função, se você esquecer qual arquivo está na barra de título e salvar uma versão modificada. Se isso acontecer, use a função Sample Function Keys abaixo para recuperar os padrões, e então salve-os de volta com o nome do arquivo original.</strong></li>
+    <li><strong>Cancel</strong> fecha a janela sem salvar. Se você fez alterações, ou importou um arquivo, o programa pergunta se quer salvá-las. Yes atribui as mensagens ao contest atual e salva no arquivo da barra de título; No apenas fecha, descartando as alterações.</li>
+  </ul>
+
+  <h3 id="the-file-menu">The File Menu (O Menu File)</h3>
+
+  <img src="../../assets/img/fk-Function-Key-Editor-File-Menu.png" alt="Menu File do Function Key Editor">
+
+  <ul>
+    <li><strong>Copy these Messages to the Clipboard</strong> coloca todo o conteúdo do editor na área de transferência</li>
+    <li><strong>Delete These Messages and insert Starter Message Text</strong> — para voltar às mensagens padrão do modo atual, esta opção as copia para o editor no lugar das que estavam lá, mantendo o nome de arquivo original. Você será perguntado se quer salvar as alterações; OK grava as mudanças no banco de dados e no arquivo .mc aberto, Cancel reverte para o conjunto de mensagens anterior</li>
+    <li><strong>Import and Assign a Different Function Key (.MC) file to this Contest</strong> atribui a este contest um arquivo escolhido por você. Ele é registrado na aba Associated Files e será aberto automaticamente sempre que você abrir esta ou outra instância deste contest</li>
+    <li><strong>Save these Messages to a Different Function Key (.MC) filename</strong> abre uma janela para copiar o conteúdo atual do editor para um arquivo .MC com outro nome</li>
+  </ul>
+
+  <div class="caixa-info">
+    <strong>Starter Messages</strong>
+    <p>Houve uma mudança importante na forma como o texto das mensagens Default [modo] é tratado.</p>
+    <p>Um conjunto de arquivos .mc padrão é instalado na subpasta FunctionKeyMessages, dentro da pasta de arquivos de usuário do N1MM+, na instalação do programa. Se quiser, você pode modificá-los à vontade, adaptando-os a cada contest, ou criar e salvar arquivos .mc específicos por contest. Note, porém, que se você partir de um arquivo Default CW, por exemplo, fizer alterações no Function Key Editor e salvá-las, elas serão gravadas com aquele mesmo nome de arquivo.</p>
+    <p>Para restaurar as mensagens Default originais:</p>
+    <ul>
+      <li>Clique em "Import and Assign a Different Function Key File" no menu File, e selecione o arquivo Default [modo] Messages.mc que deseja reverter</li>
+      <li>Clique em "Delete these Messages and Insert Starter Message Text" (também no menu File)</li>
+      <li>Clique em Save no Function Key Editor, para salvar as mensagens iniciais (starter) no banco de dados e no arquivo Default [modo] Messages.mc, recriando-o efetivamente na forma original. Se você sair sem clicar em Save, será perguntado se quer salvar as alterações</li>
+    </ul>
+  </div>
+
+  <h3 id="the-edit-or-right-click-menu">The Edit or Right-click Menu (Menu Edit / Botão Direito)</h3>
+
+  <img src="../../assets/img/fk-FunctionKeyEditor-Rightclick.png" alt="Menu de botão direito do Function Key Editor">
+
+  <p>Ao selecionar o menu &gt;Edit, ou clicar com o botão direito na janela do editor, aparece um pequeno menu. Três opções — cortar, copiar e colar — são os comandos de edição já conhecidos do Notepad.</p>
+
+  <ul>
+    <li><strong>Insert wav filename</strong> faz exatamente o que o nome diz. Ao clicar, você escolhe um arquivo wav existente na pasta N1MM Logger+\Wav; o nome do arquivo é inserido na posição do cursor. Serve para facilitar a construção de mensagens de SSB complexas, combinando macros e nomes de arquivo</li>
+  </ul>
+
+  <div class="caixa-info">
+    <strong>Bancos de dados e atribuições de tecla de função</strong>
+    <p>Cada banco de dados lembra o arquivo de tecla de função preferido para um determinado contest. Por exemplo, se você atribuir <em>CQWWCW.MC</em> ao CQ Worldwide CW de 2014, o banco vai lembrar essa preferência e atribuir automaticamente o mesmo arquivo ao CQ Worldwide CW de 2015. Porém, se você abrir um novo banco de dados para seus logs, essa memória se perde, e você começa com a atribuição padrão de <em>CW Default Messages.MC</em>.</p>
+  </div>
+
+  <h2 id="function-key-message-file-contents">Function Key Message File Contents (Conteúdo do Arquivo de Mensagens)</h2>
+
+  <p><em>Consulte a seção Fundamentals anterior e a captura de tela da janela do Function Key Editor para as explicações a seguir</em></p>
+
+  <p>O N1MM Logger comporta até 24 mensagens por modo (CW, SSB e Digital), divididas em dois conjuntos de 12, um para Run, outro para Search and Pounce (S&amp;P) (mais informações sobre Run x S&amp;P no capítulo Entry Window, seção Function Keys). Isso significa que seus arquivos de mensagem de tecla de função podem ter até 24 linhas ativas, mais um número ilimitado de linhas de comentário.</p>
+
+  <h3 id="comment-line-any-line-that-begins-with-a-pound-sign">Comment Line (Linha de Comentário) – qualquer linha que comece com #</h3>
+
+  <ul>
+    <li>Exemplo de comentário: <strong>#Esta é uma linha de comentário</strong></li>
+  </ul>
+
+  <h3 id="message-line-any-line-that-does-not-begin-with-a-pound-sign">Message Line (Linha de Mensagem) – qualquer linha que não comece com #</h3>
+
+  <ul>
+    <li>Exemplo simples: <strong>F1 CQ, CQ</strong><br>Linhas de mensagem têm dois elementos — um Rótulo e a Mensagem em si, separados por vírgula ",". Neste exemplo, o rótulo é "F1 CQ" e a mensagem transmitida é "CQ"</li>
+  </ul>
+
+  <ul>
+    <li>Exemplo simples com macro: <strong>F1 CQ, CQ de {MYCALL}</strong><br>Aqui a mensagem transmitida é "CQ de" seguido do seu indicativo, que o programa busca em Config &gt; Change Your Station Data, campo "Call"</li>
+  </ul>
+
+  <ul>
+    <li>Exemplo com múltiplos macros: <strong>F2 Exch,! {SENTRST} {EXCH} de {MYCALL}</strong><br>Neste exemplo de exchange de contest, a mensagem começa com o indicativo da outra estação "!", seguido do relatório RST "SENTRST", seguido do exchange do contest (que pode ser um número sequencial, um estado, uma zona CQ, ou outros parâmetros conforme o contest e o campo Sent Exchange no Contest Setup), seguido de "de", e por fim seu indicativo</li>
+  </ul>
+
+  <p>Em arquivos de mensagem, # inicia uma linha de comentário. Qualquer linha que não comece com # é usada como definição de tecla de função, pareça ou não com uma.</p>
+
+  <p>Cada linha ativa (não-comentário) contém um rótulo de botão (que aparece no botão na Entry window), depois uma vírgula, depois o conteúdo. Para colocar um "&amp;" em um rótulo (como em S&amp;P), digite dois "&amp;&amp;" (como em S&amp;&amp;P).</p>
+
+  <p>O rótulo é arbitrário. Sugerimos colocar o nome da tecla (F1, F2 etc.) e uma descrição bem breve no rótulo, pois isso faz os botões na Entry Window funcionarem como documentação visual das teclas, mesmo que você nunca use o mouse. Porém, colocar "F3" em um rótulo NÃO significa automaticamente que essa mensagem vai para a F3.</p>
+
+  <p>A associação entre as linhas do arquivo .mc e as teclas de função é estritamente posicional. A primeira linha não-comentário (que começa com qualquer caractere diferente de #) é a mensagem de F1, independente do que o rótulo diz. A segunda linha é F2. E assim por diante.</p>
+
+  <p>Um arquivo tem até 24 linhas ativas. As primeiras 12 são para o modo Run, as 12 seguintes para S&amp;P. Com menos de 12 linhas ativas, as teclas depois da última ficam vazias, e as teclas de S&amp;P ficam idênticas às de Run. Com exatamente 12, S&amp;P fica idêntico a Run. Entre 12 e 24, as linhas de S&amp;P depois da última ficam idênticas às correspondentes de Run. Por exemplo, com 15 linhas ativas, as 12 primeiras são Run F1-F12; as 3 seguintes são S&amp;P F1-F3, e S&amp;P F4-F12 ficam idênticas a Run F4-F12.</p>
+
+  <p>Não pode haver linhas puladas no arquivo. Se você deixar uma linha de fora, todas as seguintes efetivamente sobem uma posição.</p>
+
+  <h3 id="message-content-limitations">Message Content Limitations (Limites do Conteúdo das Mensagens)</h3>
+
+  <ul>
+    <li>O rótulo é limitado a 29 caracteres, embora você nunca precise usar tantos</li>
+    <li>A mensagem completa é limitada a 255 caracteres</li>
+    <li>O número de linhas de mensagem costuma ser 24 — 12 para Run e 12 para Search &amp; Pounce. Porém, se você não atribuir mensagens de S&amp;P, o programa substitui automaticamente pelas mensagens de Run. Por exemplo, se suas mensagens de S&amp;P para F9-F12 são idênticas às de Run, você pode deixar essas linhas de fora do arquivo. Mas cuidado, pois não pode haver lacunas na numeração sequencial das mensagens de S&amp;P. Linhas em branco contam como linhas de mensagem!</li>
+    <li>A associação entre mensagens e teclas de função é estritamente posicional. A mensagem na primeira linha não-comentário é enviada por F1 em modo Run, independente do rótulo; a da segunda linha por F2 em Run; a da 13ª linha por F1 em S&amp;P; e assim por diante</li>
+  </ul>
+
+  <h2 id="function-key-examples">Function Key Examples (Exemplos de Teclas de Função)</h2>
+
+  <div class="caixa-info">
+    <strong>Sample Function Key Files</strong>
+    <p>Além dos três arquivos de mensagem padrão instalados com o programa, há também um grande número de arquivos de exemplo (Sample Function Key Files) disponíveis para download no site. A vantagem desses arquivos de exemplo, em relação aos padrão, é que já vêm personalizados para os principais contests e podem ser usados sem mais ajustes.</p>
+  </div>
+
+  <p>Há arquivos de tecla de função de exemplo no site, em &gt;Downloads &gt;Category listing &gt;Function Key files, para operação em SSB, CW e Digital. Abra a categoria do modo desejado e baixe os arquivos escolhidos. Para usá-los, você pode indicar esses arquivos ao configurar um novo contest, ou importá-los no editor de tecla de função. Você pode examiná-los no editor ou em um editor de texto como o Notepad.</p>
+
+  <p>O programa já vem pré-carregado com arquivos genéricos padrão de mensagens de tecla de função para os três modos: CW Default Messages.mc, SSB Default Messages.mc e Digi Default Messages.mc. Funcionam para contests com exchanges simples (como CQ WW ou CQ WPX), e basicamente para todos os contests de SSB.</p>
+
+  <p>Se você usa o arquivo Default Messages.mc de um modo e usa o editor para fazer alterações, essas mudanças ficam permanentes, ou seja, valem para todos os contests futuros que usarem esse arquivo. Portanto, se você fizer alterações para um contest específico mas não quiser que valham para outros, use um arquivo .mc específico daquele contest, em vez do arquivo padrão genérico. Você pode criar ou baixar arquivos específicos de contest e usar a aba Associated Files na Contest Setup Dialog para indicar o arquivo a usar naquele contest. A partir daí, futuros contests do mesmo tipo vão usar automaticamente os mesmos arquivos de mensagem do contest anterior daquele tipo.</p>
+
+  <h3 id="ssb">SSB</h3>
+
+  <p>A menos que você use <a href="../audio-setup-window/index.html">text-to-speech</a>, arquivos de SSB contêm nomes de arquivo wav, que precisam ser fornecidos por você. Normalmente são gravados na própria voz do operador, para evitar confusão entre vozes "ao vivo" e gravadas. Presume-se que estejam na subpasta wav da área de arquivos de usuário do N1MM Logger+. (<strong>Nota:</strong> se você moveu a área de arquivos de usuário durante uma reinstalação, talvez para evitar problemas com o OneDrive, pode haver mais de uma pasta N1MM Logger+ no seu sistema; a correta, incluindo os arquivos wav, é a indicada pelo menu <strong>Help &gt; Open Explorer on User Files Directory</strong>.) Se uma macro {OPERATOR}\ ou {WAVDIR}\ aparecer no nome do arquivo, ele será procurado em uma subpasta nomeada com o indicativo do operador atual (ou outro identificador definido por uma macro {SetWavDir}). As macros !, # e @ também podem ser usadas, mas só se houver um conjunto completo de arquivos wav individuais para cada letra e número na subpasta wav\LettersFiles (ou uma subpasta nomeada no Configurer, aba Other, campo DVK Letters File Path). Há um arquivo de exemplo de SSB no site (SSB_Default_Messages.mc). As diferenças entre contests ficam principalmente no conteúdo dos arquivos wav gravados, não no conteúdo das mensagens de tecla de função.</p>
+
+  <p>Exemplo básico ilustrando o uso da macro {OPERATOR}:</p>
+
+  <div class="bloco-mc">F1 CQ,{OPERATOR}\CQ.wav
+F2 Exch,{OPERATOR}\Exchange.wav
+F3 TNX,{OPERATOR}\Thanks.wav
+F4 {MYCALL},{OPERATOR}\Mycall.WAV
+F5 His Call,empty.wav
+F6 Spare,empty.wav
+F7 QRZ?,{OPERATOR}\QRZ.wav
+F8 Agn?,{OPERATOR}\AllAgain.wav
+F9 Exchg?,{OPERATOR}\Exchange query.wav
+F10 Spare,empty.wav
+F11 Spare,empty.wav
+F12 Wipe,{WIPE}
+F1 CQ,{OPERATOR}\CQ.wav
+F2 S&amp;P Exch,{OPERATOR}\S&amp;P Exchange.wav
+F3 Spare,empty.wav
+F4 {MYCALL},{OPERATOR}\Mycall.WAV
+F5 His Call,empty.wav
+F6 {MYCALL},{OPERATOR}\Mycall.wav
+F7 Rpt Exch,{OPERATOR}\Repeat Exchange.wav
+F8 Agn?,{OPERATOR}\AllAgain.wav
+F9 Spare,empty.wav
+F10 Spare,empty.wav
+F11 Spare,empty.wav
+F12 Wipe,{WIPE}</div>
+
+  <p>Garanta que sua pasta wav contenha uma subpasta nomeada com o seu indicativo, e que ela contenha todos os arquivos listados, exceto "empty.wav", que já vem instalado com o programa.</p>
+
+  <img src="../../assets/img/fk-FunctionKeys-WAV.png" alt="Exemplo de subpasta wav para o indicativo de operador N1MM">
+
+  <h3 id="cw">CW</h3>
+
+  <p>Arquivos de CW contêm o texto real a ser enviado em código Morse, possivelmente misturado com macros de substituição (como {MYCALL}, !, #, {EXCH}) e macros de controle (como {WIPE}, {CLEARRIT}). Note que, se a macro {EXCH} for usada, você precisa informar o exchange correto no campo Sent Exchange da Contest Setup Dialog — consulte as instruções de configuração do contest. Há arquivos de CW no site, na galeria Sample Function Key Files, para a maioria dos contests importantes.</p>
+
+  <p><strong>Exemplo genérico de CW</strong></p>
+
+  <div class="bloco-mc">F1 Cq,cq test {MYCALL} {MYCALL} test
+F2 Exch, {SENTRSTCUT} {EXCH}
+F3 Tu,tu {MYCALL} test
+F4 {MYCALL},{MYCALL}
+F5 His Call,!
+F6 Repeat, {SENTRSTCUT} {EXCH} {EXCH}
+F7 Empty,
+F8 Agn?,agn?
+F9 Nr?,nr?
+F10 Call?,cl?
+F11 Empty,
+F12 Wipe,{WIPE}
+F1 Qrl?,qrl? de {MYCALL}
+F2 Exch,{SENTRSTCUT} {EXCH}
+F3 Tu,tu
+F4 {MYCALL},{MYCALL}
+F5 His Call,!
+F6 Repeat,{SENTRSTCUT} {EXCH} {EXCH}
+F7 Empty,
+F8 Agn?,agn?
+F9 Nr?,nr?
+F10 Call?,cl?
+F11 Empty,
+F12 Wipe,{WIPE}</div>
+
+  <p><strong>Exemplos de CW para o Sprint</strong></p>
+
+  <p>Quer você opere o NA Sprint ou não, estes exemplos ilustram o uso de vários macros combinados com texto em definições de tecla de função.</p>
+
+  <p><strong>Sprint CW Exemplo #1</strong></p>
+
+  <p>Este conjunto de teclas é baseado em um conjunto postado por Kenny, K2KW:</p>
+
+  <div class="bloco-mc">F1 CQ,* * NA
+F2 Exch, * {EXCH}
+F3 TU,EE{S&amp;P}
+F4 {MYCALL},*
+F5 His Call,!
+F6 QSO B4,B4 E E
+F7 ?,?
+F8 Agn,AGN
+F9,
+F10,
+F11,
+F12,
+F1 CQ,* * NA
+F2 Exch,! {EXCH} *
+F3 TU,EE{RUN}
+F4{MYCALL},*
+F5 His Call,!
+F6 QSO B4,B4 E E
+F7 ?,?
+F8 Agn,AGN
+F9,
+F10,
+F11,
+F12,</div>
+
+  <p><strong>Notas sobre as mensagens de Running</strong></p>
+
+  <ul>
+    <li>Em F2, há um espaço antes do *, ex.: "[espaço] * {EXCH}"</li>
+    <li>Em F3, "EE" confirma o QSO. Também daria para usar "TU"</li>
+    <li>Depois de enviar "EE" na mensagem F3, a macro {S&amp;P} coloca você em modo S&amp;P. Depois é só usar as setas cima/baixo para fazer QSY</li>
+    <li>Pessoalmente, tenho F6 programada como {EXCH} para repetir o exchange</li>
+  </ul>
+
+  <p><strong>Notas sobre as mensagens de S&amp;P</strong></p>
+
+  <ul>
+    <li>Note a diferença na sequência da mensagem F2 em relação à F2 de Running</li>
+    <li>Na mensagem F3, a macro {RUN} coloca você em modo Running, pronto para trabalhar um "tail ender" e enviar a sequência correta do QSO</li>
+    <li>Pessoalmente, tenho F6 programada como {EXCH} para repetir o exchange</li>
+  </ul>
+
+  <p><strong>Sprint CW Exemplo #2</strong></p>
+
+  <p>Este conjunto de teclas é baseado em um postado por Pete, N4ZR:</p>
+
+  <div class="bloco-mc">F1 CQ,* * NA{CLEARRIT}
+F2 Exch, * {EXCH}|
+F3 TU,E~E {CLEARRIT}
+F4 {MYCALL},*
+F5 His Call,!
+F6 QSO B4,B4 *
+F7 Rpt Exch,{EXCH}
+F8 ?,?
+F9,
+F10,
+F11,
+F12,
+F1 CQ,* * NA{CLEARRIT}
+F2 Exch,! {EXCH} * {RUN}
+F3 NR,#
+F4 {MYCALL},*
+F5 His Call,!
+F6 Name,PETE
+F7 State,WV
+F8 ?,?
+F9,
+F10,
+F11,
+F12,</div>
+
+  <p>Note duas coisas sobre este conjunto:</p>
+
+  <p>1. A macro {RUN} está na S&amp;P F2, não na F3. Isso funcionou muito bem para mim — ao pressionar Enter para enviar o exchange de S&amp;P, o exchange era enviado, o QSO logado, e o modo mudava para {RUN} com o cursor no campo de indicativo. Então eu não precisava pressionar F3 para sair de S&amp;P e ir para Run. O problema principal é que, se alguém pede repetição do número serial, as teclas de Run já estão ativas, então você precisa lembrar como pegar o número serial do conjunto de S&amp;P (Shift+F3), ou simplesmente usar a paddle, que foi o que eu fiz.</p>
+
+  <p>2. Não há macro {S&amp;P} neste conjunto. No fim de um QSO de Run, você muda para S&amp;P apenas fazendo QSY. Isso também funcionou bem para mim; já que você vai ter que fazer QSY de qualquer jeito, não parece haver necessidade real de forçar a mudança para S&amp;P. Eu também tinha a opção "QSYing wipes the call &amp; spots QSO in bandmap" selecionada, o que deve ter ajudado a garantir que o cursor ficasse no lugar certo depois do QSY, limpando a Entry window. Claro que eu não tinha o bandmap aberto de fato, e simplesmente ignorava qualquer indicativo que aparecesse no quadro de chamada.</p>
+
+  <p><strong>Sprint CW Exemplo #3</strong></p>
+
+  <p><strong>Personalizando o N1MM Logger para o North American CW Sprint, por Steve, N2IC</strong></p>
+
+  <p>Não vou tentar explicar como operar o Sprint — para isso, há um excelente texto em http://www.kkn.net/~n2ic/sprint.html. O que vou fazer é descrever como aproveitar ao máximo o N1MM Logger no Sprint. Eu opero em SO2R, e minha configuração é otimizada para isso. Mas tenho certeza de que quem usa SO1R também vai aproveitar algumas dicas do que fiz para SO2R. A coisa mais importante é configurar corretamente suas opções, janelas e teclas de função antes do Sprint começar.</p>
+
+  <p><strong>As Opções...</strong></p>
+
+  <p>Inicie o N1MM Logger+ e crie um novo contest SPRINTCW.</p>
+
+  <p>No menu Config, selecione as seguintes opções:</p>
+
+  <ul>
+    <li>Enter sends message (ESM)</li>
+    <li>QSYing wipes the call &amp; spots QSO in bandmap</li>
+    <li>Do not automatically switch to run on CQ frequency</li>
+    <li>Show non-workable spots</li>
+    <li>SO2R &gt; Toggle CTRLFx Macro</li>
+  </ul>
+
+  <p>Nota: SO2R &gt; Focus on Other Radio NÃO está ligada</p>
+
+  <p>As Janelas... são as únicas que tenho na tela, e todas cabem bem no meu monitor pequeno</p>
+
+  <ul>
+    <li>Entry Window (uma para cada rádio)</li>
+    <li>Visible Dupesheet (uma para cada rádio)</li>
+    <li>Info</li>
+    <li>Log</li>
+    <li>Score Summary</li>
+  </ul>
+
+  <img src="../../assets/img/fk-Classic-FunctionKeys1.png" alt="Layout de janelas sugerido por N2IC para o Sprint">
+
+  <p>O Visible Dupesheet é bem útil depois que você se acostuma. Para ver se uma estação é dupe, basta passar os olhos pela planilha, em vez de digitar freneticamente o indicativo na Entry Window. Você pode mudar o tamanho da fonte no Visible Dupesheet arrastando-o mais largo, deixando espaço em branco depois da coluna mais à direita, e clicando com o botão direito nesse espaço para escolher fonte pequena ou grande.</p>
+
+  <p>Note que eu NÃO deixo a janela "Available Mults &amp; Q's" aberta. Abra a janela Bandmap, mas deixe-a bem pequena — precisa estar aberta, mesmo sem utilidade no Sprint.<br>Abra a janela Telnet. Vá na aba Filters. Mude o Bandmap DX spot timeout para 1 minuto. Isso mesmo... 1 minuto. Clique em Update. Agora feche a janela Telnet e não a reabra — ela não tem valor no Sprint, mas era importante mudar o valor de timeout dos spots no bandmap para 1 minuto. Isso controla por quanto tempo os indicativos ficam no bandmap e aparecem no quadro "on deck" da Entry Window. Obviamente não usamos packet no Sprint.</p>
+
+  <p>Teclas de Função...</p>
+
+  <p>Seguem minhas definições de tecla de função. Vou explicar algumas que não são óbvias.</p>
+
+  <div class="bloco-mc">F1 CQ,{JUMPRX}cq na cq na * na
+F2 Exch,* # steve nm
+F3 TU,{CLEARRIT}T{END}{CONDJUMP}{STOPTX}
+F4 {MYCALL},*
+F5 His Call,!
+F6 QSO B4,! QSO B4 * NA
+F7 Other Short,{CTRLF10}
+F8 Other Long,{CTRLF11}
+F9 Go S&amp;P,{S&amp;P}
+F10 CQ,CQ NA * * NA {RUN}
+F11 Long CQ,CQ NA CQ NA * * NA {RUN}
+F12 -,-
+F1 S&amp;P CQ,{JUMPRX}CQ NA CQ NA * NA
+F2 S&amp;P Exch,! # STEVE NM {RUN}
+F3 S&amp;P TU,TU
+F4 S&amp;P{MYCALL},
+F5 S&amp;P His Call,!
+F6 S&amp;P Name,-
+F7 S&amp;P Other Short,{CTRLF10}
+F8 S&amp;P Other Long,{CTRLF11}
+F9 Go Run,{RUN}
+F10 CQ,CQ NA * * NA {RUN}
+F11 Long CQ,CQ NA CQ NA * * NA {RUN}
+F12 -,-</div>
+
+  <p>Na tecla CQ F3, minha mensagem de "obrigado" é enviada. Ao fazer QSY, você muda automaticamente para S&amp;P. Não inclua a macro {S&amp;P} aqui — isso faria a última estação trabalhada ficar "presa" no quadro de chamada da Entry Window.</p>
+
+  <p>Na S&amp;P F2, assim que envio meu exchange, mudo imediatamente para o modo Run.<br>Também posso me forçar para os modos Run e S&amp;P com a tecla F9.</p>
+
+  <p>As teclas F7 e F8 enviam CQ no "outro" rádio. Muito útil quando a outra estação está enviando o exchange dela e você vai perder a frequência (ou seja, ela vai virar "a frequência dela"). Você pode enviar um CQ no outro rádio enquanto ela envia o exchange. Depois, quando ela terminar e você precisar mandar sua mensagem de "obrigado" para fechar o QSO, basta pressionar Enter, que para o CQ no outro rádio e envia sua mensagem CQ F3 no rádio ativo. Mas é bom estar pronto para copiar uma nova chamada no "outro" rádio. Você também precisa estar afiado com a tecla Pause para pular entre os dois rádios quando isso acontecer. A macro {CONDJUMP} na mensagem Run F3 move o foco de entrada para o "outro" rádio, deixando você pronto para copiar uma nova chamada.</p>
+
+  <p>Quando estou chamando CQ no rádio ativo, mas fazendo S&amp;P simultaneamente no outro, e ouço uma estação nova, basta pressionar Enter. Isso para o CQ e envia minha chamada no outro rádio.</p>
+
+  <p>Uma coisa que você precisa fazer é ficar de olho em onde estão seus focos de transmissão e recepção (os pontos vermelho e verde na Entry Window). Fazendo SO2R no Sprint, vai haver momentos em que o foco não está onde você espera ou quer. Esteja sempre pronto com as teclas \ e Pause para pular entre os rádios. Sim, isso exige muita prática, e você vai errar. Os Sprints da NCCC às quintas à noite são uma boa forma de treinar.</p>
+
+  <p>73 e até o Sprint!<br>Steve, N2IC</p>
+
+  <h4 id="cw-messages-deep-dive">CW Messages Deep Dive (Aprofundando nas Mensagens de CW)</h4>
+
+  <p>No menu Config, você pode selecionar Change CW/SSB/Digital Function Key Definitions, e depois Change CW Function Key Definitions, ou simplesmente clicar com o botão direito em um dos 12 botões de tecla de função na Entry window. Isso abre esta janela:</p>
+
+  <img src="../../assets/img/fk-MessageEditor-DefaultCwMessages.png" alt="Function Key Editor exibindo as mensagens padrão de CW">
+
+  <p>O que ela mostra é o arquivo padrão de mensagens de tecla de função que já vem com o N1MM Logger+. Há muito mais sobre o Function Key Message Editor <a href="#the-function-key-message-editor">aqui</a>, mas por enquanto vamos usar o que já está pronto.</p>
+
+  <p>De cima para baixo, note a macro {MYCALL}. Uma alternativa é a macro de caractere único <strong>*</strong>. Ambas representam seu indicativo, vindo da janela Station Data. É uma macro de texto. Existem dois tipos de macro, de texto e de ação — as de texto substituem uma string de texto no lugar da macro, as de ação executam alguma função do programa. Ambas costumam ser combinadas com texto comum em uma mensagem, como aqui — ao pressionar a tecla de função ou clicar no botão F1 na tela, o programa envia CQ TEST N4ZR N4ZR TEST (substituindo o asterisco pelo seu indicativo). Há uma tabela com os muitos <a href="#macros">Macros</a> reconhecidos no capítulo de mesmo nome do manual, mas por ora vamos seguir em frente.</p>
+
+  <p>Por convenção, F2 é usada para o exchange do contest. O arquivo de exemplo usa a macro {EXCH}, uma macro de texto que substitui o que você colocou na parte Sent Exchange do Contest Setup. Digamos que estamos configurando um contest cujo exchange é relatório de sinal, nome e estado. Ao configurar o contest, N4ZR coloca PETE WV no Sent Exchange. Agora, ao pressionar ou clicar F2, o programa envia PETE WV.</p>
+
+  <p>Você não precisa usar a macro {EXCH}; é apenas uma conveniência. Sempre é possível cravar o exchange diretamente na definição da mensagem (use # para números seriais).</p>
+
+  <p>Também em Run F2 está a macro {SENTRSTCUT}. Muitos de nós simplesmente colocam 5NN explicitamente em F2, mas essa macro é um pouco mais esperta. Ela envia o relatório de sinal (nominalmente 599, mas pode ser alterado na Entry window por QSO) usando N em vez de 9 (só em CW).</p>
+
+  <p>Um detalhe importante — você pode pensar em colocar 5NN direto no Sent Exchange do Contest Setup — afinal, todo mundo é 599, certo? Pois bem, não faça isso, porque vai bagunçar seu log Cabrillo. Resigne-se a colocar 5NN ou {SENTRSTCUT} nas suas mensagens de tecla de função, onde quer que precise ser enviado.</p>
+
+  <p>O próximo truque útil está em Run F5, onde se usa <strong>!</strong>. Ele sempre representa o indicativo da outra estação, pego da Entry Window.</p>
+
+  <p>Uma última dica — a maioria dos macros tem a forma {PALAVRA}, onde "palavra" é o nome do macro (as principais exceções são *, ! e #, que não usam chaves). As chaves ao redor do nome são necessárias para o programa saber que deve substituir algo ou executar uma ação. É muito fácil digitar colchetes ou parênteses comuns em vez de chaves, então preste atenção.</p>
+
+  <p>Daqui em diante, para mudar o conteúdo de qualquer botão de mensagem, basta clicar com o botão direito na área dos botões, e o editor que acabamos de ver reaparece.</p>
+
+  <p>Certo — você já conectou sua interface, então está pronto para enviar algum CW pré-gravado. Como explicado acima, pressione a tecla de função F1 ou clique no botão F1. De qualquer forma, o programa vai comutar seu rádio de Recepção para Transmissão (supondo que você tenha o PTT conectado — também pode usar VOX ou break-in, claro), enviar a mensagem, e voltar para Recepção.</p>
+
+  <h3 id="rtty">RTTY</h3>
+
+  <p>Mensagens de arquivos digitais geralmente começam com {TX} e terminam com {RX}, exceto macros de controle do programa.</p>
+
+  <p>Do jeito que as teclas abaixo são projetadas, elas funcionam em muitos contests de RTTY sem qualquer alteração. Se elas servem para a sua situação depende das suas antenas, potência, QTH etc.; mas talvez lhe deem algumas ideias:</p>
+
+  <div class="bloco-mc">F1 CQ,{TX} CQ TEST * * CQ {RX}
+F2 EXCH,{TX} 599 {EXCH} ! {RX}
+F3 TU,{TX}{ENTERLF} ! TU * QRZ? {RX}
+F4 {MYCALL},{TX} * {RX}
+F5 His Call,{TX}{ENTERLF}! {RX}
+F6 QSO B4, {TX} QSO B4 * CQ {RX}
+F7 Rpt Exch,{TX} {EXCH} {EXCH} {EXCH} {RX}
+F8,{TX} AGN AGN * {RX}
+F9,
+F10,
+F11,
+F12,
+F1 CQ,{TX} CQ TEST * * CQ {RX}
+F2 EXCH,{TX}{ENTERLF} ! TU 599 {EXCH} {EXCH} {RX}
+F3 TU,{TX} ! TU {RX}
+F4 Call Him,{TX} * * {RX}
+F5 1x1,{TX} ! * {RX}
+F6 0x1,{TX} * {RX}
+F7 Rpt Exch,{TX} {EXCH} {EXCH} {EXCH} {EXCH} {RX}
+F8 Agn,{TX} AGN AGN {RX}
+F9,
+F10,
+F11,
+F12,</div>
+
+  <p>Se o exchange do contest incluir um RST, você pode usar a macro {SENTRST} para enviar o relatório de sinal do campo Snt na Entry window, no lugar de 599 na mensagem de exchange.</p>
+
+  <p><strong>Exemplo geral de RTTY</strong></p>
+
+  <p>Ao usar as teclas acima, presume-se que o ESM esteja ligado. As teclas de Run F5, F6 e F7 não são muito úteis quando você está em S&amp;P, por isso as programei de forma diferente das teclas de Run. Note também que você pode usar até 24 botões adicionais (só com o mouse, sem acesso pelo teclado) na janela Digital Interface. Por exemplo, dá para configurar chamadas 0x1, 0x2, 0x3 e 0x4, exchanges simples, duplos e triplos, pedidos separados da zona e do estado dele, e repetições só da sua zona ou só do seu estado, e assim por diante.</p>
+
+  <p><strong>Exemplo de RTTY onde a hora faz parte do exchange (como no BARTG)</strong></p>
+
+  <p>Na tabela a seguir, só as teclas diferentes do exemplo geral acima são mostradas:</p>
+
+  <div class="bloco-mc">F2 Exch,{TX}599 {EXCH} {EXCH} {TIME2} {TIME2} ! {RX}
+F7 Rpt Exch,{TX} 599 {EXCH} {EXCH} {TIME2} {TIME2} {RX}</div>
+
+  <h2 id="per-operator-function-key-files">Per-Operator Function Key Files (Arquivos de Tecla de Função por Operador)</h2>
+
+  <p>Há uma opção, selecionável na aba Other do Configurer, que permite que cada operador de uma estação multi-operador tenha seus próprios arquivos de mensagem de tecla de função. Isso dá a operadores diferentes a possibilidade de ter arquivos de mensagens ajustados às suas preferências individuais. O arquivo de tecla de função de todos os operadores parte do nome de arquivo definido na aba Associated Files da janela Contest Setup. O arquivo "mestre" é editado quando o OPERATOR está definido como o indicativo da estação.</p>
+
+  <p>Em contests de fonia, não é necessário usar esta opção apenas para mudar a voz nas mensagens gravadas (veja a descrição da macro {OPERATOR} na próxima seção sobre mensagens SSB). Mas, usando arquivos de tecla de função individuais por operador, é possível que um operador use um arquivo com macros ! e # para dizer indicativos e números seriais com letras e números pré-gravados, enquanto outro operador usa um arquivo sem essas macros, falando os indicativos e números diretamente no microfone. Em CW e modos digitais, essa opção permite que cada operador ajuste suas mensagens às próprias preferências.</p>
+
+  <p>Com esta opção habilitada, trocar de operador com OPON ou Ctrl+O muda o arquivo de mensagens em uso para o arquivo pessoal daquele operador. Esses arquivos ficam em uma subpasta do diretório principal de mensagens de tecla de função. Na primeira vez que um operador com indicativo diferente do da estação faz login com Ctrl+O ou OPON, o arquivo pessoal dele é inicializado a partir do arquivo "mestre" definido na aba Associated Files. Depois disso, esse operador pode fazer alterações pelo Function Key Message Editor sem afetar os arquivos dos demais operadores, permitindo que cada um tenha seus próprios arquivos individuais. O arquivo "mestre" da aba Associated Files só pode ser editado pelo operador cujo indicativo é igual ao da estação. Veja a descrição de Per-Operator Function Key Messages, na aba Other, na seção <a href="../the-configurer/index.html#other-tab">Configurer</a> do manual, para mais detalhes de implementação.</p>
+
+  <p><strong>Se um operador mudar o nome do arquivo de mensagens definido na aba Associated Files durante o contest, todos os operadores receberão novos arquivos de mensagem baseados no novo nome, ao fazerem OPON.</strong></p>
+
+  <h2 id="special-measures-for-ssb-function-keys">Special Measures for SSB Function Keys (Medidas Especiais para Teclas de Função de SSB)</h2>
+
+  <p>Mensagens de CW e RTTY são bem diretas. Mensagens de SSB, porém, exigem instruções adicionais.</p>
+
+  <p>O arquivo <em>SSB Default Message.mc</em>, como mostrado no Function Key Editor:</p>
+
+  <img src="../../assets/img/fk-Default-SSB-Messages-Shown-In-FKey-Editor.png" alt="Mensagens padrão de SSB no Function Key Editor">
+
+  <p>Esta captura de tela mostra as teclas de função de SSB padrão, como entregues originalmente pelo programa. Note que a mensagem F5-His Call vem, de fábrica, com um único espaço. Se você usa a locução de indicativos letra por letra, pode usar a macro "!" (sem espaços antes ou depois) como mensagem de F5 — é a macro usada para dizer o indicativo juntando arquivos de letras e números, então normalmente não seria usada de outra forma. Se você não está locucionando indicativos nem números seriais (veja abaixo), <strong>não</strong> deveria ter a macro "!" nas suas definições de SSB. O mesmo vale para "#", "*" e "@". No lugar de "*" ou {MYCALL}, use um nome de arquivo explícito como mycall.wav.</p>
+
+  <p>Os arquivos Wav referenciados no arquivo de mensagens precisam ser fornecidos por você. Para uso com este arquivo, devem estar no caminho N1MM+ user Wav\. Quando a estação tem múltiplos operadores, use a macro {Operator} no caminho do arquivo wav, como mostrado acima, e coloque os arquivos wav de cada operador em uma subpasta com o indicativo dele: <strong>N1MM Logger+\Wav\[operador]\</strong>. Por exemplo, os arquivos wav de K3CT operando na estação de N1MM ficariam em <strong>N1MM Logger+\Wav\K3CT\</strong>. A macro {WAVDIR} pode ser usada no lugar de {OPERATOR} nos caminhos de arquivo wav, para dar suporte a múltiplos conjuntos para o mesmo operador.</p>
+
+  <p>Use o comando CTRL+O ou OPON para trocar de operador e dizer ao programa para usar os arquivos Wav daquele operador. Se estiver usando múltiplos conjuntos para o mesmo operador, use {SetWavDir} para definir o valor usado pela macro {WAVDIR}.</p>
+
+  <h3 id="playing-multiple-wav-files">Playing Multiple Wav Files (Tocando Múltiplos Arquivos Wav)</h3>
+
+  <p>Para tocar mais de um arquivo wav com uma tecla de função, separe os nomes de arquivo por vírgula.<br><strong>F1 CQ,{OPERATOR}\Cq.wav,{OPERATOR}\Cq.wav</strong></p>
+
+  <h3 id="the-operator-macro">The {Operator} Macro (A Macro {Operator})</h3>
+
+  <p>Como você deve ter notado acima, há uma macro {OPERATOR} no caminho de cada arquivo de mensagem .wav. O objetivo é permitir que os arquivos de mensagem armazenados acompanhem o operador de plantão (em situações multi-op ou com operador convidado), para que a voz usada nas mensagens gravadas seja a mesma do operador ao vivo, ao usar o microfone. Por exemplo, se um conjunto de mensagens (como CQ.wav) está na subpasta Wav\N1XYZ, e N1XYZ é o operador e a mensagem se refere a {OPERATOR}\CQ.wav, o programa vai enviar <strong>o CQ.wav dele</strong> ao pressionar aquela tecla. O mesmo vale para letras e números gravados, usados na locução de indicativos e números seriais, exceto que esses ficam no caminho identificado <a href="../the-configurer/index.html#other-tab">na aba Other do Configurer</a>. O caminho padrão dos arquivos de letras é: <strong>{Operator}\</strong>. <strong>Portanto, se seu indicativo é "N1XYZ", os arquivos de letras e números devem ficar na subpasta wav\LettersFiles\N1XYZ\ da área de arquivos de usuário do N1MM+</strong>.</p>
+
+  <p>O operador atual aparece na barra de título da janela Info, e também em letras azuis grandes dentro dela, à direita. Vem pré-preenchido com o indicativo da Station Data. Para trocar de operador, pressione Ctrl+O e digite o indicativo desejado.</p>
+
+  <p>Mesmo operando sozinho, sem nunca precisar trocar de operador, recomendamos manter as macros {OPERATOR} e colocar os arquivos wav em pastas nomeadas com o seu indicativo. Isso facilita adicionar um operador convidado depois, e enquanto isso a substituição de {OPERATOR} vem da página Station Data.</p>
+
+  <p>No lugar da macro {OPERATOR} nos caminhos de arquivo wav, pode-se usar a macro {WAVDIR}. Por padrão, o resultado de usar {WAVDIR} é o mesmo de usar {OPERATOR}. O objetivo da macro {WAVDIR} é permitir usar diretórios de wav diferentes para variações de fonética ou idioma pelo mesmo operador. Ao iniciar o programa ou trocar de operador (OpOn ou Ctrl+O), {WAVDIR} é definido com o indicativo do operador. A macro {OPERATOR} ainda pode ser usada em arquivos de tecla de função, mas seu uso está sendo descontinuado, e as mensagens padrão de SSB do programa já usam {WAVDIR}. Operadores que queiram variar arquivos wav ou de letras por fonética ou idioma devem mudar seus arquivos de tecla de função para usar {WAVDIR} e a nova macro {SetWavDir}.</p>
+
+  <h3 id="recording-on-the-fly">Recording on the Fly (Gravando na Hora)</h3>
+
+  <p>Se você precisa gravar ou regravar um arquivo de tecla de função com urgência, pode fazer isso de dentro do programa, desde que a mensagem de tecla de função chame apenas um único arquivo .wav. Este método também presume que o microfone está ligado ao rádio pela placa de som (permanentemente, ou temporariamente durante a gravação). Apesar das limitações, é muito útil, principalmente para operação split em contests de SSB, onde a frequência de escuta muda com frequência.</p>
+
+  <p>A sequência de teclas para iniciar e parar a gravação na hora é Ctrl+Shift+Fkey, tanto em Run quanto em S&amp;P.<br>Ao iniciar a gravação, uma mensagem aparece na linha de status da Entry window: algo como "start recording:[caminho e nome do arquivo]". Pressione Ctrl+Shift+Fkey de novo ao terminar de gravar, e a linha de status vai mostrar "recording saved: [caminho e nome do arquivo]". Se aparecer uma mensagem de erro e a Entry window não for larga o suficiente para lê-la toda, basta esticá-la horizontalmente.</p>
+
+  <p>Se você chamar um arquivo .wav que não existe (por exemplo, por um nome ou caminho errado no arquivo .mc), você será avisado no mesmo lugar. Para investigar problemas de caminho, pode ser necessário esticar a Entry window horizontalmente, já que há pouco espaço para a mensagem na linha de status.</p>
+
+  <h3 id="voicing-call-signs-serial-numbers-and-frequencies">Voicing Call-signs, Serial Numbers and Frequencies (Locução de Indicativos, Números Seriais e Frequências)</h3>
+
+  <p>A opção de locucionar indicativos, números seriais e frequências caractere por caractere parece estar cada vez mais popular entre os contesters de SSB. Um operador, para proteger o sono da esposa e dos filhos pequenos, chegou a montar um conjunto tão completo de arquivos de locução que conseguia operar um Sweepstakes inteiro sem usar o microfone.</p>
+
+  <p>Quando a locução é usada, as macros !, # e @ podem ser usadas em mensagens de SSB, e o programa envia os arquivos individuais de letra e número que compõem o indicativo ou número a ser enviado, ou, se um indicativo completo ou parcial estiver gravado como arquivo wav, usa esse arquivo como parte ou todo o envio. As letras, números, caracteres especiais e fragmentos de indicativo usados na locução ficam no local definido no caminho de arquivos de letras, na <a href="../the-configurer/index.html#other-tab">aba Other do Configurer</a>. De novo, se você quiser ter mais de um operador, é melhor inserir a macro {OPERATOR} nesse caminho, e gravar em uma subpasta nomeada com o indicativo do operador, para que Ctrl+O diga ao programa qual conjunto de arquivos de letras usar.</p>
+
+  <p>Mensagens de tecla de função com locução podem ter mais de um arquivo wav ou macro. Use vírgulas para separar os nomes de arquivo e macros dentro de uma mensagem. Por exemplo, para enviar 59 seguido de um número serial:<br>F2 Exch,fivenine.wav,#<br>onde fivenine.wav é um arquivo wav com "five nine". A macro # é separada do nome do arquivo wav por vírgula.</p>
+
+  <p><strong>Nota: se você não quiser usar locução, garanta que sua tecla Run F5 esteja programada com um único espaço, e não "!".</strong></p>
+
+  <p><strong>Locução Simples</strong></p>
+
+  <p>Essa técnica é usada para locucionar indicativos, como a forma mais simples de locucionar números seriais, para informar sua frequência de escuta em operação split, e para locucionar as macros {SENTRST}, {ROVERQTH} e {COUNTYLINE}. O operador precisa gravar arquivos para as letras A-Z, os números 0-9, e alguns caracteres especiais — <strong>query.wav</strong> para o caractere "?", <strong>stroke.wav</strong> para a barra usada em indicativos de operação recíproca, operação portátil etc. (denotada no log pela barra "/"), e <strong>point.wav</strong> para o ponto decimal (em uma frequência, por exemplo). Opcionalmente, você também pode gravar um arquivo <strong>strokep.wav</strong> para o indicador "/P" (portátil) (por exemplo, para enviar "stroke portable" em vez de "stroke papa" com arquivos separados stroke.wav e P.wav). Quando a macro ! está em uma definição de tecla de função e a tecla é pressionada, o programa substitui por uma sequência de arquivos .wav para o número ou indicativo. <strong>N1MM</strong> é decomposto em <strong>N.wav</strong>+<strong>1.wav</strong>+<strong>M.wav</strong>+<strong>M.wav</strong>. As macros # e @ funcionam da mesma forma para números seriais e frequência, respectivamente.</p>
+
+  <p>Ao locucionar indicativos ou números seriais, o programa procura todos os arquivos no "Letters Wav File Path" configurável pelo usuário. Esse caminho é definido em Config, aba Other, e permite escolher o diretório a usar abaixo de Wav\LettersFiles. O caminho padrão é: {WAVDIR}\, que normalmente equivale a {OPERATOR}\, ou seja, procura arquivos em Wav\LettersFiles\[IndicativoDoOperador].</p>
+
+  <p>Se o indicativo da Entry window existir como um arquivo "indicativo".wav, ou um fragmento de grupo de caracteres (duas ou mais letras/números), nesse diretório, o arquivo do grupo é tocado ao locucionar o indicativo. Caracteres restantes não cobertos são locucionados como arquivos de letra individuais. Ao nomear arquivos wav de tecla de função, use nomes que não apareçam dentro de indicativos (use algo como CQ_RUN.wav em vez de CQ.wav, senão um indicativo como WZ9CQY seria locucionado com sua mensagem de CQ inteira entre o WZ9 e o Y!).</p>
+
+  <p><strong>Locução Avançada</strong></p>
+
+  <p>Essa técnica locuciona números seriais de forma considerada mais inteligível que uma simples sequência de dígitos. A teoria é que "cento e vinte e três" tende a ser mais fácil de entender que "um dois três", pela redundância adicionada pelos "marcadores de posição".</p>
+
+  <p>Para implementar a locução avançada, você precisa gravar os seguintes arquivos wav, armazenados no "Letters Wav File Path" (Config, aba Other). O caminho de arquivos de letras pode conter a macro <strong>{Operator}</strong> ou {WAVDIR}, essencial se você tem mais de um operador ou usa múltiplos conjuntos de arquivos wav. Exemplo: se o caminho no Configurer for {OPERATOR}\, os arquivos de letras e números ficarão na subpasta <strong>Wav\LettersFiles\{Operator}\</strong> da pasta de arquivos de usuário do N1MM+ (localizável pelo menu Help &gt; Open Explorer on User Files Directory).</p>
+
+  <p><strong>0.wav até 19.wav</strong> (20 arquivos)<br><strong>20.wav</strong> até <strong>90.wav</strong> (só as dezenas exatas) (8 arquivos)<br><strong>HUNDRED.wav</strong> e <strong>THOUSAND.wav</strong></p>
+
+  <p>Ao tentar locucionar um número pela primeira vez após iniciar o programa, ele verifica se <strong>todos</strong> os arquivos necessários para a locução avançada estão presentes. O resultado dessa verificação aparece na parte inferior da janela Info, então mantenha-a aberta. Se algum estiver faltando, os números seriais serão locucionados pelo método simples. A mesma verificação é feita ao trocar de operador (com Ctrl+O).</p>
+
+  <p>Uma tabela completa mostrando os arquivos locucionados para cada número está disponível na seção de arquivos do site, no arquivo "Advanced voicing of serial numbers.txt". Há mais uma variação — se o Logger estiver configurado para usar zeros à esquerda, um ou dois arquivos 0.wav são locucionados antes do número, conforme o caso. Não recomendamos usar zeros à esquerda com a Locução Avançada — como você pode imaginar, "zero onze" provavelmente não é mais inteligível que "onze" ou "zero um um".</p>
+
+  <p>Uma boa forma de conseguir números com som natural é gravar números compostos inteiros, como "cento e dez" ou "dois mil quatrocentos e treze", com um programa como o Audacity (veja abaixo), e depois cortar a gravação nos componentes necessários. Isso ajuda a manter um padrão de entonação natural, tornando os números locucionados mais fáceis de entender.</p>
+
+  <h3 id="recording-letters-and-numbers">Recording Letters and Numbers (Gravando Letras e Números)</h3>
+
+  <p>Esta é a parte mais difícil da locução. Um som mais natural facilita muito o entendimento por outras estações, um ponto especialmente importante para números seriais. Como reduzir o som "robótico" é uma questão complicada, como quem já usou serviços automáticos de informação por telefone sabe bem.</p>
+
+  <p>O atraso entre números introduzido pelo programa é bem curto, então os verdadeiros truques são:</p>
+
+  <ul>
+    <li>cortar os arquivos de voz individuais para terem o mínimo de "silêncio morto" possível antes e depois da letra ou número</li>
+    <li>ajustar velocidade, entonação e nível de áudio dos arquivos de número individuais para que se encaixem da forma mais natural possível</li>
+  </ul>
+
+  <p>A melhor ferramenta única que encontramos para isso é o editor de áudio gratuito Audacity. Ele traz uma variedade de ótimas ferramentas para cortar, equalizar níveis etc. Muito vai depender de quanto tempo cada operador está disposto a dedicar.</p>
+
+  <p>Ao gravar no Audacity, use "Export as .WAV" com as configurações padrão de criação de arquivo; elas funcionam bem no N1MM Logger, enquanto algumas outras opções de .wav não funcionam.</p>
+
+  <p>Aqui vai uma dica que ajudou algumas pessoas. Pode ou não funcionar para você.</p>
+
+  <ul>
+    <li>Não grave letras e números isolados. Em vez disso, grave sequências parecidas com indicativos, como AB1CD, EF2GH etc. Tente falar na mesma velocidade de um contest. Depois use o Audacity (ou o editor que preferir) para cortar a gravação, remover tempo morto, e equalizar os níveis. Você pode até usar a ferramenta Change Tempo (em Effects) para acelerar as letras e números gravados, deixando-os mais naturais mas mantendo o tom e as características da sua voz — impressionante!</li>
+  </ul>
+
+  <h3 id="processing-all-recordings-with-audacity">Processing All Recordings with Audacity (Processando Todas as Gravações com o Audacity)</h3>
+
+  <p>O Audacity consegue processar arquivos em lote usando "Macros" (antes chamadas "Chains" em versões antigas). Se você usa locução de indicativos, pode achar isso útil. Macros são criadas e executadas pelo menu Tools do Audacity, e você pode selecionar vários arquivos de uma vez. A macro abaixo faz o seguinte:</p>
+
+  <ul>
+    <li>Remove frequências altas</li>
+    <li>Remove frequências baixas</li>
+    <li>Normaliza os níveis</li>
+    <li>Trunca silêncio (cuidado com silêncio entre sílabas/palavras)</li>
+  </ul>
+
+  <img src="../../assets/img/fk-Audacity.png" alt="Exemplo de macro de processamento em lote no Audacity">
+
+  <h3 id="should-i-use-voicing">Should I Use Voicing? (Devo Usar Locução?)</h3>
+
+  <p>Isso ainda é controverso. A economia de energia durante um contest vale a possível perda de inteligibilidade? Em tese, dá para operar um contest inteiro em "search and pounce" sem nunca falar uma palavra. Por um lado, quando você está fazendo Run, locucionar o indicativo da outra estação é bem seguro, já que ela sabe quem é e só precisa ter certeza de que você a está chamando. Por outro, alguns operadores acham que a perda do "toque humano" pode desanimar contesters casuais de chamar.</p>
+
+  <p>Do ponto de vista da inteligibilidade, locucionar números seriais é menos atraente. Em más condições, a qualidade "robótica" pode dificultar a cópia, principalmente para quem não fala inglês. O veredito também ainda está em aberto aqui.</p>
+
+  <h3 id="voicing-vs-text-to-speech">Voicing vs Text-to-Speech (Locução x Texto-para-Voz)</h3>
+
+  <p>A locução descrita aqui usa arquivos wav individuais para dizer um conjunto restrito de macros (!, # e @, usadas em mensagens de tecla de função). Não deve ser confundida com text-to-speech (texto-para-voz), que em princípio consegue dizer qualquer texto em linguagem natural sem precisar pré-gravar cada palavra ou frase usada. A partir da versão 1.0.10913.0, o N1MM Logger+ pode usar text-to-speech em arquivos de mensagem de SSB. O text-to-speech não usa arquivos wav pré-gravados; em vez disso, gera fala a partir de mensagens de texto usando um "modelo de voz", que pode ser uma das várias vozes predefinidas, ou um modelo personalizado gerado com a sua própria voz. Para mais informações, veja a descrição da janela <a href="../audio-setup-window/index.html">Audio Setup</a>.</p>
+
+  <h2 id="macros">Macros</h2>
+
+  <p>Um dos grandes pontos fortes do N1MM Logger+ é a capacidade de enviar mensagens armazenadas durante os QSOs de contest, e de embutir macros nessas mensagens. Macros se chamam assim porque se expandem em uma string de texto fixa, para CW e modos digitais, ou executam alguma função do programa. Um exemplo do primeiro tipo é a macro {EXCH}, que se expande no exchange informado no campo Sent Exchange da Contest Setup Dialog — se você digitar John CT, é isso que será enviado sempre que a macro {EXCH} aparecer.<br>O segundo tipo (controle do programa) é bem mais complexo e poderoso. Essas macros podem mudar o programa de RUN para S&amp;P, essencial no NA Sprint; ligar ou desligar o RIT do seu transceptor; e uma infinidade de outras possibilidades. Nas seções a seguir, você encontra uma lista completa de todas as macros disponíveis no N1MM Logger+, além de exemplos úteis de como estruturar mensagens armazenadas para operar com eficiência.</p>
+
+  <h3 id="general-macro-commands">General Macro Commands (Comandos de Macro Gerais)</h3>
+
+  <p>Macros gerais podem ser usadas em todos os lugares mencionados acima.</p>
+
+  <p><strong>* Envia o indicativo desta estação</strong><br>* (asterisco) envia o indicativo da estação registrado em &gt;Config &gt;Station Info. Equivale à macro {MYCALL}.</p>
+
+  <p><strong>! Envia o indicativo digitado no campo Callsign</strong><br><strong>!</strong> (exclamação) envia o indicativo do campo Callsign da Entry window, ou, se vazio, o último indicativo logado. Use esta macro em vez de {CALL} se quiser que a função Send Corrected Call funcione corretamente.</p>
+
+  <p><strong># Envia o número serial deste QSO</strong><br><strong>#</strong> (cerquilha) envia o número serial deste QSO, ou, sem indicativo na Entry window, o número serial do QSO anterior. Ao locucionar números, o caminho usado é o "DVK Letters Path" (Configurer, aba Other), tipicamente contendo {Operator}\, para tocar arquivos wav específicos do operador.</p>
+
+  <p><strong>@ Locuciona a frequência de recepção atual</strong><br><strong>@</strong> (arroba) locuciona a frequência de recepção atual, se você tiver arquivos gravados para letras e números individuais. Usa o mesmo "DVK Letters Path" acima. A frequência é locucionada ao múltiplo de 100 Hz mais próximo, omitindo ".0" em frequências exatas de kHz. Útil para evitar regravar mensagens de CQ em split de 40m. Exemplo: {operator}\CQ Listening.wav,@,{operator}\AndThisFreq.wav</p>
+
+  <p><strong>{CALL} Envia o indicativo anterior ou não corrigido do campo Callsign</strong><br>{CALL} Envia o indicativo do campo Callsign como estava no início do envio da mensagem, ou, se vazio, o último indicativo logado. Nota: isso envia o indicativo como estava quando a mensagem COMEÇOU. Use a macro ! em vez desta para usar a função Send Corrected Call. Não use {CALL} em F5 (His Call key) se usar ESM; use ! em F5 no lugar. Isso é fundamental se você pressionar Enter em ESM antes de terminar de digitar o indicativo, pois os caracteres digitados depois do Enter não serão enviados a menos que você use !. Da mesma forma, se usar Insert ou ; para enviar o exchange, garanta que F5 use ! e não {CALL}.</p>
+
+  <p><strong>{CHNAME} Envia o Nome do arquivo de Call History</strong><br>{CHNAME} Se um arquivo de Call History está carregado no banco atual, e há um nome cadastrado para o indicativo digitado, esta macro envia esse nome. Não é necessário ter o Call History Lookup habilitado para esta macro funcionar.</p>
+
+  <p><strong>{CLUSTER} Indicativo de cluster da janela Station info</strong><br>{CLUSTER} Indicativo de cluster da janela Station info. Veja exemplos.</p>
+
+  <p><strong>{COMMENT} Adiciona uma string a um QSO</strong><br>{COMMENT} Adiciona ao campo de comentário do QSO atual ou do último.</p>
+
+  <p><strong>{CQ} Define uma mensagem de CQ alternativa</strong><br>{CQ} Permite que uma tecla de função não definida na aba Function Keys do Config seja usada como mensagem alternativa de CQ.</p>
+
+  <p><strong>{Telnet cmd} Envia um comando para a janela Telnet (se aberta)</strong><br>{Telnet cmd} Usada para sh/dx e outros comandos de Telnet.</p>
+
+  <p><strong>{END} Guarda todo o texto de macro depois de {END} e o executa</strong><br>Para usar a macro {END}, a tecla de função precisa enviar uma mensagem; se nada for enviado, {END} é ignorada. Ela guarda todo o texto de macro que vem depois dela e o executa depois que a mensagem de CW, SSB ou DIGI for enviada. Um uso comum é enviar comandos CAT ao(s) rádio(s) após o fim de uma transmissão. Todo texto de mensagem colocado após {END} não é enviado.</p>
+
+  <p>Exemplos da macro {END}<br>Ela sinaliza ao programa que os comandos {} restantes devem ser executados quando o programa terminar de enviar a mensagem de CW, SSB ou DIGI. Exemplo:</p>
+
+  <p>Mensagem: F1 {STEREOOFF}CQ TEST *{END}{STEREOON}<br>Ao pressionar F1, o bit de estéreo na porta LPT é desligado. O CQ é enviado no modo atual, e depois que a mensagem termina, o bit de estéreo é ligado de novo. Assim, dá para ouvir só o segundo rádio enquanto o CQ é enviado, e ouvir os dois depois.</p>
+
+  <div class="caixa-info">
+    <strong>Algo mais para enviar depois da macro {END}?</strong>
+    <p>Só macros que não envolvem envio de mensagem são executadas quando colocadas depois de {END}. Por exemplo, se você colocar {MYCALL} ou "5NN" depois de {END}, elas serão ignoradas — afinal, a mensagem já acabou, não há mais nada a enviar. Por outro lado, todas as macros que só disparam funções do programa (sem enviar mensagens) são executadas antes de qualquer mensagem, a menos que apareçam depois de um {END}.</p>
+  </div>
+
+  <p><strong>{EXCH} Exchange Enviado</strong><br>{EXCH} Usa o conteúdo do campo Sent Exchange da Contest Setup Dialog. Uma conveniência que funciona em muitos (mas não todos) os contests. Sempre é possível (e em alguns contests necessário) cravar o exchange específico do contest diretamente na mensagem, em vez de usar {EXCH}. Quando o exchange enviado inclui um número serial (001 ou # no campo Sent Exchange), o número enviado é do QSO atual, se houver indicativo na Entry window, ou do QSO anterior, se não houver.</p>
+
+  <p><strong>{EXCHSENT} Define o status de "exchange já enviado"</strong><br>{EXCHSENT} Diz ao programa que o exchange já foi enviado. O estado do ESM muda quando o exchange é enviado pela Exchange key (F2). Se você quiser usar um formato alternativo de exchange, de outra tecla de função, sem antes enviar a mensagem normal de Exchange, esta macro muda o estado do ESM como se a Exchange key tivesse sido usada.</p>
+
+  <p><strong>{FORCELOG} Força o programa a logar um contato</strong><br>{FORCELOG} Mesmo efeito de Ctrl+Alt+Enter, mas sem pedir uma nota. Contatos forçados com exchange inválido podem gerar cálculos de pontuação incorretos.</p>
+
+  <p><strong>{FORCELOGNOTE} Força o log de um contato, mas com uma nota</strong><br>{FORCELOGNOTE} Igual a {FORCELOG}, mas pergunta se você quer inserir uma nota explicando o log forçado.</p>
+
+  <p><strong>{FREQ} Frequência do contato na Entry window</strong><br>{FREQ} Frequência do contato na Entry window. Em CW, substitui o decimal por "R".</p>
+
+  <p><strong>{FREQUP}, {FREQDN} Muda a frequência do rádio, normalmente após um contato</strong><br>Muda a frequência pelo incremento definido em Configurer &gt; Other. Usadas depois da macro {END}.</p>
+
+  <p><strong>{FREQROUND} Frequência do contato na Entry window</strong><br>{FREQROUND} Frequência do contato na Entry window, arredondada ao kHz mais próximo.</p>
+
+  <p><strong>{GRID} Gridsquare da janela Station info</strong><br>{GRID} Gridsquare da janela Station info.</p>
+
+  <p><strong>{GRIDSQUARE} Gridsquare do campo de grid (contato na Entry window)</strong><br>{GRIDSQUARE} Gridsquare do campo de grid (contato na Entry window).</p>
+
+  <p><strong>{GRIDBEARING} Rumo entre o seu gridsquare e o do campo de grid</strong><br>{GRIDBEARING} Rumo entre o seu gridsquare e o do campo de grid (contato na Entry window).</p>
+
+  <p><strong>{REVGRIDBEARING} Rumo inverso entre o seu gridsquare e o do campo de grid</strong><br>{REVGRIDBEARING} Rumo inverso entre o seu gridsquare e o do campo de grid (contato na Entry window).</p>
+
+  <p><strong>{KMGRIGDISTANCE} Distância em km entre o seu gridsquare e o do campo de grid</strong><br>{KMGRIGDISTANCE} Distância em km entre o seu gridsquare e o do campo de grid (contato na Entry window).</p>
+
+  <p><strong>{LOG} Loga o contato atual. Equivale ao botão Log It da Entry Window</strong><br>{LOG} Loga o contato atual, igual ao botão Log It. Em Digital: coloque a macro {LOG} depois da macro {RX}.</p>
+
+  <p><strong>{SwapContests} Limpa o contato atual, troca para o penúltimo log de contest e restaura o contato</strong><br>{SwapContests} deve ser colocada em uma tecla de função ou botão do bandmap. Ao pressionar, troca para o penúltimo contest, preservando os dados de QSO parcialmente digitados.</p>
+
+  <p><strong>{SwapContests nome-do-contest estado} Limpa o contato atual, troca para o contest indicado e o restaura</strong>.<br>Permite que teclas de função ou botões do bandmap troquem para contests específicos. Os contests precisam estar no mesmo banco de dados, e a instância mais recente é carregada. O "estado" só é necessário quando o nome do contest é QSOPARTY, e usa a mesma abreviação do Contest Setup.</p>
+
+  <p><strong>{SwapContestsn}</strong> <strong>Limpa o contato atual, alterna entre os últimos n contests e restaura o contato</strong>.<br>n pode ser 3, 4, 5 ou 6. {SwapContests3} alterna entre os últimos três contests, {SwapContests4} entre os últimos quatro, e assim por diante.</p>
+
+  <p><strong>{LASTCALL} Indicativo da última estação logada</strong><br>{LASTCALL} Indicativo da última estação logada.</p>
+
+  <p><strong>{LASTEXCH} Exchange da última estação logada</strong><br>{LASTEXCH} Exchange da última estação logada. Só para ROPOCO e LZOPEN. NÃO funciona em outros contests!</p>
+
+  <p><strong>{MYCALL} Seu indicativo, da janela Station info</strong><br>{MYCALL} Seu indicativo, da janela Station info, igual a *.</p>
+
+  <p><strong>{NAME} Envia o nome digitado no campo Name da Entry Window</strong><br>{NAME} Envia o nome do campo Name da Entry window, em contests específicos (ex.: TARA), ou, sem campo Name, busca o nome na tabela de Call History.</p>
+
+  <p><strong>{NAMEANDSPACE} Envia o nome digitado no campo Name da Entry Window</strong><br>{NAMEANDSPACE} Igual a {NAME}, mas acrescenta um espaço depois.</p>
+
+  <p><strong>{OTHERFREQ} Substituída pela frequência do rádio não ativo</strong><br>{OTHERFREQ} Substituída pela frequência do rádio não ativo. Usada para "passar" estações para outras bandas. Em CW, substitui o decimal por "R".</p>
+
+  <p><strong>{OTHERFREQROUND} Substituída pela frequência do rádio não ativo, arredondada ao kHz mais próximo</strong><br>{OTHERFREQROUND} Igual acima, arredondada. Usada para passar estações para outras bandas.</p>
+
+  <p><strong>{OTRSP XXXX} Envia um comando a um dispositivo OTRSP</strong><br>{OTRSP XXXX} Envia um comando a um dispositivo OTRSP (Open Two-Radio Switching Protocol). XXXX pode ser qualquer comando reconhecido pelo dispositivo.</p>
+
+  <p><strong>{OTRSP RX} Envia o comando OTRSP RX ao dispositivo</strong><br>{OTRSP RX} Ativa o RX correspondente ao rádio ativo no momento.</p>
+
+  <p><strong>{OTRSPOTHER RX} Envia o comando OTRSP RX ao dispositivo</strong><br>{OTRSPOTHER RX} Ativa o RX correspondente ao rádio inativo. Por exemplo, se o Radio 1 tem o foco de teclado e {OTRSPOTHER RX} é acionada, o comando OTRSP RX2 é enviado, mas o foco de teclado continua no Radio 1.</p>
+
+  <p><strong>{PGDN} Aumenta a frequência</strong><br>{PGDN} Aumenta a frequência pelo valor definido em "PgUp/PgDn Incr (kHz)" (Configurer, aba Other). Pode ser usada depois da macro {END}, como nas mensagens de tecla de função do NA Sprint.</p>
+
+  <p><strong>{PGUP} Diminui a frequência</strong><br>{PGUP} Diminui a frequência pelo mesmo valor. Pode ser usada depois da macro {END}, como nas mensagens do NA Sprint.</p>
+
+  <p><strong>{PREVNR} Envia o número de QSO do último QSO logado</strong><br>{PREVNR} Envia o número de QSO do último QSO logado.</p>
+
+  <p><strong>{DIGQTCR} Abre a janela QTC Receive</strong><br>{DIGQTCR} Só para o contest WAE. Abre a janela QTC Receive.</p>
+
+  <p><strong>{DIGQTCS} Abre a janela QTC Send</strong><br>{DIGQTCS} Só para o contest WAE. Abre a janela QTC Send.</p>
+
+  <p><strong>{QTC} Envia a mensagem de TU após um bloco de QTCs</strong><br>{QTC} Só para o contest WAE. Em CW, usada na mensagem de TU enviada após um bloco de QTCs. Em RTTY, usada na mensagem Send All Heading SQTC para o número do bloco de QTC (veja Config &gt; WAE &gt; Open QTC setup na Entry Window).</p>
+
+  <p><strong>{LRMHZ} Frequência do Rádio/VFO-A esquerdo, em MHz</strong><br>{LRMHZ} Exemplo: 28, em 28.1234 MHz.</p>
+
+  <p><strong>{RRMHZ} Frequência do Rádio/VFO-B direito, em MHz</strong><br>{RRMHZ} Exemplo: 14, em 14.1235 MHz.</p>
+
+  <p><strong>{RUN} Muda para o modo RUN</strong><br>{RUN} Muda para o modo Running.</p>
+
+  <p><strong>{S&amp;P} Muda para o modo S&amp;P</strong><br>{S&amp;P} Muda para o modo S&amp;P.</p>
+
+  <p><strong>{SPACE} Equivale a pressionar a barra de espaço</strong><br>{SPACE} Útil fora do modo ESM, para autopreencher o exchange. Exemplo: F2 exchange, 5nn 4{END}{SPACE}</p>
+
+  <p><strong>{SPOTME} Envia um autospot para o cluster conectado</strong><br>{SPOTME} Faz seu próprio spot em contests ARRL (e outros que permitam, mediante autorização do patrocinador). Só funciona em modo RUN. Não repete o spot na mesma frequência (dentro da tolerância de sintonia do Configurer, aba Other) com intervalo menor que 10 minutos.</p>
+
+  <p><strong>{STEREOOFF} Desliga o áudio estéreo</strong><br>{STEREOOFF} Desliga o áudio estéreo.</p>
+
+  <p><strong>{STEREOON} Liga o áudio estéreo</strong><br>{STEREOON} Liga o áudio estéreo.</p>
+
+  <p><strong>{TIMESTAMP} Data e hora do contato na Entry Window</strong><br>{TIMESTAMP} Data e hora do contato na Entry Window.</p>
+
+  <p><strong>{TX} Aciona o PTT a partir de uma tecla de função</strong><br>{TX} CW/SSB: ao ser enviada em uma tecla de função, aciona o PTT. Use Esc para desligar — é um PTT manual pelo teclado. RTTY: veja as macros digitais abaixo. Nota: pode não funcionar com algumas combinações de rádio/interface.</p>
+
+  <p><strong>{CLEARRIT} Zera o RIT</strong><br>{CLEARRIT} Zera o RIT. Pode ser usada na mensagem que confirma o contato (geralmente F3) ou na mensagem de CQ (geralmente F1). Use o RIT enquanto a estação chama, e ao logar o contato (com F3) o RIT é zerado. Nota: só funciona em rádios que suportam essa função — a maioria dos rádios ICOM não suporta. Consulte o manual do rádio.</p>
+
+  <p><strong>{CTRL-A}...{CTRL-Z} Envia o caractere Ctrl+A ao TNC</strong><br>{CTRL-A}...{CTRL-Z} Envia o caractere Ctrl correspondente ao TNC, de A a Z. Não válido em MMTTY e PSK. Veja exemplos.</p>
+
+  <p><strong>{ENTER} Envia o caractere ENTER ao TNC</strong><br>{ENTER} Envia ENTER ao TNC.</p>
+
+  <p><strong>{ENTERLF} Envia Retorno/Avanço de Linha ao TNC</strong><br>{ENTERLF} Tente esta se {ENTER} não parecer funcionar.</p>
+
+  <p><strong>{ESC} Envia o caractere Escape ao TNC</strong><br>{ESC} Não válido em MMTTY e PSK. Veja exemplos.</p>
+
+  <p><strong>{DATE} Data curta no formato do Windows</strong><br>{DATE} Conforme as Configurações Regionais do Windows.</p>
+
+  <p><strong>{DATE1} Data no formato Nordlink-TF/WA8DED</strong><br>{DATE1} Formato dd.mm.aa — exemplo: 26.02.99.</p>
+
+  <p><strong>{SENTRST} Envia o RST digitado no campo Snt da Entry window</strong><br>{SENTRST} Não espere que o RST esteja correto se o campo Snt não estiver preenchido. Em modos de voz, se locucionando números seriais e indicativo, pode ser usada para enviar o relatório do campo Snt. Em CW e digital, se não houver campo Snt na Entry window, esta macro e o espaço seguinte são removidos da mensagem enviada.</p>
+
+  <p><strong>{SENTRSTCUT} Envia o RST do contato atual em formato "cut"</strong><br>{SENTRSTCUT} O uso mais comum é enviar o número 9 como o caractere N (não é útil em RTTY, pois 5NN demora mais para enviar que 599 em RTTY). Se o campo de indicativo estiver vazio, o modo do contato atual não está definido, então não espere que o RST enviado esteja correto nesse caso. Se quiser enviar exchanges com o campo de indicativo vazio, remova esta macro e insira 5NN diretamente na mensagem. Em CW e digital, sem campo Snt, esta macro e o espaço seguinte são removidos.</p>
+
+  <p><strong>{TIME} Hora no formato do Windows</strong><br>{TIME} Conforme as Configurações Regionais do Windows.</p>
+
+  <p><strong>{TIME1} Hora no formato Nordlink-TF/WA8DED</strong><br>{TIME1} Formato hh:mm:ss — exemplo: 17:36:55.</p>
+
+  <p><strong>{TIME2} Hora GMT curta (hhmm)</strong><br>{TIME2} Formato hhmm — exemplo: 1736. Informações sobre como esta macro funciona em contests digitais estão nas instruções de configuração do contest específico.</p>
+
+  <p><strong>{DAYTIME} Data no formato TAPR DayTime</strong><br>{DAYTIME} Formato: 1907291736.</p>
+
+  <p><strong>{DATEGMT} Data e hora GMT</strong><br>{DATEGMT} No formato do Windows (Configurações Regionais).</p>
+
+  <p><strong>{TIMEGMT} Hora GMT</strong><br>{TIMEGMT} Formato: 17:36:55.</p>
+
+  <p><strong>{F1} – {F12} Envia as teclas de função F1 a F12</strong><br>{F1} – {F12} Envia o texto atribuído às teclas de função F1 a F12.</p>
+
+  <p><strong>{SOCALLSTACK} Habilita o empilhamento de indicativos para operador único</strong><br>Em modo RUN, permite empilhar e recuperar um único indicativo quando várias estações chamam ao mesmo tempo. O indicativo empilhado não precisa ser completo e pode conter "?". Funciona em SO1V/2V ou SO2R, nas duas Entry windows, com ou sem ESM. Em RUN, {SOCALLSTACK} move um indicativo (completo ou parcial) para o quadro de chamada e o bandmap. Se já houver um indicativo empilhado no quadro, os indicativos são trocados entre si. Se o indicativo tiver um "?", o cursor destaca o "?" ao ser retirado da pilha; caso contrário, o cursor vai para o início do indicativo. Com o comando ALT+D já existente, dá para apagar um indicativo empilhado do bandmap e do quadro de chamada sem retirá-lo da pilha, quando o campo de indicativo estiver vazio. {SOCALLSTACK} também retira o indicativo da pilha se o ESM o substituiu pela string CQ-Frequency, ficando visível no bandmap; nesse caso, pressione a barra de espaço para retirá-lo. {SOCALLSTACK} empilha só mais um indicativo por vez; para empilhar vários, use {STACKANOTHER}. Mais informações no capítulo Single Operator Call Stacking.<br><br><strong>{STACKANOTHER} Empilha indicativos adicionais</strong><br>Equivale a Ctrl+Alt+G. Mais informações no capítulo Single Operator Call Stacking, e também usada no empilhamento multi-operador (Partner Mode).</p>
+
+  <p><strong>{CLRSTACK} Limpa a pilha de indicativos</strong><br>{CLRSTACK} Limpa a pilha de indicativos.</p>
+
+  <p><strong>{LOGTHENPOP} Loga a estação atual e inicia um QSO com um indicativo da pilha, em modo Run</strong><br>{LOGTHENPOP} Só em modo RUN. Feita para uso com o empilhamento de indicativos: loga a estação atual (enviando correções se habilitado), retira o próximo indicativo da pilha, e inicia o próximo contato. Pode ser usada com ou sem ESM. Com ESM, a tecla "Next Call" (Configurer, aba Function Keys) deve apontar para a mensagem com {LOGTHENPOP}; se houver um indicativo na pilha, o ESM envia automaticamente a tecla "Next Call" no lugar da tecla normal de "End of QSO". Mensagem sugerida para "Next Call": {LOGTHENPOP} TU NW {F5}{F2} (Nota: NÃO use ! no lugar de {F5}, e em contests com número serial, NÃO use # na mensagem com {LOGTHENPOP}). Em CW, se {LOGTHENPOP} não conseguir retirar um indicativo da pilha e o indicativo logado foi alterado, envia a correção (se habilitada) e a mensagem de TU. Mais informações no capítulo Single Operator Call Stacking.</p>
+
+  <p><strong>{LOGTHENNEXT} Versão não automatizada de {LOGTHENPOP}</strong></p>
+
+  <p>{LOGTHENNEXT} funciona igual a {LOGTHENPOP}, exceto que, se usada na tecla Next do ESM, a automação do Next é desabilitada, e o operador precisa pressionar a tecla de função manualmente em vez de usar Enter.</p>
+
+  <p><strong>{ROVERQTH} Envia o QTH do Rover</strong><br>{ROVERQTH} Veja o capítulo Setup QSO Parties – CW and SSB para mais informações sobre suporte a Rover. Com locução de números seriais e indicativos habilitada, também locuciona o QTH do Rover.</p>
+
+  <p><strong>{POPPREVNEEDEDQ} Recupera o indicativo e grid/exchange anterior e os coloca nos campos da Entry window</strong><br>{POPPREVNEEDEDQ} Percorre os QSOs logados recentemente, colocando o indicativo e grid/exchange na Entry window. Útil em contests de VHF, movendo uma ou mais estações de banda em banda. O QSO atualmente recuperado fica destacado na janela Log.</p>
+
+  <p><strong>{POPNEXTNEEDEDQ} Igual a {POPPREVNEEDEDQ}, mas na direção oposta</strong><br>{POPNEXTNEEDEDQ} Veja {POPPREVNEEDEDQ}.</p>
+
+  <p><strong>{VARYMSG1} {VARYMSG2} Alternam mensagens de tecla de função</strong><br>Podem ser usadas em todos os modos, permitindo controlar com que frequência uma forma alternativa de mensagem é enviada, no lugar da forma principal. Existem duas dessas macros (VARYMSG1 e VARYMSG2); cada uma só pode ser usada uma vez por conjunto de teclas de função. A forma é {VARYMSGn&amp;Mensagem Principal&amp;Mensagem Alternativa&amp;Frequência do Alternativo&amp;}. Substitua "Mensagem Principal" pela forma enviada com mais frequência, "Mensagem Alternativa" pela enviada em intervalos, e defina a frequência do alternativo. "0" na frequência envia sempre a mensagem principal; "1" envia sempre a alternativa; um número N maior que 1 envia a alternativa a cada N vezes.<br>Exemplos:<br>Para variar a mensagem de CQ em CW, na tecla Run F1 (CQ Key):<br>{VARYMSG1 &amp;CQ * *&amp;CQ CQ * *&amp;3&amp;} envia um CQ um pouco mais longo a cada 3 vezes.<br>Para variar a mensagem de TU em SSB, na tecla Run F3 (TU Key):<br>{VARYMSG2 &amp;TU.wav&amp;TUMYCALL.wav&amp;2&amp;} envia TU.wav após um QSO completo, e TUMYCALL.wav (uma mensagem de agradecimento mais longa, com seu indicativo em fonético, por exemplo) a cada 2º QSO.</p>
+
+  <p>Qualquer texto de tecla de função antes ou depois da macro {VARYMSGn} é preservado. Assim, usuários de RTTY podem colocar as macros {TX} {RX} antes e depois de {VARYMSGn}. Os campos principal e alternativo de {VARYMSGn} podem conter outras macros, mas as duas macros {VARYMSGn} não podem ser aninhadas.</p>
+
+  <p><strong>{CTRLHOME} – Força o cursor para o campo de indicativo</strong><br>{CTRLHOME} Força o cursor para o campo de indicativo e seleciona seu texto, não importa onde o cursor estivesse quando a mensagem foi acionada. Pode ser usada nas mensagens de CQ (F1) e/ou TU (F3), para evitar digitar indicativos sem querer no campo de exchange.</p>
+
+  <h3 id="cathex-and-catasc-radio-hex-macro-commands">CATHEX and CATASC Radio Hex Macro Commands</h3>
+
+  <p><strong>{CAT1HEX} {CAT2HEX} Enviam comandos hexadecimais aos rádios 1 e 2</strong><br>Usadas para enviar comandos que exigem dados em hexadecimal ao rádio 1 (CAT1HEX) ou rádio 2 (CAT2HEX). O nome da macro deve ser seguido dos dados hex do rádio e do fechamento }. Deve haver dois caracteres hex por byte, incluindo zero (00). Espaços são permitidos em qualquer lugar da string hex, para facilitar a digitação e verificação.<br>Não é possível colocar mais de uma macro CAT1HEX ou CAT2HEX na mesma mensagem, mas a mensagem pode conter uma de cada. A exceção é quando a macro {END} é usada. Mais de um comando pode ser enviado ao rádio separando-os com uma \; espaços são permitidos ao redor da \. Comandos múltiplos são divididos e enviados ao rádio com espaçamento interno de comando.<br>Dependendo da velocidade do computador e do número de comandos na string, o uso dessas macros pode atrasar a operação do programa durante o envio de CW ou outras operações. Não há nenhuma prevenção contra o uso dessas macros enquanto o rádio transmite. Para trocar de porta de antena com segurança, use as macros {ANTRX#TOGGLE}, que incluem inibição de TX.<br>Exemplo de comando Icom: {CAT1HEX FEFE66E01C0102FD \ FE FE 66 E0 1C 01 02 FD }</p>
+
+  <p><strong>{CAT1ASC} {CAT2ASC} Enviam comandos ASCII aos rádios 1 e 2</strong><br>Usadas para enviar comandos que exigem dados ASCII ao rádio 1 (CAT1ASC) ou rádio 2 (CAT2ASC). O nome da macro deve ser seguido dos dados ASCII e do fechamento }. Todos os espaços antes do início do comando são removidos e não enviados ao rádio; os demais espaços do comando são enviados.<br>Não é possível colocar mais de uma macro CAT1ASC ou CAT2ASC na mesma mensagem, mas ela pode conter uma de cada, exceto com a macro {END}. Vários comandos podem ser separados por \ ou concatenados; espaços antes/depois da \ são enviados ao rádio. Comandos separados por \ são divididos e enviados com espaçamento interno.<br>Caracteres especiais podem ser incluídos delimitando o valor hex de dois caracteres com &lt;&gt;; os &lt; e &gt; não são enviados ao rádio, e não são permitidos espaços dentro deles. Se o comando ASCII exigir caracteres interpretados pelo Logger como macros (*, !, #), é preciso codificá-los em hex para escondê-los do processamento de macros (troque * por &lt;2A&gt;, ! por &lt;21&gt;, e # por &lt;23&gt;).<br>Dependendo da velocidade do computador e do número de comandos, essas macros podem atrasar o programa durante o envio de CW ou outras operações. Não há prevenção contra usá-las enquanto o rádio transmite; para trocar antena com segurança, use {ANTRX#TOGGLE}.<br>Exemplos: {CAT1ASC PB1;\PB2;} {CAT1ASC PB1;PB2;} {CAT1ASC P&lt;42&gt;1;PB2;} . Pode-se colocar um espaço entre o nome da macro e o comando CAT, para facilitar a leitura; espaços iniciais depois do nome CAT1ASC são removidos. Como exemplo do uso da notação hex, o comando {CAT1ASC *UM0} contém um caractere de macro e não funcionaria corretamente; a forma correta seria {CAT1ASC &lt;2A&gt;UM0}. Se o comando precisar terminar com um CR (Orion), seria {CAT1ASC &lt;2A&gt;UM0&lt;0D&gt;}</p>
+
+  <h3 id="catahex-catihex-catacthex-cataasc-catiasc-catactasc-macro-commands">CATAHEX, CATIHEX, CATACTHEX, CATAASC, CATIASC, CATACTASC Macro Commands</h3>
+
+  <p><strong>{CATA1HEX} {CATA2HEX} {CATACTHEX} {CATA1ASC} {CATA2ASC} {CATACTASC} Enviam comandos ao rádio ativo</strong><br>Enviam comandos ASCII ou HEX ao rádio ativo especificado (1 ou 2, conforme o número no nome da macro) em modo SO2R (ou VFO em SO2V). Usadas para comandos que só devem ir ao rádio ativo (com foco de transmissão), não ao inativo — úteis para usuários de SO2R sem rádios idênticos. Seguem a mesma sintaxe de CAT1HEX e CAT1ASC.</p>
+
+  <p>O texto de macro das teclas de função passa por uma rotina que remove macros CAT dos rádios que não se qualificam pelo status Ativo/Inativo, permitindo que uma única string de tecla de função sirva para vários propósitos.</p>
+
+  <p>Exemplo de uma string de macro para o Pro3 que alterna DualWatch e a antena de RX conforme a atividade do rádio: {catA1hex fefe6ee0 12 00 00fd}{catI1hex fefe6ee0 12 00 01fd}{catA2hex fefe6ee0 07 c0 fd}{catI2hex fefe6ee0 07 c1 fd}.</p>
+
+  <p>As macros {CATACTASC} e {CATACTHEX} podem ser usadas se os dois rádios aceitam os mesmos comandos CAT (por exemplo, rádios idênticos), eliminando a necessidade de usar pares {CATA1ASC}{CATA2ASC} ou {CATA1HEX}{CATA2HEX}.</p>
+
+  <p>Macro: {CATACTASC} envia o comando ASCII ao rádio ativo no momento. Os dois rádios precisam aceitar o mesmo comando; se forem diferentes, use os pares {CATA1ASC} e {CATA2ASC}.</p>
+
+  <p>Macro: {CATACTHEX} envia o comando HEX ao rádio ativo no momento. Mesma observação acima, com {CATA1HEX} e {CATA2HEX}.</p>
+
+  <p><strong>{CATI1HEX} {CATI2HEX} {CATI1ASC} {CATI2ASC} Enviam comandos ao rádio inativo</strong><br>Enviam comandos ASCII ou HEX ao rádio inativo (sem foco de transmissão) em modo SO2R (ou VFO em SO2V). Mesma sintaxe de CAT1HEX e CAT1ASC.<br>O texto de macro passa pela mesma rotina de filtro por status Ativo/Inativo mencionada acima.<br>Mesmo exemplo do Pro3: {catA1hex fefe6ee0 12 00 00fd}{catI1hex fefe6ee0 12 00 01fd}{catA2hex fefe6ee0 07 c0 fd}{catI2hex fefe6ee0 07 c1 fd}</p>
+
+  <h3 id="catdelay-macro-command">CATDELAY Macro Command</h3>
+
+  <p><strong>{CATDELAY} Suspende o programa inteiro por um tempo determinado</strong><br>Suspende toda a operação do programa para permitir que comandos CAT sejam recebidos e executados pelo rádio antes de uma transmissão começar. A necessidade desta macro depende da velocidade do computador, da taxa da interface de rádio, e do tipo de rádio. A forma é {CATDELAY N}, onde "N" é um atraso configurável em incrementos de 50ms, limitado internamente a 20 (1 segundo). O atraso é sempre adicionado depois de todos os comandos CatMacro serem enviados ao rádio, não importa onde {CATDELAY} apareça no texto da mensagem.</p>
+
+  <h3 id="antenna-and-rotator-control-macro-commands">Antenna and Rotator Control Macro Commands (Macros de Controle de Antena e Rotor)</h3>
+
+  <p><strong>{AUXANTSEL} Envia um comando de ativação de antena em um pacote UDP RadioInfo</strong><br>{auxantsel nn} envia um pacote UDP com o número ("Code") e nome ("Antenna") de uma antena listada na tabela Antenna do Configurer. Ativar a antena e exibir o nome fica por conta de uma aplicação externa de controlador de antena/decodificador de banda. Veja o apêndice External UDP Broadcasts.</p>
+
+  <p><strong>{ANTRX1TOGGLE} {ANTRX2TOGGLE} {ANTRX3TOGGLE} {ANTRX4TOGGLE} Trocam de porta de antena</strong><br>Alternam entre portas de antena e a entrada de recepção em alguns rádios, quando o programa não está transmitindo. Alguns modelos têm múltiplas entradas mas não têm o comando CI-V para controlar a porta, então a funcionalidade depende do rádio. Ao executar {ANTRX#TOGGLE}, a porta de antena numerada é selecionada; executando de novo, se o rádio suportar, a antena de recepção liga/desliga a cada execução. Ao trocar de porta, a configuração atual do RX daquela antena é lembrada para quando ela for selecionada de novo. Com apenas uma porta de antena, basta atribuir {ANTRX#TOGGLE} a uma tecla de função para ligar/desligar rapidamente o RX daquela antena.</p>
+
+  <p><strong>{TURNROTOR} Gira o rotor (caminho curto)</strong><br>{TURNROTOR} Gira o rotor na direção calculada.</p>
+
+  <p><strong>{LONGPATH} Gira o rotor na direção de caminho longo</strong><br>{LONGPATH} Gira o rotor no rumo de caminho longo calculado.</p>
+
+  <p><strong>{STOPROTOR} Para o rotor</strong><br>{STOPROTOR} Para o giro do rotor. Nota: algumas funções não são suportadas em todas as marcas de rotor.</p>
+
+  <h3 id="cw-macro-commands">CW Macro Commands (Macros de CW)</h3>
+
+  <p>Macros de CW só são substituídas quando usadas em botões de CW.</p>
+
+  <p><strong>Macros de Controle e Prosigns de CW</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Macro</strong></td><td><strong>Substituída por</strong></td></tr>
+    <tr><td><strong>&lt;</strong></td><td>Aumenta a velocidade de CW em 2 wpm</td></tr>
+    <tr><td><strong>&gt;</strong></td><td>Diminui a velocidade de CW em 2 wpm</td></tr>
+    <tr><td><strong>~</strong></td><td>Envia um meio-espaço. Veja exemplos</td></tr>
+    <tr><td><strong>]</strong></td><td>Prosign SK &nbsp; . . . _ . _</td></tr>
+    <tr><td><strong>[</strong></td><td>Prosign AS &nbsp; . _ . . .</td></tr>
+    <tr><td><strong>+</strong></td><td>Prosign AR &nbsp; . _ . _ .</td></tr>
+    <tr><td><strong>=</strong></td><td>Prosign BT &nbsp; _ . . . _</td></tr>
+  </table>
+
+  <p><strong>Macros de Pontuação em CW</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Macro</strong></td><td><strong>Substituída por</strong></td><td><strong>Macro</strong></td><td><strong>Substituída por</strong></td></tr>
+    <tr><td><strong>?</strong></td><td><strong>. . _ _ . .</strong></td><td><strong>/</strong></td><td><strong>_ . . _ .</strong></td></tr>
+    <tr><td><strong>,</strong></td><td><strong>_ _ . . _ _</strong></td><td><strong>.</strong></td><td><strong>. _ . _ . _</strong></td></tr>
+  </table>
+
+  <p><strong>Exemplos de Macros de CW</strong></p>
+
+  <p>Enviar o indicativo digitado no campo de indicativo</p>
+
+  <ul>
+    <li>Macro: <strong>!</strong>
+      <ul><li>Envia o indicativo dele. O que estiver no campo de indicativo será enviado pela porta serial ou paralela</li></ul>
+    </li>
+  </ul>
+
+  <p>Enviar CQ com seu indicativo por substituição de macro</p>
+
+  <ul>
+    <li>Macro: <strong>cq~test~de~*</strong>
+      <ul>
+        <li>O tempo entre as palavras é um meio-espaço (<strong>~</strong>)</li>
+        <li>O <strong>*</strong> é substituído pelo indicativo da janela Station dialog ({MYCALL})</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Enviar parte do exchange mais rápido (relatório enviado 6 wpm mais rápido)</p>
+
+  <ul>
+    <li>Macro: &lt;&lt;&lt;<strong>5nn</strong>&gt;&gt;&gt;<strong>{EXCH}</strong>
+      <ul>
+        <li>O relatório 5nn é enviado 6 wpm mais rápido que o exchange ( &lt;&lt;&lt; &gt;&gt;&gt; )</li>
+        <li>Não é necessário voltar a velocidade de CW ao normal no fim da mensagem</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="caixa-info">
+    <strong>Melhorando a Legibilidade do CW</strong>
+    <p>Alguns indicativos têm combinações de letras difíceis de copiar corretamente. Ex.: 6Y2A costuma ser copiado como BY2A. Para facilitar, vá em Config &gt; Change Packet/CW/SSB/Digital Message Buttons &gt; Change CW Buttons, e tente mudar a mensagem padrão de F1 e/ou F4 onde * representa seu indicativo. Neste exemplo, para 6Y2A, mude F4 de * para: <strong>&gt; 6 &lt; ~ Y2A</strong>.<br>Resultado: o 6 é enviado 2 WPM mais devagar que o resto do indicativo, e um meio-espaço extra é adicionado entre o 6 e o Y2A. Experimente outras combinações de "&gt;", "&lt;" ou "~" para facilitar a cópia do seu indicativo.</p>
+  </div>
+
+  <h3 id="ssb-macro-commands">SSB Macro Commands (Macros de SSB)</h3>
+
+  <p>Macros de SSB só são substituídas em mensagens de SSB. Nomes de arquivo wav de SSB podem ser concatenados com vírgula.</p>
+
+  <p><strong>{OPERATOR}</strong> Usada para ter arquivos wav diferentes por operador, evitando confusão entre a voz gravada e a voz do operador ao vivo no microfone.</p>
+
+  <p><strong>{WAVDIR}</strong> Permite múltiplos conjuntos de arquivos wav para um único operador, para variações de fonética ou idioma. Usada nos caminhos de arquivo wav no lugar de {OPERATOR}. Por padrão, {WAVDIR} funciona exatamente como {OPERATOR}, sem precisar de mudanças. Para usar múltiplos conjuntos, use a macro {SetWavDir}.</p>
+
+  <p><strong>{SetWavDir}</strong> Designa múltiplos conjuntos de arquivos wav para o mesmo operador. Muda o valor de {WAVDIR} usado nas mensagens de tecla de função e no Letters Wav File Path. Pode ser adicionada a uma mensagem de tecla de função ou executada via key mapper ou StreamDeck, permitindo trocar diretórios de wav na hora, para variações de fonética, idioma etc. A forma é {SetWavDir Texto}, onde "Texto" é o novo valor de {WAVDIR}. Quando combinada em uma mensagem, {SetWavDir} é executada antes de tocar os arquivos wav. Também aceita as formas {SetWavDir {OPERATOR}} ou {SetWavDir {OPERATOR}Texto} (onde "Texto" é qualquer string). Por exemplo, com o operador K3CT, {SetWavDir {OPERATOR}_2} define {WAVDIR} = K3CT_2. Quando {WAVDIR} é diferente do indicativo do operador (definido por OPON ou Ctrl+O), o valor de {WAVDIR} aparece na barra de título da Entry window.</p>
+
+  <p>As macros de text-to-speech <strong>{TTS}, {ICAO}, {SPACECALL}, {SPACENR}, {SPLITNR}, {TTSParms}, {TTSTrim}</strong> estão documentadas na descrição da janela <a href="../audio-setup-window/index.html">Audio Setup</a>.</p>
+
+  <p><strong>Exemplos de Macros de SSB</strong></p>
+
+  <ul>
+    <li>Enviar o indicativo digitado no campo de indicativo
+      <ul>
+        <li>Macro: <strong>!</strong>
+          <ul><li>Envia o indicativo dele, tocado pela placa de som. O local dos arquivos de letra/número usados para montar o indicativo é definido na aba Files do Configurer; todos os arquivos WAV das letras/números precisam estar naquela pasta. Veja a seção sobre <a href="#voicing-call-signs-serial-numbers-and-frequencies">locução</a></li></ul>
+        </li>
+      </ul>
+    </li>
+    <li>Deixar cada operador com seus próprios arquivos WAV
+      <ul>
+        <li>Nome de arquivo wav, ex.: <strong>{OPERATOR}\cq.wav</strong>
+          <ul>
+            <li>Com arquivos como {OPERATOR}\cq.wav, ao trocar de operador em uma estação multi-operador, os arquivos WAV também trocam. Cada operador precisa criar seu conjunto completo. A sintaxe do diretório WAV indica uma subpasta dentro de Wav, na área de arquivos de usuário do N1MM Logger+. Também é possível informar o caminho completo, como "C:\Users\[seuUsuarioWindows]\Documents\N1MM Logger+\wav\{OPERATOR}\cq.wav"</li>
+            <li>A macro {OPERATOR} pode ser concatenada com outros caracteres; por exemplo, {OPERATOR}CQ.wav, mantendo arquivos com nomes separados na mesma pasta:
+              <ul>
+                <li><strong>N1MMCQ.wav</strong></li>
+                <li><strong>PA1MCQ.wav</strong></li>
+              </ul>
+            </li>
+            <li>Tocar o exchange com a voz do operador: <strong>{OPERATOR}\5905.wav</strong></li>
+            <li>{OPERATOR} é uma substituição de string implementada apenas para mensagens de SSB</li>
+            <li>{WAVDIR} faz a mesma função de {OPERATOR}, mas permite múltiplos conjuntos de wav para o mesmo operador sem mudar o indicativo de operador registrado em ADIF e Cabrillo</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="so2v-so2r-macro-commands">SO2V/SO2R Macro Commands (Macros de SO2V/SO2R)</h3>
+
+  <p>Macros de SO2V/SO2R só são substituídas com SO2V ou SO2R selecionado. As macros {CTRLFx} só funcionam em SO2R, pois não têm utilidade em SO2V.</p>
+
+  <p><strong>{ACTIVEAUDIOTOGGLE}</strong> Alterna mudo/não-mudo do ganho de AF no rádio ativo. Só funciona em rádios com essa capacidade via porta de controle.</p>
+
+  <p><strong>{INACTIVEAUDIOTOGGLE}</strong> Igual acima, mas no rádio inativo.</p>
+
+  <p><strong>{ACTIVEAUDIOON}</strong> Reativa o áudio do rádio ativo (mesma limitação de suporte por rádio).</p>
+
+  <p><strong>{ACTIVEAUDIOOFF}</strong> Silencia o áudio do rádio ativo<br><strong>{INACTIVEAUDIOON}</strong> Reativa o áudio do rádio inativo<br><strong>{INACTIVEAUDIOOFF}</strong> Silencia o áudio do rádio inativo<br><strong>{OTHERBAND}</strong> Envia a banda do outro VFO/rádio (inativo) (ex.: 80)</p>
+
+  <p><strong>{OTHERMHZ}</strong> Envia a frequência do outro VFO/rádio (inativo) em MHz (ex.: 3.5 e 3R5 em CW)</p>
+
+  <p><strong>{OTHERFREQCUT}</strong> Só em CW. Envia os últimos dígitos da frequência do outro VFO/rádio como cut numbers, no estilo definido no Configurer.</p>
+
+  <p><strong>{JUMPRX}</strong> Muda o foco de RX para a outra janela de entrada. Se só uma estiver visível, a segunda é aberta.</p>
+
+  <p><strong>{JUMPRXTX}</strong> Muda o foco de RX e TX para a outra janela de entrada. Se só uma estiver visível, a segunda é aberta.</p>
+
+  <p><strong>{WIPE}</strong> Limpa a janela com foco. Se os campos já estiverem vazios, restaura o último contato limpo ("unwipe").</p>
+
+  <p><strong>{CTRLFX}</strong> Envia no outro rádio. Só em SO2R, funciona em todos os modos. Por exemplo, um botão de CW poderia ser: "TU {CTRLF9}", onde F9 no outro rádio está configurada para enviar um CQ. O atalho Ctrl+Shift+L liga/desliga este recurso; desligado, a macro CTRLFn é ignorada. O foco de entrada só muda para o outro rádio quando o campo de indicativo do rádio atual está vazio.</p>
+
+  <p><strong>{CONDJUMP}</strong> Muda o foco e envia a mensagem de CW quando não está em split. Com foco de RX e TX divididos entre dois rádios, ao pressionar Enter, o foco de TX vai primeiro para o rádio com foco de RX, a mensagem de CW é enviada, e depois os focos de TX e RX vão juntos para o outro rádio. Sem divisão de foco, ao pressionar Enter a mensagem é enviada e os focos não mudam. Uso típico no Sprint: Run F3: TU {END} {CONDJUMP}</p>
+
+  <p><strong>{QSYCQ}</strong> Faz QSY para a frequência de CQ do último rádio com foco.<br><strong>{STOPTX}</strong> Força a liberação do PTT. Usado em cenários especializados de SO2R; raramente necessário, e não recomendado para SO1R.</p>
+
+  <h3 id="multi-user-macro-commands">Multi-User Macro Commands (Macros Multi-Usuário)</h3>
+
+  <p>Macros multi-usuário só são substituídas em modo Multi-User.</p>
+
+  <p><strong>{MESSAGE}</strong> Envia uma mensagem (via tecla de função) para outros computadores conectados na rede. Explicado a seguir.</p>
+
+  <div class="caixa-info">
+    <strong>Exemplos da macro {MESSAGE}</strong>
+    <p>A macro {MESSAGE} envia uma mensagem (via tecla de função) para outras estações conectadas na rede. A informação aparece em letras vermelhas grandes na janela Info da(s) estação(ões) receptora(s). Coloque o nome da estação logo depois da macro {MESSAGE} para enviar a uma estação específica; para enviar a todas, coloque "-" antes da mensagem.</p>
+    <p><strong>F8 Pass station {MESSAGE} BobsPC {TIMEGMT} {PASS 1} {CALL} {GRIDSQUARE} {GRIDBEARING}deg. {KMGRIDDISTANCE} km</strong></p>
+    <p>Mensagem enviada à estação chamada "BobsPC" com informações sobre a estação no campo de indicativo. Útil, por exemplo, em um contest onde uma estação é passada de uma banda para outra.</p>
+    <p><strong>F8 Pass station {MESSAGE} - {TIMEGMT} {PASS 1} {CALL} {GRIDSQUARE} {GRIDBEARING}deg. {KMGRIDDISTANCE} km</strong></p>
+    <p>Mensagem enviada a todas as estações conectadas, com informações sobre a estação no campo de indicativo.</p>
+  </div>
+
+  <p><strong>{PASS NOME}</strong> Substitui NOME pelo nome do computador. Passa a frequência ao computador indicado, listado na janela Network. A frequência passada é arredondada ao kHz mais próximo.</p>
+
+  <p><strong>{PASS 1800}...{PASS 241000000}</strong> Insere a frequência de passagem do primeiro computador conectado encontrado naquela banda. Valores válidos: qualquer banda em kHz de 1800 a 241000000 (exemplo: PASS 1800).</p>
+
+  <p><strong>{PASSMSG NOME}</strong> Substitui NOME pelo nome do computador. Passa as informações do último QSO ao computador indicado.</p>
+
+  <p><strong>{PASSMSG 1800}... {PASSMSG 28000}</strong> Passa as informações do último QSO ao primeiro computador conectado encontrado naquela banda. Valores válidos: 1800 a 28000 kHz (exemplo: PASSMSG 1800).</p>
+
+  <p><strong>{LASTPASSEDFREQ}</strong> Envia a frequência de passagem da estação mais recentemente avisada de uma passagem. Uso típico: clique com o botão direito no botão de banda para o qual quer passar a outra estação, depois envie uma mensagem de tecla de função com {LASTPASSEDFREQ} para dizer a frequência de QSY. O clique direito no botão de banda avisa o operador daquela banda sobre o indicativo sendo passado, e {LASTPASSEDFREQ} é substituída pela frequência de passagem para aquela estação. Se a frequência tiver parte fracionária diferente de zero (arredondada a um dígito), um R é enviado no lugar do ponto decimal. Havendo mais de uma estação na banda selecionada, a estação em Run tem prioridade; senão, a primeira estação daquela banda com frequência de passagem definida. Se a última frequência passada não mudou, não é necessário clicar de novo no botão de banda.</p>
+
+  <h3 id="digital-macro-commands">Digital Macro Commands (Macros Digitais)</h3>
+
+  <p>As substituições a seguir valem ao enviar teclas de função. Na Digital Interface, além das macros abaixo, também é possível usar todas as macros gerais.</p>
+
+  <p><strong>{TX}</strong> Inicia a transmissão na Digital Interface. Necessária no início de toda mensagem Digital.</p>
+
+  <p><strong>{RX}</strong> Volta para recepção na Digital Interface. Necessária no fim de toda mensagem Digital.</p>
+
+  <p><strong>{CLRRX}</strong> Limpa a janela RX. Pode ser usada sozinha ou depois de {END}.</p>
+
+  <p><strong>{CLRTX}</strong> Limpa a janela TX.</p>
+
+  <p><strong>{SCQ}</strong> Retoma o CQ (colocada no fim da mensagem de TU).</p>
+
+  <p><strong>{GRAB}</strong> Pega o primeiro indicativo da janela grab.</p>
+
+  <p><strong>{DELALL}</strong> Apaga todas as entradas da janela grab.</p>
+
+  <p><strong>{DELTOP}</strong> Apaga a primeira entrada da janela grab.</p>
+
+  <p><strong>{DELSEL}</strong> Apaga a entrada destacada da janela grab.</p>
+
+  <p><strong>_</strong> (underscore) Só MMTTY — envia tom de idle.</p>
+
+  <p><strong>^</strong> Envia o caractere ! (já que ! sozinho envia o indicativo da outra estação; use ^ para colocar um ! literal na mensagem).</p>
+
+  <p><strong>{FILE:xxxx}</strong> Envia um arquivo de texto. xxxx é substituído pelo nome do arquivo, que precisa estar na subpasta FunctionKeyMessages, na área de arquivos de usuário do N1MM+. Funciona em qualquer lugar da mensagem. Se o arquivo tiver só uma linha, não adiciona CR ao fim; com múltiplas linhas, o CR da última é removido, então o texto seguinte fica na mesma linha (use uma macro {ENTER} para separar). Várias macros {FILE:xxxx} são permitidas na mesma mensagem.</p>
+
+  <p><strong>{LDIGFQ}</strong> Frequência da Digital Interface esquerda.</p>
+
+  <p><strong>{RDIGFQ}</strong> Frequência da Digital Interface direita.</p>
+
+  <p><strong>{PREVTIME}</strong> Envia a hora enviada no contato anterior (para ANARTS, BARTG e contests parecidos; usada ao pedir repetição de hora depois de logado o contato).</p>
+
+  <p><strong>{ALIGN}</strong> Move o sinal para dentro da faixa de passagem (bandpass). Igual ao botão Align nas Digital Interfaces e no PSK Engine.</p>
+
+  <p><strong>{PROFILE0}</strong> Só MMTTY. Restaura os padrões HAM de marca, espaço e largura de RTTY.</p>
+
+  <p><strong>{PROFILE1}</strong> ... <strong>{PROFILE8}</strong> Só MMTTY. Usadas no início de uma macro de CQ ou S&amp;P, trocam o perfil do MMTTY — permitindo um perfil para CQ e outro para S&amp;P, por exemplo.</p>
+
+  <p><strong>{Hxxxx}</strong> Só HAL DXP38. Os comandos do DXP-38 são bytes em hexadecimal, como $80 $EA. Esta macro, na forma {Hxxxx} (ex.: {H80EA}), converte a string no comando correto a enviar ao TU. Veja o capítulo de RTTY para mais informações sobre o HAL DXP38.</p>
+
+  <p><strong>{DI1}</strong> ... <strong>{DI24}</strong> Envia o texto atribuído às teclas de mensagem digital DI-1 a DI-24 na janela Digital Interface.</p>
+
+  <p><strong>{LOGTHENGRAB}</strong> Só em modo Run. Loga o contato atual e pega o primeiro indicativo da janela Grab da DI. Se a janela Grab estiver vazia, loga o contato e muda para a mensagem de TU em vez de continuar o resto da mensagem com {LOGTHENGRAB}. Mensagem sugerida: {LOGTHENGRAB} TU NW {F5}{F2} (Nota: NÃO use ! no lugar de {F5}, e em contests com número serial, NÃO use # nessa mensagem). Veja a documentação na seção Digital Call Stacking.</p>
+
+  <p><strong>$</strong> Só no contest WAE. Usado na mensagem Agn RQTC para enviar o número do QTC ao pedir repetição de um único QTC (veja Config &gt; WAE &gt; Open QTC setup &gt; RTTY Setup na Entry Window).</p>
+
+  <p><strong>{ALT-T}</strong> Igual a Alt+T no teclado — alterna TX/RX.</p>
+
+  <p><strong>{ALT-Q}</strong> Igual a Alt+Q no teclado — volta à frequência de CQ.</p>
+
+  <p><strong>{ENABLEAFC}</strong> Liga o AFC.</p>
+
+  <p><strong>{DISABLEAFC}</strong> Desliga o AFC.</p>
+
+  <p><strong>{ENABLENET}</strong> Liga o NET (não se aplica a FSK).</p>
+
+  <p><strong>{DISABLENET}</strong> Desliga o NET.</p>
+
+  <div class="caixa-alerta">
+    <strong>Sempre use {TX} e {RX} juntos</strong>
+    <p>Use {TX} e {RX} sempre juntos nas suas macros. Caso contrário, {TX} sozinho vai deixar o rádio <strong>preso em transmissão</strong> até você pressionar um botão de RX ou a tecla ESC.</p>
+  </div>
+
+  <p>Mensagem: <strong>{TX}{ENTER} ! {LOGTHENGRAB} TU NW {F5}{F2}{RX}</strong><br>Loga o contato, pega um indicativo da caixa Grab e envia o exchange para a próxima estação. Se a caixa Grab estiver vazia, esta macro só loga o contato e envia a mensagem de TU.</p>
+
+  <p>Mensagem: <strong>{TX}{ENTER} ! {LOGTHENPOP} TU NW {F5}{F2}{RX}</strong><br>Loga o contato, retira o próximo indicativo da pilha e envia o exchange a ele (veja Single Operator Call Stacking). Para empilhar outra estação que te chamou, dê Alt+clique no indicativo na janela RX, e ele vai para a pilha, disponível por esta macro.</p>
+
+  <h4 id="example-macros-for-the-pk-232-digital-interface-window">Example Macros for the PK-232 (Digital Interface window)</h4>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Texto do botão</strong></td><td><strong>Macro</strong></td></tr>
+    <tr><td><strong>Abort</strong></td><td>{CTRL-C}R{ENTER}TC{ENTER}</td></tr>
+    <tr><td><strong>TX</strong></td><td>X{ENTER}</td></tr>
+    <tr><td><strong>RX</strong></td><td>{CTRL-D}</td></tr>
+    <tr><td><strong>Band Up</strong></td><td>RB U{ENTER}</td></tr>
+    <tr><td><strong>RxReverse</strong></td><td>RXREV T{ENTER}</td></tr>
+  </table>
+
+  <h4 id="example-function-key-messages-for-the-pk-232-entry-window">Example Function Key Messages for the PK-232 (Entry window)</h4>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Modo</strong></td><td><strong>Texto do botão</strong></td><td><strong>Mensagem</strong></td></tr>
+    <tr><td>Running</td><td><strong>F1 CQ</strong></td><td>X{ENTER}CQ CQ CQ TEST DE {MYCALL} {MYCALL} K CQ{CTRL-D}</td></tr>
+    <tr><td>Running</td><td><strong>F2 Exch</strong></td><td>X{ENTER} ! UR 599 {EXCH} 599 {EXCH} BK{CTRL-D}</td></tr>
+    <tr><td>Running</td><td><strong>F3 Tnx/Qrz</strong></td><td>X{ENTER} ! TU GL DE {MYCALL} QRZ{CTRL-D}</td></tr>
+    <tr><td>S&amp;P</td><td><strong>F1 {MYCALL}</strong></td><td>X{ENTER}! DE {MYCALL} {MYCALL}{CTRL-D}</td></tr>
+    <tr><td>S&amp;P</td><td><strong>F2 Exch</strong></td><td>X{ENTER}! UR 599 {EXCH} 599 {EXCH} GL DE {MYCALL}{CTRL-D}</td></tr>
+  </table>
+
+  <h4 id="example-macros-for-the-kam">Example Macros for the KAM</h4>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Texto do botão</strong></td><td><strong>Macro</strong></td></tr>
+    <tr><td><strong>Abort</strong></td><td>{CTRL-C}R RTTY {ENTER}</td></tr>
+    <tr><td><strong>TX</strong></td><td>{CTRL-C}T</td></tr>
+    <tr><td><strong>RX</strong></td><td>{CTRL-C}E</td></tr>
+  </table>
+
+  <h4 id="example-macros-for-the-scs-ptc-digital-interface-window">Example Macros for the SCS PTC (Digital Interface window)</h4>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Texto do botão</strong></td><td><strong>Macro</strong></td></tr>
+    <tr><td><strong>Abort</strong></td><td>{ESC}CLR{ENTER}{CTRL-D}{ENTER}</td></tr>
+    <tr><td><strong>TX/RX</strong></td><td>{CTRL-Y}</td></tr>
+    <tr><td><strong>RX-Reverse</strong></td><td>{ESC}TR 1{ENTER}</td></tr>
+    <tr><td><strong>RX-Norm</strong></td><td>{ESC}TR 0{ENTER}</td></tr>
+    <tr><td><strong>45 Baud</strong></td><td>{ESC}BAU 45{ENTER}</td></tr>
+    <tr><td><strong>75 Baud</strong></td><td>{ESC}BAU 75{ENTER}</td></tr>
+    <tr><td><strong>Command mode</strong></td><td>{ESC}Q{ENTER}</td></tr>
+    <tr><td>– – –</td><td>– – –</td></tr>
+    <tr><td><strong>RTTY</strong></td><td>{ESC}Q{ENTER}BAU{ENTER}</td></tr>
+    <tr><td><strong>PSK31</strong></td><td>{ESC}Q{ENTER}PSKT{ENTER}</td></tr>
+  </table>
+
+  <h4 id="example-function-key-messages-for-the-scs-ptc-entry-window">Example Function Key Messages for the SCS PTC (Entry window)</h4>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Modo</strong></td><td><strong>Texto do botão</strong></td><td><strong>Mensagem</strong></td></tr>
+    <tr><td>Running</td><td><strong>F1 CQ</strong></td><td>{CTRL-Y}CQ TEST DE * * * k{ENTER}{CTRL-Y}</td></tr>
+    <tr><td>Running</td><td><strong>F2 Exch</strong></td><td>{CTRL-Y}! HI 599 {EXCH} {EXCH} K{CTRL-Y}</td></tr>
+    <tr><td>Running</td><td><strong>F3 CFM</strong></td><td>{CTRL-Y}! QSL TU DE * QRZ? K{CTRL-Y}</td></tr>
+    <tr><td>S&amp;P</td><td><strong>F1 {MYCALL}</strong></td><td>{CTRL-Y}! DE * * K{CTRL-Y}</td></tr>
+    <tr><td>S&amp;P</td><td><strong>F2 Exch</strong></td><td>{CTRL-Y}DE * TU 599 {EXCH} {EXCH} GL DE *{CTRL-Y}</td></tr>
+  </table>
+
+  <h4 id="example-function-key-messages-for-mmtty-entry-window">Example Function Key Messages for MMTTY (Entry window)</h4>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Modo</strong></td><td><strong>Texto do botão</strong></td><td><strong>Mensagem</strong></td></tr>
+    <tr><td>Running</td><td><strong>F1 CQ</strong></td><td>{TX} CQ CQ CQ TEST {MYCALL} {MYCALL} CQ {RX}</td></tr>
+    <tr><td>Running</td><td><strong>F2 Exch</strong></td><td>{TX} ! UR 599 {EXCH} 599 {EXCH} {RX}</td></tr>
+    <tr><td>Running</td><td><strong>F3 Tnx/Qrz</strong></td><td>{TX} ! TU {MYCALL} QRZ {RX}</td></tr>
+    <tr><td>S&amp;P</td><td><strong>F1 {MYCALL}</strong></td><td>{TX} ! {MYCALL} {MYCALL}{RX}</td></tr>
+    <tr><td>S&amp;P</td><td><strong>F2 Exch</strong></td><td>{TX} ! 599 {EXCH} 599 {EXCH} {MYCALL}{RX}</td></tr>
+    <tr><td>Envia CQ em nova linha</td><td><strong>F1 CQ</strong></td><td>{TX}{ENTERLF} CQ {MYCALL}{RX}</td></tr>
+  </table>
+
+  <h3 id="packet-telnet-macro-commands">Packet/Telnet Macro Commands (Macros de Packet/Telnet)</h3>
+
+  <p>Macros de Packet/Telnet só são substituídas nos botões de packet/telnet.</p>
+
+  <h4 id="macros-for-use-in-packet-telnet-buttons">Macros for use in packet/telnet buttons</h4>
+
+  <p><strong>{WAIT}</strong> Espera 5 segundos (valor fixo).</p>
+
+  <h4 id="macros-for-use-in-comment-for-all-spots-in-telnet-packet-window">Macros for use in 'Comment For All Spots' (in Telnet/Packet window)</h4>
+
+  <p><strong>{GRIDSQUARE}</strong> Gridsquare do campo de grid na Entry window.</p>
+
+  <p><strong>{MODE}</strong> Modo usado na Entry window durante o contato.</p>
+
+  <p><strong>{QTH}</strong> QTH do campo de seção/QTH na Entry window.</p>
+
+  <p><strong>{ZONE}</strong> Zona do campo estado/província/seção/oblast/outro na Entry window.</p>
+
+  <h2 id="quoted-strings">Quoted Strings (Strings entre Aspas)</h2>
+
+  <p>Colocar caracteres entre aspas duplas faz com que teclas de função ou teclas mapeadas enviem esses caracteres para processamento pela caixa de texto onde o cursor está no momento, ex.: "/P" vai anexar "/P" ao indicativo se o cursor estiver no fim do campo de indicativo. Para usar isso com o cursor em outra posição, mova-o primeiro para o local desejado antes de acionar a tecla que invoca a string entre aspas.</p>
+
+  <p>Se a string entre aspas começar com "http" ou "https", o navegador padrão abre na URL especificada.</p>
+
+  <p>Se começar com o nome de um arquivo .exe ou .bat, a string é executada como um comando do Windows; por exemplo, "notepad.exe C:\contestnotes.txt" abre o Notepad no arquivo C:\contestnotes.txt. O nome do .exe ou .bat não pode ter espaços (o programa procura ".bat" ou ".exe" logo antes do primeiro espaço, se houver, na string).</p>
+
+  <p>Strings entre aspas podem ser usadas em qualquer lugar onde macros são aceitas. São tratadas como macros, mas processadas depois de todas as substituições de macro serem concluídas. Depois de feitas as substituições de macro e extraídas e processadas as strings entre aspas, o que sobra é enviado como mensagem de CW ou arquivo wav.</p>
+
+  <h2 id="esm-enter-sends-message">ESM – Enter Sends Message (Enter Envia Mensagem)</h2>
+
+  <h3 id="esm-overview">ESM Overview (Visão Geral do ESM)</h3>
+
+  <p>Esta seção traz uma introdução passo a passo ao ESM. Experimente, e é quase certo que você vai gostar.</p>
+
+  <p>O primeiro passo é ligá-lo. Abra o menu Config na Entry Window e selecione ESM.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-SpTurnItOn.png" alt="Ativando o ESM no menu Config">
+
+  <p>Agora feche o menu e digite qualquer indicativo na Entry window. Vamos supor que você está em S&amp;P.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-SpPressEnter.png" alt="Entry window com ESM ativo em modo S&amp;P">
+
+  <p>O que mudou? Olhe o botão F4. O destaque significa que, se você pressionar Enter agora, a mensagem F4 será enviada (que é o que você quer — seu indicativo). Pressione Enter, seu indicativo é enviado, mas o cursor continua no campo de indicativo, e F4 continua destacado. Se ele não responder da primeira vez, pressione Enter de novo. Se ele responder, pressione Espaço, e o cursor vai para o campo Exchange. Você ainda não está pronto para enviar seu exchange, pois ainda não copiou o exchange dele, então F8 (Agn?) fica destacado. Digite o exchange recebido, e veja só!</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-SpPressSpacebar.png" alt="Entry window com cursor no campo Exchange em S&amp;P">
+
+  <p>Agora F2 está destacado. Significa que, na próxima vez que você pressionar Enter, o programa envia F2 e loga o QSO.</p>
+
+  <p>Então, em vez de um processo de 8 passos para trabalhar um QSO de S&amp;P, você tem 3 ou 4:</p>
+
+  <ol>
+    <li>Digite o indicativo</li>
+    <li>Pressione Enter</li>
+    <li>(opcional) Se ele não responder, pressione Enter de novo quando for hora de chamar de novo; se responder, pressione Espaço e copie o exchange dele</li>
+    <li>Pressione Enter de novo para enviar seu exchange e logar o QSO</li>
+  </ol>
+
+  <div class="caixa-info">
+    <strong>O que é essa chave "Big Gun"?</strong>
+    <p>O que foi descrito acima é o comportamento padrão do ESM em S&amp;P, que presume que você não vai conseguir resposta toda vez (ou na maioria das vezes) que chamar alguém. Se você é mais forte que isso, pode querer mudar esse comportamento. Vá no Configurer (primeira opção do menu Config), clique nele, escolha a aba Function Key, e procure a opção "ESM sends your call once, then ready to copy S&amp;P exchange". Marque-a, e o comportamento muda: Enter agora envia seu indicativo uma vez, e o cursor vai direto para o campo Exchange. Ao mesmo tempo, o destaque vai para F8 Agn. Digite o exchange dele, e o destaque vai para F2 Exchange. Pressione Enter, e seu exchange é enviado. Se já houver um exchange válido no campo (digitado ou pré-preenchido), o destaque vai direto para F2 em vez de passar por F8. Depois de F2 enviado, o QSO é logado, e o destaque volta para F4, pronto para chamar a próxima estação.</p>
+  </div>
+
+  <div class="caixa-info">
+    <strong>Dica Big Gun</strong>
+    <p>Um truque para usar com a chave Big Gun <strong>ligada</strong> é programar seu indicativo em F8 em vez de "again". Assim, quando você não conseguir a estação na primeira chamada, pressione Enter de novo para repetir seu indicativo até ele responder (e o cursor sempre estará no lugar certo quando isso acontecer). 73 de Ted W4NZ</p>
+  </div>
+
+  <p>Mas e se você estiver fazendo Run (chamando CQ)? Primeiro, avise o programa marcando a caixa ao lado da palavra "Run", com o mouse ou com Alt+U. Agora sua Entry Window fica um pouco diferente:</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunInitial.png" alt="Entry window em modo Run com ESM">
+
+  <p>Note que o destaque agora está em F1, pois a primeira coisa na maioria dos QSOs de Run é um CQ. Pressione Enter e o programa envia F1.</p>
+
+  <p>Agora alguém responde. Digite o indicativo dele e a janela muda.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunEnterCallsign.png" alt="Entry window após digitar o indicativo em modo Run">
+
+  <p>Você já está pegando o jeito — os destaques significam que, ao pressionar Enter, o programa envia F5 seguido de F2 (em CW — em fonia, você fala o indicativo e depois pressiona Enter para enviar o exchange).</p>
+
+  <p>Depois disso, a janela muda de novo.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunEnterExchange.png" alt="Entry window após copiar o exchange em modo Run">
+
+  <p>Agora os destaques indicam que você copiou um exchange válido (neste caso, o programa o preencheu a partir do indicativo), e que o próximo Enter vai enviar sua mensagem F3 e logar o QSO.</p>
+
+  <p>Então: digite um indicativo, pressione Enter 3 vezes, e você logou um QSO. Bem prático!</p>
+
+  <p>Agora suponha que, como eu, você erre ao copiar o exchange, deixando algo sem sentido no campo Exchange. Nesse caso, o programa te avisa:</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunAGN.png" alt="Entry window destacando Agn após exchange inválido">
+
+  <p>Se você pressionar Enter com um exchange incorreto, o programa envia a mensagem F8 e pede repetição. Se você perceber o erro e corrigir, a tela muda de novo, mostrando os destaques "F3 and Log It". Basta pressionar Enter, o programa envia a mensagem F3, loga o QSO, e pronto.</p>
+
+  <p>Depois de usar o ESM, aposto que você nunca mais vai querer voltar ao jeito antigo.</p>
+
+  <div class="caixa-info">
+    <strong>F1 Call CQ – uma tecla de função especial que muda para Run automaticamente</strong>
+    <p>Os desenvolvedores reservaram F1 como a tecla "Call CQ". Pressioná-la em modo Search and Pounce muda você para Run. Embora não recomendemos alterar isso, há pelo menos duas formas de redefinir F1: modificar a tabela de atribuição de teclas do ESM (veja abaixo), ou usar a macro {S&amp;P} no fim da sua definição de F1 para forçar o programa de volta ao modo S&amp;P.</p>
+  </div>
+
+  <img src="../../assets/img/fk-Entry-ESM-ConfigFunctionKeysTab.png" alt="Aba Function Keys do Configurer, mostrando as opções de ESM">
+
+  <p>Duas últimas coisas, e este capítulo termina. Abra o menu Config de novo, e depois "Configure Ports, Telnet Address, Other". Clique na aba Function Keys:</p>
+
+  <p>Na coluna da esquerda, note a opção "Send Corrected Call" marcada. Esse recurso, em modo Run, acompanha se você alterou o indicativo no campo depois de já ter enviado seu exchange. Por exemplo, digamos que você copiou só "DL6A" no início e completou depois. Ao copiar DL6ABC e pressionar Enter para enviar F3 (mensagem de TU), em CW o programa envia "DL6ABC TU..." Em fonia, você precisa fazer a correção você mesmo.</p>
+
+  <p>Na coluna da direita, a terceira caixa tem o nome longo "ESM only sends your call once in S&amp;P, then ready to copy received exchange" — resumidamente, a chamamos de chave "Big Gun". Se você quase sempre consegue a estação na primeira chamada, pode economizar uma tecla deixando o cursor avançar automaticamente para o campo Exchange após a primeira chamada. Se costuma precisar chamar mais de uma vez, não marque. Se marcada e você precisar chamar de novo, basta pressionar F4, não importa onde o cursor esteja.</p>
+
+  <p><strong>Comportamento do cursor no ESM e a janela Digital Interface</strong></p>
+
+  <p>Por causa da possibilidade de transferir dados da janela DI para a Entry window com um clique do mouse, o comportamento do cursor entre os campos da Entry window é um pouco diferente com a janela DI aberta ou fechada. Se você usa ESM em CW ou SSB com a janela DI aberta e o cursor não se move entre os campos de indicativo e exchange como esperado, tente fechar a janela DI.</p>
+
+  <p><strong>Repetindo o que foi enviado por último</strong></p>
+
+  <p>Em modo ESM, às vezes é preciso repetir o que foi enviado por último, seja indicativo, elemento do exchange ou outra tecla de função. A tecla "=" faz isso. Em vez de olhar a Entry Window e descobrir qual tecla enviar, basta pressionar "=" para reenviar o que foi enviado por último. Fácil!</p>
+
+  <div class="caixa-alerta">
+    <strong>Cuidado</strong>
+    <p>Não altere os "mapeamentos de tecla" (abaixo do texto vermelho na aba Function Key do Configurer), a menos que você tenha absoluta certeza do que está fazendo — pode bagunçar completamente o ESM.</p>
+  </div>
+
+  <p>A tabela abaixo resume as combinações possíveis de informação na Entry window e o que é enviado em cada situação.<br>Nota: o ESM é afetado por duas opções na aba Function Keys do Configurer:</p>
+
+  <ul>
+    <li>a caixa "ESM sends your call once in S&amp;P, then ready to copy received exchange" (às vezes chamada de opção "Big Gun")</li>
+    <li>a caixa "Work dupes when running" (recomendada)</li>
+  </ul>
+
+  <p><strong>Ações da tecla <em>Enter</em> em modo ESM</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Campo de indicativo</strong></td><td><strong>Campo de exchange</strong></td><td><strong>Em Run, Enter envia</strong></td><td><strong>Em S&amp;P, Enter envia</strong></td></tr>
+    <tr><td>Vazio</td><td>Vazio</td><td>CQ (<strong>F1</strong>)</td><td>My Call (<strong>F4</strong>)</td></tr>
+    <tr><td>Indicativo novo (1ª vez)</td><td>Vazio ou inválido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>My Call (<strong>F4</strong>)</td></tr>
+    <tr><td>Indicativo novo (repetição)</td><td>Vazio ou inválido</td><td>Again? (<strong>F8</strong>)</td><td>My Call (<strong>F4</strong>)</td></tr>
+    <tr><td>Indicativo novo (repetição) – "ESM sends call once..." marcada</td><td>Vazio ou inválido</td><td>Again? (<strong>F8</strong>)</td><td>Again? (<strong>F8</strong>)</td></tr>
+    <tr><td>Indicativo novo (antes do exchange)</td><td>Válido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>Exchange + Log (<strong>F2</strong>+<strong>Log It</strong>)</td></tr>
+    <tr><td>Indicativo novo (depois do exchange)</td><td>Válido</td><td>End QSO + Log (<strong>F3</strong>+<strong>Log It</strong>)</td><td>Log (<strong>Log It</strong>)</td></tr>
+    <tr><td>Indicativo duplicado</td><td>Vazio ou inválido</td><td>QSO B4 (<strong>F6</strong>)</td><td>não faz nada</td></tr>
+    <tr><td>Duplicado (antes do exchange)</td><td>Válido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>Exchange + Log (<strong>F2</strong>+<strong>Log It</strong>)</td></tr>
+    <tr><td>Duplicado (depois do exchange)</td><td>Válido</td><td>End QSO + Log (<strong>F3</strong>+<strong>Log It</strong>)</td><td>Log (<strong>Log It</strong>)</td></tr>
+    <tr><td>Dupe (1ª vez) – "Work Dupes" marcada</td><td>Vazio ou inválido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>não faz nada</td></tr>
+    <tr><td>Dupe (repetição) – "Work Dupes" marcada</td><td>Vazio ou inválido</td><td>Again? (<strong>F8</strong>)</td><td>não faz nada</td></tr>
+    <tr><td>Dupe (antes do exchange) – "Work Dupes" marcada</td><td>Válido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>Exchange + Log (<strong>F2</strong>+<strong>Log It</strong>)</td></tr>
+    <tr><td>Dupe (depois do exchange) – "Work Dupes" marcada</td><td>Válido</td><td>End QSO + Log (<strong>F3</strong>+<strong>Log It</strong>)</td><td>Log (<strong>Log It</strong>)</td></tr>
+  </table>
+
+  <h3 id="esm-on-phone-one-special-feature">ESM on Phone – One Special Feature (ESM em Fonia – Um Recurso Especial)</h3>
+
+  <p>Há todo motivo, ao fazer Run em CW ou RTTY, para usar mensagens armazenadas em quase toda transmissão. Fonia é diferente — você pode não querer que o computador fale por você o tempo todo.</p>
+
+  <ul>
+    <li>A maioria dos operadores prefere falar indicativos e números seriais eles mesmos, em vez de deixar o computador montá-los a partir de letras e números individuais. Veja a próxima seção para mais discussão e informações sobre como configurar suas teclas de função, escolha você deixar o computador fazer tudo ou não</li>
+    <li>Em alguns contests como o CQWW, o exchange é tão curto que pode não valer a pena ter o computador locucionando sua zona de CQ</li>
+  </ul>
+
+  <p>Ou... você pode esquecer, especialmente operando cansado, e falar o indicativo da outra estação e seu exchange antes de perceber o que fez.</p>
+
+  <p>Para lidar com isso, o N1MM Logger incorpora uma flexibilidade adicional. Veja como funciona, segundo o próprio criador, N2IC:</p>
+
+  <p>Você está em modo Run. Uma estação responde. Você digita o indicativo, e usa sua voz ao vivo para enviar indicativo e exchange. Agora, a estação está prestes a enviar o exchange dela. Se, neste momento, você pressionar Enter, seu arquivo wav de exchange seria enviado — ruim, já que você já usou a voz ao vivo. Em vez de Enter, pressione a Barra de Espaço. Agora digite o exchange da outra estação. Pressione Enter, e a mensagem de "Obrigado" será enviada, e o QSO logado.</p>
+
+  <p>Resumindo, a decisão entre usar Enter ou a Barra de Espaço, nesse momento do processo de log, depende de você usar a voz ao vivo ou um arquivo wav para enviar seu exchange.</p>
+
+  <p><strong>Aqui vai uma versão ilustrada de como funciona:</strong></p>
+
+  <p>Você está fazendo Run, e W8QZR te chama. Você digita o indicativo dele no campo.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunW8QZR1.png" alt="Entry window com o indicativo W8QZR digitado">
+
+  <p>Aí, por algum motivo, você <strong>fala</strong> o indicativo dele e o exchange, em vez de deixar o computador fazer isso. Se você pressionar Enter agora, o programa vai, como diz, transmitir o indicativo dele e a mensagem de exchange armazenada. Não é o que você quer.</p>
+
+  <p>Em vez disso, pressione a Barra de Espaço.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunW8QZR2.png" alt="Entry window com cursor no campo Exchange após pressionar Espaço">
+
+  <p>Perfeito! Agora o cursor está no campo Exchange. Ainda não há nada nele, então F8 (Agn?) está destacado. Digite o exchange dele.</p>
+
+  <img src="../../assets/img/fk-Entry-ESM-RunW8QZR3.png" alt="Entry window com o exchange digitado, pronto para logar">
+
+  <p>O destaque vai para os botões TU e "Log It", exatamente onde deveria. Pressione Enter, e o computador loga o QSO, envia sua mensagem "TU QRZ", e fica pronto para o próximo QSO.</p>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/setup/function-keys/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../assets/js/protect.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Key Assignments – Keyboard Shortcuts — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, da seção de atalhos de teclado do manual oficial do N1MM Logger+.">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="icon" href="../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/favicon.jpg">
+<style>
+  .tabela-atalhos { width: 100%; border-collapse: collapse; margin: 1em 0; font-size: 0.92em; }
+  .tabela-atalhos td, .tabela-atalhos th { border: 1px solid var(--borda); padding: 6px 10px; text-align: left; vertical-align: top; }
+  .tabela-atalhos tr:nth-child(even) { background: var(--fundo-alt); }
+</style>
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="../../index.html">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Setup</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    As combinações de teclas em si permanecem como no original (são universais); apenas as descrições das ações foram traduzidas.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/setup/keyboard-shortcuts/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/setup/keyboard-shortcuts</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="../../index.html">Início</a> &raquo;
+    <a href="../index.html">Setup</a> &raquo;
+    Key Assignments – Keyboard Shortcuts
+  </nav>
+
+  <h1>Key Assignments – Keyboard Shortcuts <span class="tag-en">EN: Keyboard Shortcuts</span></h1>
+
+  <div class="sumario">
+    <strong>Nesta página</strong>
+    <ul>
+      <li><a href="#key-assignments-short-list">Key Assignments Short List</a></li>
+      <li><a href="#general-key-assignments">General Key Assignments</a></li>
+      <li><a href="#active-radio-bandmap-control-key-assignments">Active Radio/Bandmap Control Key Assignments</a></li>
+      <li><a href="#non-active-radio-bandmap-control-key-assignments">Non-Active Radio/Bandmap Control Key Assignments</a></li>
+      <li><a href="#logging-key-assignments">Logging Key Assignments</a></li>
+      <li><a href="#callsign-exchange-editing-features">Callsign/Exchange Editing Features</a></li>
+      <li><a href="#message-key-assignments">Message Key Assignments</a></li>
+      <li><a href="#cw-key-assignments">CW Key Assignments</a></li>
+      <li><a href="#enter-sends-message-mode-esm">Enter Sends Message Mode (ESM)</a></li>
+      <li><a href="#telnet-key-assignments">Telnet Key Assignments</a></li>
+      <li><a href="#available-window-key-assignments">Available Window Key Assignments</a></li>
+      <li><a href="#so2r-key-assignments">SO2R Key Assignments</a></li>
+      <li><a href="#rtty-key-assignments">RTTY Key Assignments</a></li>
+      <li><a href="#gridsquare-key-assignments-vhf-and-up">Gridsquare Key Assignments (VHF and up)</a></li>
+      <li><a href="#rotator-key-assignments">Rotator Key Assignments</a></li>
+      <li><a href="#window-key-assignments">Window Key Assignments</a></li>
+      <li><a href="#lookup-table-edit">Lookup Table Edit</a></li>
+      <li><a href="#qtc-keys-for-wae-contests">QTC Keys (for WAE contests)</a></li>
+      <li><a href="#key-mapping">Key Mapping</a></li>
+    </ul>
+  </div>
+
+  <h2 id="key-assignments-short-list">Key Assignments Short List (Lista Resumida de Atalhos)</h2>
+
+  <p><strong>Tabela de teclas de atalho por modo de operação (RUN x S&amp;P)</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Teclas de Running</strong></td><td><strong>Teclas de S&amp;P</strong></td></tr>
+    <tr><td><strong>F1</strong> = CQ</td><td><strong>Shift+F1</strong> = Chamar CQ e trocar para Run</td></tr>
+    <tr><td><strong>; ou Insert</strong> = Enviar indicativo e relatório</td><td><strong>Alt+U</strong> = Alternar S&amp;P/Run. Define a frequência de CQ para o "pass"</td></tr>
+    <tr><td><strong>'</strong> = Enviar mensagem de TU e logar</td><td><strong>Alt+Q</strong> = Voltar à frequência de CQ</td></tr>
+    <tr><td><strong>Alt+R</strong> = Habilita repetição de CQ</td><td><strong>Ctrl+seta cima/baixo</strong> = Pega o próximo QSO do bandmap</td></tr>
+    <tr><td><strong>Ctrl+R</strong> = Define o tempo de repetição</td><td><strong>Ctrl+Alt+seta cima/baixo</strong> = Pega o próximo multiplicador do bandmap</td></tr>
+    <tr><td><strong>Esc</strong> = Para o envio, para a repetição</td><td>–</td></tr>
+    <tr><td><strong>Teclas gerais</strong></td><td><strong>Controle de rádio</strong></td></tr>
+    <tr><td><strong>Ctrl+O</strong> = Define o indicativo do operador (ou OPON no campo de indicativo)</td><td><strong>Alt+F10</strong> = Troca os VFOs</td></tr>
+    <tr><td><strong>Ctrl+N</strong> = Adiciona nota ao log</td><td><strong>Alt+Q</strong> = Volta à frequência de CQ</td></tr>
+    <tr><td><strong>Ctrl+W</strong> ou <strong>Alt+W</strong> = Limpa os campos de entrada. Libera um número serial reservado. Ctrl+W é irreversível; Alt+W pode ser revertido digitando de novo</td><td><strong>Alt+F8</strong> = Volta à última frequência</td></tr>
+    <tr><td><strong>ESPAÇO</strong> ou <strong>TAB</strong> = Move entre os campos de log. Espaço pula os campos de RST; Tab passa por eles</td><td><strong>Ctrl+PgUp/PgDn</strong> = Sobe/desce uma banda</td></tr>
+    <tr><td><strong>ENTER</strong> = Loga o contato (veja o modo ESM)</td><td><strong>Digitar CW/USB/LSB/RTTY</strong> = Muda o modo; <strong>digitar frequência em kHz</strong> = muda a frequência ou banda</td></tr>
+    <tr><td><strong>Ctrl+Q/A</strong> = Edição rápida do QSO anterior ou seguinte</td><td><strong>Ctrl+S</strong> = Coloca o rádio em split; <strong>Ctrl+Alt+S</strong> = Alterna o modo split</td></tr>
+    <tr><td><strong>Ctrl+D</strong> = Apaga o último QSO. Pede confirmação</td><td><strong>Ctrl+Enter</strong> = Define a frequência de split</td></tr>
+    <tr><td><strong>Alt+H</strong> = Mostra a ajuda</td><td><strong>Alt+F7</strong> = Define a frequência de split ou offset para a frequência indicada</td></tr>
+    <tr><td><strong>Alt+K</strong> = Edita os botões de mensagem</td><td><strong>Alt+'</strong> = Alterna entre os filtros largo e estreito</td></tr>
+    <tr><td><strong>Ctrl+Alt+Enter</strong> = Loga um QSO não aceito (exchange inválido, geralmente)</td><td><strong>Alt+F12</strong> = Copia frequência e modo para o outro rádio/VFO. Há diferenças específicas por rádio</td></tr>
+    <tr><td>–</td><td><strong>Barra invertida ( \ )</strong> = Muda o foco de recepção (RX) (VFO/rádio)</td></tr>
+    <tr><td><strong>Spots de DX e Bandmap</strong></td><td><strong>Modo ESM</strong></td></tr>
+    <tr><td><strong>Roda do mouse</strong> = Zoom in/out no bandmap</td><td><strong>Ctrl+M</strong> = Liga/desliga</td></tr>
+    <tr><td><strong>Teclado numérico +/-</strong> = Zoom in/out no bandmap</td><td><strong>Insert ou ;</strong> = Envia indicativo e exchange</td></tr>
+    <tr><td><strong>Alt+D</strong> = Remove o spot exibido no quadro de indicativo ou no campo de indicativo</td><td><strong>Enter</strong> = Envia TU e loga</td></tr>
+    <tr><td><strong>Alt+P</strong> = Envia spot</td><td><strong>Enter</strong> = Começa o CQ de novo...</td></tr>
+    <tr><td><strong>Ctrl+P</strong> = Envia spot com comentário</td><td><strong>Alt+Enter</strong> = Loga sem enviar nada</td></tr>
+    <tr><td><strong>Ctrl+Tab</strong> = Alterna para/da janela de packet</td><td><strong>Modo Multi-Usuário</strong></td></tr>
+    <tr><td><strong>Alt+O</strong> = Guarda o contato no Bandmap</td><td><strong>Alt+Z</strong> = Define a frequência de "pass" (transmite para todos os computadores)</td></tr>
+    <tr><td><strong>Alt+Q</strong> = Pula para a frequência de CQ nesta banda</td><td>–</td></tr>
+    <tr><td><strong>SO2R</strong></td><td><strong>Rádios específicos / Controle de rotor</strong></td></tr>
+    <tr><td><strong>Barra invertida ( \ )</strong> – Dois rádios = Muda o foco de recepção (RX)</td><td><strong>FT-1000MP + FT1000D + alguns rádios Icom com Dual Watch</strong>: <strong>Alt+F12</strong> = Alterna Dual Receive</td></tr>
+    <tr><td><strong>Pause</strong> = Troca o foco de Transmissão e Recepção/Teclado</td><td>–</td></tr>
+    <tr><td><strong>Ctrl+Enter</strong> = Envia o próximo estado do ESM no rádio alternativo</td><td><strong>TenTec Orion</strong>: <strong>Alt+F12</strong> = Alterna Main/Sub esquerda/direita e ativo nos dois ouvidos</td></tr>
+    <tr><td><strong>Ctrl+F1 a F12</strong> = Envia mensagem no rádio alternativo</td><td>–</td></tr>
+    <tr><td><strong>Ctrl+B</strong> = CQs duelando (Dueling CQ's)</td><td><strong>Controle de rotor para o indicativo na Entry window</strong></td></tr>
+    <tr><td><strong>` (acento grave)</strong> = Alterna Estéreo/Mono (pino 5 da LPT)</td><td><strong>Alt+J</strong> – Gira o rotor para o rumo</td></tr>
+    <tr><td><strong>Alt+L</strong> – Gira o rotor para o rumo de caminho longo (long path)</td><td>–</td></tr>
+    <tr><td>–</td><td><strong>Ctrl+Alt+J</strong> – Para o giro do rotor</td></tr>
+  </table>
+
+  <p><strong>Tabela de teclas de atalho por modo de transmissão</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>CW</strong></td><td><strong>SSB</strong></td><td><strong>RTTY</strong></td><td><strong>VHF</strong></td></tr>
+    <tr><td><strong>Page Up</strong> = aumenta velocidade</td><td><strong>Ctrl+Shift+F1</strong> = Grava CQ</td><td><strong>Alt+G</strong> = Pega indicativo da pilha</td><td><strong>Alt+menos</strong> = Alterna grids</td></tr>
+    <tr><td><strong>Page Down</strong> = diminui velocidade</td><td><strong>Ctrl+Shift+F*</strong> = Grava mensagem de tecla de função</td><td><strong>Alt+T</strong> = Alterna RX/TX</td><td><strong>Ctrl+E</strong> = Envia mensagem às estações</td></tr>
+    <tr><td><strong>=</strong> = reenvia a última tecla de função</td><td><strong>NB.</strong> As mesmas teclas de novo param a gravação</td><td><strong>Ctrl+setas</strong> = Troca de DI</td><td>–</td></tr>
+    <tr><td><strong>Shift+Fx</strong> = envia a Fx do modo oposto</td><td>Idem</td><td>Idem</td><td>Idem</td></tr>
+    <tr><td><strong>Ctrl+K</strong> = alterna a janela de CW</td><td>–</td><td><strong>Ctrl+K</strong> = alterna a janela manual</td><td><strong>Alt+Z</strong> = Define a frequência de "pass"</td></tr>
+    <tr><td><strong>Esc</strong> = Para o envio imediatamente e fecha a janela</td><td>–</td><td><strong>Esc</strong> = Para o envio imediatamente e fecha a janela</td><td>–</td></tr>
+  </table>
+
+  <p><strong>Nota: as teclas abaixo funcionam a partir de todas as janelas principais</strong></p>
+
+  <h2 id="general-key-assignments">General Key Assignments (Atalhos Gerais)</h2>
+
+  <ul>
+    <li><strong>Space</strong> – A barra de espaço pula de campo em campo, preenchendo padrões como o indicativo do quadro de chamada, 59/599, e informações de contatos anteriores com aquela estação. Pula os campos de relatório de sinal. <em><strong>ESPAÇO É O CARACTERE DE TABULAÇÃO PREFERIDO</strong></em>.</li>
+    <li><strong>Tab</strong> – Pula para o próximo campo de entrada na Entry Window, incluindo os campos de relatório de sinal (o dígito "S" do relatório fica destacado, para facilitar sobrescrever, por exemplo trocar 599 por 579 etc.)</li>
+    <li><strong>Shift+Tab</strong> – Pula para o campo de entrada anterior na Entry Window</li>
+    <li><strong>Alt+H</strong> – abre a ajuda on-line. A maioria das janelas tem ajuda específica de contest acessível pelo menu de botão direito</li>
+    <li><strong>Ctrl+Tab</strong> – Alterna entre a Entry window e a janela Packet</li>
+    <li><strong>Alt+F9</strong> – alterna entre todas as antenas definidas para a banda atual. A antena selecionada aparece no canto inferior esquerdo do painel de status</li>
+    <li><strong>Alt+F4</strong> – Fecha o programa. Com duas Entry windows (SO2R), o programa não fecha direto; você será perguntado se tem certeza</li>
+  </ul>
+
+  <h2 id="active-radio-bandmap-control-key-assignments">Active Radio/Bandmap Control Key Assignments (Atalhos de Controle do Rádio/Bandmap Ativo)</h2>
+
+  <h3 id="jump-to-spots">Jump to Spots (Pular entre Spots)</h3>
+
+  <p><strong>Nota: se você está operando em modo único, o modo não muda ao pular entre spots.</strong></p>
+
+  <ul>
+    <li><strong>Ctrl+seta baixo</strong> – Pega o próximo spot mais alto em frequência</li>
+    <li><strong>Ctrl+seta cima</strong> – Pega o próximo spot mais baixo em frequência</li>
+    <li><strong>Ctrl+Alt+seta baixo</strong> – Pega o próximo spot mais alto em frequência que seja multiplicador</li>
+    <li><strong>Ctrl+Alt+seta cima</strong> – Pega o próximo spot mais baixo em frequência que seja multiplicador</li>
+    <li><strong>Shift+Alt+seta cima</strong> – Pega o próximo spot mais baixo em frequência que seja autospot (self-spotted)</li>
+    <li><strong>Shift+Alt+seta baixo</strong> – Pega o próximo spot mais alto em frequência que seja autospot</li>
+  </ul>
+
+  <h3 id="jump-to-cq-frequencies">Jump to CQ Frequencies (Pular para Frequências de CQ)</h3>
+
+  <ul>
+    <li><strong>Alt+Q</strong> – Pula para a última frequência de CQ nesta banda (bandmap ativo) e limpa todos os campos de texto da Entry Window</li>
+    <li><strong>Shift+Alt+Q</strong> – Pula para a última frequência de CQ na outra banda (bandmap não ativo)</li>
+    <li><strong>Ctrl+Alt+Q</strong> – Pula para a sua última frequência de CQ usada, em qualquer banda, e sintoniza o bandmap ativo nela</li>
+    <li><strong>Alt+F8</strong> – Volta para a sua frequência anterior (pode ser usado para "desfazer" o Alt+Q)</li>
+  </ul>
+
+  <h3 id="tune-the-radio">Tune the Radio (Sintonizar o Rádio)</h3>
+
+  <ul>
+    <li><strong>Ctrl+Page Up</strong> – Sobe uma banda. Bandas WARC são puladas durante o log de um contest</li>
+    <li><strong>Ctrl+Page Down</strong> – Desce uma banda. Bandas WARC são puladas durante o log de um contest</li>
+    <li><strong>Seta cima</strong> – Sintoniza o rádio 100 Hz abaixo em SSB, 20 Hz em CW (ajustável no Configurer)
+      <ul><li><strong>FT-1000MP, FT-890, FT-920, FT-990, FT-1000 e muitos outros rádios</strong>
+        <ul>
+          <li><strong>Em S&amp;P</strong> – pressionar as setas cima/baixo desliga o RIT e sintoniza o VFO principal</li>
+          <li><strong>Em modo Running</strong> – liga o RIT e sintoniza o RIT</li>
+        </ul>
+      </li></ul>
+    </li>
+    <li><strong>Seta baixo</strong> – Sintoniza o rádio 100 Hz acima em SSB, 20 Hz em CW (ajustável)
+      <ul><li>Veja as informações da Seta cima acima</li></ul>
+    </li>
+    <li><strong>Roda do mouse</strong> – Com o mouse na Entry Window, faz QSY no rádio usando o mesmo incremento das setas cima/baixo
+      <ul>
+        <li><strong>Alt+roda do mouse</strong> – Com o mouse na Entry Window, faz QSY para a próxima frequência redonda, arredondada para 1 kHz</li>
+        <li><strong>Ctrl+roda do mouse</strong> – Idem, arredondado para 10 kHz</li>
+        <li><strong>Ctrl+Alt+roda do mouse</strong> – Idem, arredondado para 100 kHz</li>
+      </ul>
+    </li>
+    <li><strong>Alt+F7</strong> – Define a frequência de split ou o offset a partir da frequência atual, para o rádio ativo. Pressionar Enter ou clicar OK com a linha vazia limpa o split. Pressione ESC ou clique Cancel para sair. Mais informações sobre operação split no capítulo Single Operator Split Operation</li>
+    <li><strong>Ctrl+Enter</strong> – Informar uma frequência ou offset no campo de indicativo e confirmar com Ctrl+Enter define uma frequência de split</li>
+    <li><strong>Alt+S</strong> – Com o rádio em modo split, Alt+S retorna a frequência de RX para a frequência de transmissão, mas mantém o modo split. "Reset RX frequency when running split" está associado ao Alt+S; quando ativado, o programa faz um Alt+S automático a cada QSO logado. Funciona só no VFO-A!</li>
+    <li><strong>Ctrl+S</strong> – Coloca o rádio em operação split, se ainda não estiver</li>
+    <li><strong>Ctrl+Alt+S</strong> – Alterna o modo Split no rádio. "Split" aparece na Entry window</li>
+    <li><strong>Alt+F5</strong> – Troca frequência, modo e indicativos entre VFOs (SO2V) ou rádios (SO2R). Em SO2R, o foco de recepção muda para o rádio não ativo</li>
+    <li><strong>Alt+F6</strong> – Comando exclusivo de SO2R. Idêntico ao Alt+F5, exceto que o foco de recepção não muda</li>
+    <li><strong>Alt+F8</strong> – Pula para a sua última frequência</li>
+    <li><strong>Alt+' (Alt+aspas simples)</strong> – alterna entre o filtro largo e estreito do modo selecionado (SSB, CW e modos Digi)</li>
+    <li><strong>Ctrl+Alt+D</strong> – Permite ao usuário em SO2V habilitar repetição de CQ, chamar CQ no VFOA e sintonizar o subreceptor (VFOB) entre os CQs. Atualmente só habilitado para K3, IC756, IC756Pro, IC756Pro2, IC756Pro3, IC7800 e IC7600
+      <ul>
+        <li>Se "Sub Receiver Always On" estiver ON e o Sub RX estiver ON, desliga "Sub Receiver Always On" e mantém o Sub RX ligado</li>
+        <li>Se "Sub Receiver Always On" estiver ON e o Sub RX estiver OFF, desliga "Sub Receiver Always On" e mantém o Sub RX desligado</li>
+        <li>Se "Sub Receiver Always On" estiver OFF e o Sub RX estiver ON, liga "Sub Receiver Always On" e mantém o Sub RX ligado</li>
+        <li>Se "Sub Receiver Always On" estiver OFF e o Sub RX estiver OFF, liga os dois</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="change-keyboard-radio-focus">Change Keyboard &amp; Radio Focus (Trocar o Foco do Teclado e do Rádio)</h3>
+
+  <ul>
+    <li><strong>Ctrl+seta esquerda</strong> – Move o foco de TX e RX/Teclado para o VFO A ou, em SO2R, para o rádio esquerdo</li>
+    <li><strong>Ctrl+seta direita</strong> – Move o foco de TX e RX/Teclado para o VFO B ou, em SO2R, para o rádio direito</li>
+    <li><strong>Alt+F10</strong> – Alterna entre VFOs com um único rádio (VFO A-B). Em Icom 756 e 7800, alterna entre as frequências Main e Sub
+      <ul><li>Comando desabilitado durante SO2R em rádios Icom sem comando CAT de troca de VFO, pois o programa não conhece a frequência do VFO B do Icom em modo SO2R</li></ul>
+    </li>
+    <li><strong>Pause</strong> – Troca os rádios e ajusta o teclado ao rádio</li>
+    <li><strong>Barra invertida ( \ )</strong> – Move o foco de RX e abre uma segunda Entry Window, se só uma estiver aberta (não suportado em SO1V)
+      <ul>
+        <li><strong>SO2V</strong> – Um rádio, 2 VFOs – Move o foco de RX entre os 2 VFOs do rádio</li>
+        <li><strong>SO2R</strong> – Dois rádios – Move o foco de RX entre os 2 rádios</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="other-nifty-tricks">Other Nifty Tricks (Outros Truques Úteis)</h3>
+
+  <ul>
+    <li><strong>Teclado numérico + (mais)</strong> – Aumenta o zoom do bandmap com foco de TECLADO, mostrando menos estações (menos largura de banda)
+      <ul><li>Também é possível dar zoom com a roda do mouse sobre a janela Bandmap</li></ul>
+    </li>
+    <li><strong>Teclado numérico - (menos)</strong> – Diminui o zoom do bandmap com foco de TECLADO, mostrando mais estações (mais largura de banda)
+      <ul><li>Também é possível diminuir o zoom com a roda do mouse sobre a janela Bandmap</li></ul>
+    </li>
+    <li><strong>Ctrl+T</strong> – Liga o rádio e envia CW contínuo (tune). Ctrl+T de novo, ou a tecla Escape, encerra a transmissão</li>
+    <li><strong>Alt+F12</strong> – Na maioria dos rádios, copia frequência e modo para o outro rádio/VFO
+      <ul>
+        <li>Alguns rádios usam Alt+F12 para funções específicas, geralmente trocando MAIN e SUB via comando CAT</li>
+        <li><strong>Somente FT-1000MP, FT1000D, Elecraft K3 e Icom IC-756, IC-781, IC-775 e IC-7800</strong>
+          <ul><li>Alterna o Dual Receive. Nota: só ligue/desligue o Dual Receive pelo teclado, para manter a sincronia com o programa</li></ul>
+        </li>
+        <li><strong>TenTec Orion</strong>
+          <ul><li>Alterna entre Main/Sub esquerda/direita e ativo nos dois ouvidos</li></ul>
+        </li>
+      </ul>
+    </li>
+    <li><strong>` (acento grave)</strong>
+      <ul>
+        <li>Em modo SO2R, alterna Estéreo/Mono (pino 5 da LPT). Se o MK2R ou OTRSP estiver habilitado, envia comandos de estéreo ao controlador SO2R externo</li>
+        <li>Em modo SO2V, alguns rádios com Dual Rx têm funções específicas atribuídas a esta tecla. Veja a seção Supported Radios para detalhes</li>
+        <li>Em modo SO1V, alguns rádios com Dual Rx têm funções específicas nesta tecla, como habilitar o subreceptor. Caso contrário, esta tecla fica desabilitada em SO1V</li>
+        <li>O acento grave corresponde, em teclados dos EUA, ao til (~) sem Shift</li>
+      </ul>
+    </li>
+    <li><strong>= (sinal de igual)</strong> – Reenvia a última tecla de mensagem (F1-F12)</li>
+    <li><strong>Alt+F11</strong> – Desabilita/habilita a troca automática entre RUN e S&amp;P. Em ambiente de rede com mais de uma estação em RUN na mesma banda, a troca para S&amp;P precisa ser desabilitada. Também usado em DXpeditions, para permanecer sempre em Run e não pular sem querer para S&amp;P ao fazer um pequeno QSY sem chamar CQ. Esse comportamento é alternado pela tecla Alt+F11, e o estado aparece na barra de status da Entry window: "Run/S&amp;P auto-toggle disabled" ou "S&amp;P and Run Mode enabled"</li>
+  </ul>
+
+  <h2 id="non-active-radio-bandmap-control-key-assignments">Non-Active Radio/Bandmap Control Key Assignments (Atalhos do Rádio/Bandmap Não Ativo)</h2>
+
+  <h3 id="jump-non-active-radio-to-spots">Jump Non-Active Radio to Spots (Pular Spots no Rádio Não Ativo)</h3>
+
+  <ul>
+    <li><strong>Ctrl+Shift+seta baixo</strong> – Pega o próximo spot mais alto em frequência, pulando a frequência de CQ quando os rádios/VFOs estão na mesma banda. O comportamento exato depende do rádio. Desabilitado em SO1V</li>
+    <li><strong>Ctrl+Shift+seta cima</strong> – Pega o próximo spot mais baixo em frequência, pulando a frequência de CQ quando os rádios/VFOs estão na mesma banda. O comportamento exato depende do rádio. Desabilitado em SO1V</li>
+    <li><strong>Shift+Ctrl+Alt+seta baixo</strong> – Pega o próximo spot mais alto em frequência que seja multiplicador. Em modo único, o modo não muda ao pular entre spots. Desabilitado em SO1V</li>
+    <li><strong>Shift+Ctrl+Alt+seta cima</strong> – Pega o próximo spot mais baixo em frequência que seja multiplicador. Em modo único, o modo não muda ao pular entre spots. Desabilitado em SO1V</li>
+    <li><strong>Shift+Alt+Q</strong> – Pula para a sua última frequência de CQ no VFO/rádio inativo</li>
+  </ul>
+
+  <h3 id="tune-the-non-active-radio">Tune the Non-Active Radio (Sintonizar o Rádio Não Ativo)</h3>
+
+  <ul>
+    <li><strong>Ctrl+Shift+Page Up</strong> – Sobe uma banda</li>
+    <li><strong>Ctrl+Shift+Page Down</strong> – Desce uma banda</li>
+    <li><strong>Shift + teclado numérico + (mais)</strong> – Aumenta o zoom do bandmap inativo</li>
+    <li><strong>Shift + teclado numérico - (menos)</strong> – Diminui o zoom do bandmap inativo</li>
+  </ul>
+
+  <h2 id="logging-key-assignments">Logging Key Assignments (Atalhos de Log)</h2>
+
+  <ul>
+    <li><strong>Enter</strong>
+      <ul>
+        <li>Loga o contato, quando "Enter sends message" está desligado no menu Config</li>
+        <li>Envia a mensagem quando "Enter sends message" está ligado no menu Config. A mensagem enviada depende do campo em que o cursor está na Entry Window. Confira as teclas destacadas</li>
+      </ul>
+    </li>
+    <li><strong>Space</strong> – Caractere preferido para mover sequencialmente pelos campos da Entry Window
+      <ul>
+        <li>Pula do indicativo para o campo Exchange, ou vice-versa</li>
+        <li>Preenche os valores padrão dos demais campos</li>
+        <li>Se houver um indicativo no quadro de chamada e o campo de indicativo estiver vazio, o indicativo do quadro é colocado na caixa de texto de indicativo</li>
+      </ul>
+    </li>
+    <li><strong>Alt+Enter</strong> – Envia a tecla de fim de QSO e loga o contato. Em ESM, apenas loga o contato (nada é enviado)</li>
+    <li><strong>Insert ou ;</strong> – Envia a His Call key seguida da Exchange key</li>
+    <li><strong>'</strong> – Envia a mensagem de fim de QSO e loga o contato</li>
+    <li><strong>Alt+W</strong> (reversível) ou <strong>Ctrl+W</strong> (irreversível)
+      <ul>
+        <li>Limpa os campos de entrada, apagando as informações do contato atual</li>
+        <li>(somente Alt+W) Se nada novo foi digitado desde a última limpeza e todos os campos ainda estão vazios, Alt+W restaura o último contato limpo (função "unwipe"), a menos que a limpeza original tenha sido feita com Ctrl+W (irreversível)</li>
+        <li>Em contests de número serial: libera o número serial reservado anteriormente</li>
+      </ul>
+    </li>
+    <li><strong>Ctrl+Shift+W</strong> – Limpa as informações de contato da outra janela</li>
+    <li><strong>Ctrl+Alt+Enter</strong> – Loga um QSO não aceito/"inválido" (exchange inválido etc.). Vai pedir um comentário. Use "View | Notes" para localizar o QSO depois e corrigi-lo
+      <ul><li>Se nenhum comentário for informado, "Forced QSO" é adicionado ao campo de comentário</li></ul>
+    </li>
+    <li><strong>Ctrl+Y</strong> – Edita o último contato</li>
+    <li><strong>Ctrl+D</strong> – Apaga o último contato</li>
+    <li><strong>Alt+O</strong> – Guarda o contato no bandmap</li>
+    <li><strong>Alt+M</strong> – Marca esta frequência no bandmap como em uso</li>
+    <li><strong>Alt+D</strong> – Remove do bandmap o spot que está no quadro de chamada ou no campo de indicativo da Entry window, em S&amp;P, ou na frequência de CQ, em Run</li>
+    <li><strong>Alt+Shift+D</strong> – Remove do bandmap o spot que está no quadro de chamada ou no campo de indicativo, e o adiciona à lista negra (blacklist) de spots. É preciso habilitar o filtro de blacklist para que isso tenha efeito</li>
+    <li><strong>Ctrl+F</strong> – Busca no log o indicativo digitado no campo de indicativo. Pressionar Ctrl+F de novo busca a próxima ocorrência</li>
+    <li><strong>Ctrl+M</strong> – Habilita/desabilita o modo "Enter sends message"</li>
+    <li><strong>Ctrl+N</strong> – Adiciona uma nota/comentário ao seu último ou atual contato</li>
+    <li><strong>Ctrl+Q</strong> – Modo de edição rápida, volta um QSO no log. Enter loga, Escape descarta as alterações. Sem checagem de conteúdo!</li>
+    <li><strong>Ctrl+A</strong> – Modo de edição rápida, avança um QSO no log. Enter loga, Escape descarta as alterações. Sem checagem de conteúdo!</li>
+    <li><strong>Ctrl+U</strong> – Aumenta em 1 o número no campo de exchange</li>
+    <li><strong>Alt+U</strong> – Alterna a caixa "Running". Quando marcada, o comportamento do modo Enter Sends Message muda de acordo, e os contatos são logados como parte de um run</li>
+    <li><strong>Alt+K</strong> – Altera o conteúdo dos botões de mensagem de Packet/CW/SSB/Digital</li>
+    <li><strong>Alt+Y</strong> – "Puxa" (yank) o primeiro indicativo da janela Check para o campo de indicativo da Entry window</li>
+    <li><strong>Ctl+G</strong> – Alterna o modo cut number</li>
+    <li><strong>Ctrl+Alt+G</strong> – Empilha indicativos adicionais em todos os modos. Equivale à macro {STACKANOTHER}</li>
+    <li><strong>Ctrl+Alt+M</strong> – Alterna entre Run/Mult (Multi-1) ou Run1/Run2 (Multi-2)</li>
+    <li><strong>Ctrl+Shift+M</strong> – Define o limiar de Autosend. O Autosend começa a enviar o indicativo antes de você terminar de copiá-lo por completo, ou seja, depois de digitado um certo número de caracteres APÓS o último número do indicativo. O limiar mínimo é 1; zero desativa o recurso. Só funciona em modo RUN, e é desabilitado em SSB quando TTS (texto para voz) gera as mensagens
+      <ul>
+        <li>As regras do Autosend são:
+          <ul>
+            <li>Encontra a primeira letra no indicativo</li>
+            <li>Encontra o último número após a primeira letra</li>
+            <li>Encontra a N-ésima letra após o passo 2</li>
+            <li>Por exemplo, com limiar definido como 2:
+              <ul>
+                <li>W4WYP começaria a enviar no Y</li>
+                <li>S57AD começaria a enviar no D</li>
+                <li>KH6/WA4WYP começaria no Y (usando também a regra da "/")</li>
+                <li>WA4WYP/4 começaria no Y (o /4 não é considerado)</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>WYP, WWYP e WAWYP não atendem aos critérios para o Autosend começar</li>
+        <li>Prefixos como KH6/ são ignorados e não disparam o limiar do Autosend por si só</li>
+      </ul>
+    </li>
+  </ul>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Tecla</strong></td><td><strong>Tecla(s) de função enviada(s)</strong></td><td><strong>Ação(ões)</strong></td></tr>
+    <tr><td><strong>Insert</strong></td><td><strong>His Call Key e Exchange Key</strong></td><td>Envia o indicativo dele seguido do exchange</td></tr>
+    <tr><td><strong>;</strong></td><td><strong>His Call Key e Exchange Key</strong></td><td>Envia o indicativo dele seguido do exchange</td></tr>
+    <tr><td><strong>Alt+Enter</strong></td><td>–</td><td>Loga o contato</td></tr>
+    <tr><td><strong>'</strong></td><td><strong>End of QSO Key</strong> e loga o contato</td><td>Envia a mensagem de fim de QSO e loga o contato</td></tr>
+  </table>
+
+  <h2 id="callsign-exchange-editing-features">Callsign/Exchange Editing Features (Edição de Indicativo/Exchange)</h2>
+
+  <ul>
+    <li><strong>Barra de espaço</strong> – Move o cursor para a última posição em que estava antes de sair dos campos de Indicativo ou Exchange</li>
+    <li><strong>Ctrl+Barra de espaço</strong> – Com o cursor no campo de indicativo, alterna a seleção entre as três partes do indicativo — prefixo alfanumérico, número e sufixo alfabético. Facilita corrigir erros, permitindo focar só na parte que precisa de correção</li>
+    <li><strong>Tab</strong> – Move para o próximo campo</li>
+    <li><strong>Shift+Tab</strong> – Move para o campo anterior</li>
+    <li><strong>Home</strong> – Move o cursor para o início do campo atual</li>
+    <li><strong>End</strong> – Move o cursor para o fim do campo atual</li>
+    <li><strong>Interrogação (?)</strong> – Envia um ?, que fica destacado ao reentrar no campo. Ex.: N?MM envia o que foi digitado, mas destaca automaticamente o ? para ser substituído. Um duplo ?, como em DL?K?A, destaca tudo entre e incluindo os pontos de interrogação. O primeiro caractere digitado substitui os três</li>
+    <li><strong>Seta esquerda/direita</strong> – Move o cursor uma posição para a esquerda ou direita dentro do campo</li>
+    <li><strong>Backspace</strong> – Apaga o caractere à esquerda</li>
+    <li><strong>Delete</strong> – Apaga o caractere à direita</li>
+    <li><strong>Shift+Home</strong> – Destaca do ponto de inserção até o início da caixa de texto</li>
+    <li><strong>Shift+End</strong> – Destaca do ponto de inserção até o fim da caixa de texto</li>
+    <li><strong>Shift+seta</strong> – Destaca conforme você pressiona as teclas. Ao digitar o primeiro caractere, o texto destacado é apagado</li>
+    <li><strong>Ctrl+C/Ctrl+Insert</strong> – Copia para a área de transferência</li>
+    <li><strong>Ctrl+V/Shift+Insert</strong> – Cola da área de transferência</li>
+    <li><strong>Ctrl+Home</strong> – Força o cursor para o campo de indicativo e seleciona seu texto</li>
+  </ul>
+
+  <div class="caixa-info">
+    <strong>Operação em VHF:</strong>
+    <p>As ferramentas de copiar/colar acima ajudam a mover estações de banda em banda. Destaque o indicativo atual com Shift+Home/End e copie com Ctrl+C. Loga o QSO, depois mude de banda para trabalhar a estação. Use Ctrl+V para inserir o indicativo dele no campo de indicativo. Se depois você o mover para uma terceira banda, pode pular a etapa de copiar, pois o indicativo já está na área de transferência.</p>
+  </div>
+
+  <h2 id="message-key-assignments">Message Key Assignments (Atalhos de Mensagem)</h2>
+
+  <p>Existem dois conjuntos de mensagens guardados para F1 a F12, um para o modo Running e outro para Search and Pounce. Porém, é possível enviar a mensagem do modo oposto pressionando Shift+Fx. As atribuições abaixo valem para os dois modos.</p>
+
+  <p>Abaixo, uma tabela das teclas de função com suas mensagens padrão associadas. Note que a tecla CQ sempre muda o programa para o modo Running, independente do modo em que estava. Todas as teclas listadas na tabela são usadas pelo ESM. As teclas His Call, Exchange e End of QSO são acionadas pelos atalhos de log (tecla Insert ou ; e a tecla ') independentemente de o recurso Enter Sends Messages (ESM) estar ativo ou não. As teclas de função podem ser remapeadas na aba Function Keys do Configurer, <strong>mas tome muito cuidado ao fazer isso, pois pode atrapalhar o funcionamento do ESM.</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>F1</strong></td><td><strong>CQ key</strong></td><td><strong>F2</strong></td><td><strong>Exchange key</strong></td><td><strong>F3</strong></td><td><strong>End of QSO key</strong></td><td><strong>F4</strong></td><td><strong>My Call key</strong></td></tr>
+    <tr><td><strong>F5</strong></td><td>His Call Key</td><td><strong>F6</strong></td><td>QSO B4 Key</td><td><strong>F7</strong></td><td>–</td><td><strong>F8</strong></td><td>Again Key</td></tr>
+    <tr><td><strong>F9</strong></td><td>–</td><td><strong>F10</strong></td><td>–</td><td><strong>F11</strong></td><td>–</td><td><strong>F12</strong></td><td>–</td></tr>
+  </table>
+
+  <ul>
+    <li><strong>Esc</strong> – Para o envio de CW ou de um arquivo wav</li>
+    <li><strong>Ctrl+R</strong> – Define o tempo de repetição de CQ, em segundos ou milissegundos (ex.: 1.8 ou 1800)</li>
+    <li><strong>Alt+R</strong> – Alterna o modo de repetição. Aperte Esc ou comece a digitar um indicativo para pausar a repetição temporariamente</li>
+    <li><strong>Shift+Fx</strong> – Envia o conteúdo da tecla de função do modo oposto. Em <strong>Run</strong>, Shift+Fx envia a Fx de <strong>S&amp;P</strong>, e vice-versa</li>
+    <li><strong>Ctrl+Shift+Fx</strong> – Grava mensagem de SSB para a tecla de função selecionada. Pressionar Ctrl+Shift+Fx de novo para a gravação. Fx pode ser F1 a F12, nas listas de Run ou S&amp;P. Garanta que o programa esteja no modo correto (Run ou S&amp;P) e que os nomes de arquivo estejam preenchidos (clique com o botão direito nos botões de mensagem da Entry window para editar); se os nomes só existirem nas primeiras 12 posições, o programa toca essas mensagens ao pressionar a tecla correspondente, independente do modo</li>
+    <li><strong>Ctrl+Alt+Fx</strong> – Grava as memórias 1 a 4 de um DVK externo, <strong>somente na placa W9XT ou outros DVKs que a emulam</strong></li>
+  </ul>
+
+  <h2 id="cw-key-assignments">CW Key Assignments (Atalhos de CW)</h2>
+
+  <ul>
+    <li><strong>PgUp/PgDn</strong> – Ajusta a velocidade de CW para cima/baixo no rádio <em>ativo</em>, usando o <em>Primary</em> CW Speed Step (aba Other do Configurer)</li>
+    <li><strong>Shift+PgUp/PgDn</strong> – Ajusta a velocidade de CW para cima/baixo no rádio/VFO <em>ativo</em>, usando o <em>Secondary</em> CW Speed Step, em modo SO2R/SO2V</li>
+    <li><strong>Alt+PgUp/PgDn</strong> – Ajusta a velocidade de CW para cima/baixo no rádio/VFO <em>inativo</em>, usando o <em>Primary</em> CW Speed Step, em modo SO2R/SO2V. <strong>Nota:</strong> o rádio <em>ativo</em> é a Entry window com o ponto vermelho</li>
+    <li><strong>Ctrl+K</strong> – Abre a janela de CW para enviar CW manual. Pressionar Ctrl+K de novo fecha a janela
+      <ul>
+        <li>Pressionar Ctrl+K ou Enter dentro da janela de CW a fecha e envia os caracteres restantes no buffer</li>
+        <li>Pressionar Escape fecha a janela e para o envio imediatamente. Nenhum caractere restante no buffer é enviado</li>
+      </ul>
+    </li>
+    <li><strong>Ctrl+Alt+R</strong> – Alterna CW Reverse/No Reverse</li>
+  </ul>
+
+  <h2 id="enter-sends-message-mode-esm">Enter Sends Message Mode (ESM) (Modo Enter Envia Mensagem)</h2>
+
+  <ul>
+    <li><strong>Ctrl+M</strong> – Alterna o modo "Enter Sends Message"</li>
+    <li><strong>Alt+Enter</strong> – Loga sem enviar nada</li>
+    <li><strong>Ctrl+Alt+Enter</strong> – Loga mesmo com exchange inválido ou ausente</li>
+  </ul>
+
+  <p>Nota: o ESM é afetado por duas opções na aba Function Keys do Configurer:</p>
+
+  <ul>
+    <li>a caixa "ESM sends your call once in S&amp;P, then ready to copy received exchange" (às vezes chamada de opção "Big Gun")</li>
+    <li>a caixa "Work dupes when running" (recomendada)</li>
+  </ul>
+
+  <p><strong>Ações da tecla <em>Enter</em> em modo ESM</strong></p>
+
+  <table class="tabela-atalhos">
+    <tr><td><strong>Campo de indicativo</strong></td><td><strong>Campo de exchange</strong></td><td><strong>Em Run, Enter envia</strong></td><td><strong>Em S&amp;P, Enter envia</strong></td></tr>
+    <tr><td>Vazio</td><td>Vazio</td><td>CQ (<strong>F1</strong>)</td><td>My Call (<strong>F4</strong>)</td></tr>
+    <tr><td>Indicativo novo (1ª vez)</td><td>Vazio ou inválido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>My Call (<strong>F4</strong>)</td></tr>
+    <tr><td>Indicativo novo (repetição)</td><td>Vazio ou inválido</td><td>Again? (<strong>F8</strong>)</td><td>My Call (<strong>F4</strong>)</td></tr>
+    <tr><td>Indicativo novo (repetição) – com "ESM sends call once..." marcada</td><td>Vazio ou inválido</td><td>Again? (<strong>F8</strong>)</td><td>Again? (<strong>F8</strong>)</td></tr>
+    <tr><td>Indicativo novo (antes de enviar o exchange)</td><td>Válido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>Exchange + Log (<strong>F2</strong>+<strong>Log It</strong>)</td></tr>
+    <tr><td>Indicativo novo (depois de enviar o exchange)</td><td>Válido</td><td>End QSO + Log (<strong>F3</strong>+<strong>Log It</strong>)</td><td>Log (<strong>Log It</strong>)</td></tr>
+    <tr><td>Indicativo duplicado</td><td>Vazio ou inválido</td><td>QSO B4 (<strong>F6</strong>)</td><td>não faz nada</td></tr>
+    <tr><td>Indicativo duplicado (antes de enviar o exchange)</td><td>Válido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>Exchange + Log (<strong>F2</strong>+<strong>Log It</strong>)</td></tr>
+    <tr><td>Indicativo duplicado (depois de enviar o exchange)</td><td>Válido</td><td>End QSO + Log (<strong>F3</strong>+<strong>Log It</strong>)</td><td>Log (<strong>Log It</strong>)</td></tr>
+    <tr><td>Dupe (1ª vez) – com "Work Dupes" marcada</td><td>Vazio ou inválido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>não faz nada</td></tr>
+    <tr><td>Dupe (repetição) – com "Work Dupes" marcada</td><td>Vazio ou inválido</td><td>Again? (<strong>F8</strong>)</td><td>não faz nada</td></tr>
+    <tr><td>Dupe (antes de enviar o exchange) – com "Work Dupes" marcada</td><td>Válido</td><td>His Call + Exch (<strong>F5</strong>+<strong>F2</strong>)</td><td>Exchange + Log (<strong>F2</strong>+<strong>Log It</strong>)</td></tr>
+    <tr><td>Dupe (depois de enviar o exchange) – com "Work Dupes" marcada</td><td>Válido</td><td>End QSO + Log (<strong>F3</strong>+<strong>Log It</strong>)</td><td>Log (<strong>Log It</strong>)</td></tr>
+  </table>
+
+  <h2 id="telnet-key-assignments">Telnet Key Assignments (Atalhos de Telnet)</h2>
+
+  <ul>
+    <li><strong>Alt+P</strong> – Envia um spot do indicativo do último contato logado, ou o que estiver no campo de indicativo, no formato DX CALL Frequência, sem comentário, a menos que um tenha sido definido na aba Spot Comment da janela Telnet</li>
+    <li><strong>Ctrl+P</strong> – Envia um spot do indicativo do último contato logado ou do campo de indicativo. Você será solicitado a digitar um comentário. Pressione ESC, clique "Cancel" ou no X vermelho para sair sem enviar o spot. Se não informar um comentário e houver um definido na aba Spot Comment, ele será enviado ao clicar OK. Se você informar um comentário, ele é enviado junto com o da aba Spot Comment</li>
+    <li><strong>Clique esquerdo</strong> – Sintoniza o rádio ativo na frequência do spot</li>
+    <li><strong>Shift+clique esquerdo</strong> – Sintoniza o rádio inativo na frequência do spot</li>
+    <li><strong>SH/DX</strong> – Digitado no campo de indicativo da Entry window, é repassado para a janela Packet ativa para processamento</li>
+  </ul>
+
+  <h2 id="available-window-key-assignments">Available Window Key Assignments (Atalhos da Janela Available)</h2>
+
+  <ul>
+    <li><strong>Clique esquerdo</strong> – Geralmente sintoniza o rádio ativo na frequência do spot. O comportamento depende de SO1V, SO2V ou SO2R e das opções no menu de botão direito da janela Available</li>
+    <li><strong>Shift+clique esquerdo</strong> – Geralmente sintoniza o rádio inativo na frequência do spot. Também depende de SO1V, SO2V, SO2R e das opções da janela Available</li>
+    <li><strong>Duplo clique</strong> – Vai para a frequência com o VFO ativo</li>
+    <li><strong>Alt+A</strong> – Começando pela primeira linha do painel inferior da janela, ou pela linha selecionada, pega o indicativo, faz QSY para a frequência do spot e transfere o indicativo para o quadro de chamada da Entry window. Repetir o comando avança <strong>para baixo</strong> pelos spots, um de cada vez, transferindo o próximo. A cor do spot transferido muda para preto</li>
+    <li><strong>Shift+Alt+A</strong> – O mesmo, mas começa pela linha atual e avança <strong>para cima</strong> pelos spots a cada repetição</li>
+    <li><strong>Alt+B, Shift+Alt+B</strong> (somente SO2R/SO2V) – Igual a Alt+A e Shift+Alt+A, mas para a segunda janela Available</li>
+  </ul>
+
+  <h2 id="so2r-key-assignments">SO2R Key Assignments (Atalhos de SO2R)</h2>
+
+  <ul>
+    <li><strong>Ctrl+Enter</strong> – Envia o próximo estado do ESM no rádio alternativo (com ESM ligado)</li>
+    <li><strong>Ctrl+F1 a F12</strong> – Envia a mensagem Fn no rádio alternativo</li>
+    <li><strong>Ctrl+seta esquerda</strong> – Em SO2R, move o foco de TX e RX/Teclado para o rádio esquerdo; em SO2V, move ambos para o VFO A</li>
+    <li><strong>Ctrl+seta direita</strong> – Em SO2R, move o foco de TX e RX/Teclado para o rádio direito; em SO2V, move ambos para o VFO B</li>
+    <li><strong>Pause</strong> – Move o foco de TX e RX/Teclado para o outro rádio (ou VFO, em SO2V). Se os focos de TX e RX estiverem divididos ao pressionar Pause, o foco de TX vai para onde estiver o foco de RX</li>
+    <li><strong>Ctrl+B</strong> – Dueling CQ's: envia CQ (sem atraso) alternadamente em cada rádio. Ao ligar, os dois rádios viram rádios de run. CQs duelando em SSB e CW também são suportados</li>
+    <li><strong>Acento grave, ou til sem Shift (~)</strong> – Alterna o modo ESTÉREO ligado/desligado, ou alterna modos Auto/PTT com DXD modificado. Nos teclados dos EUA, é a tecla logo à esquerda do número 1</li>
+    <li><strong>Ctrl+I</strong> – Alterna o modo SO2R (placa de som), passando pelos modos SO2R suportados pelo programa. Só funciona em "$5SO2R", quando o N1MM Logger controla o áudio, não ao usar um controlador SO2R externo</li>
+    <li><strong>Ctrl+PgUp/Down</strong> – Ao trocar de banda com Ctrl+PgUp/Down, pula a banda do outro rádio
+      <ul><li>ISSO NÃO SUBSTITUI O BLOQUEIO POR HARDWARE!!</li></ul>
+    </li>
+    <li><strong>Ctrl+Shift+K</strong> – FocusOther, outro método de controle automático de foco. Força o foco de entrada para o rádio que não está transmitindo, voltando ao rádio transmissor assim que ele retorna à recepção. Desabilitado em SO1V</li>
+    <li><strong>Ctrl+Shift+L</strong> – Alterna a macro CTRLFx, que permite enviar no outro rádio (somente RTTY e CW)</li>
+  </ul>
+
+  <h2 id="rtty-key-assignments">RTTY Key Assignments (Atalhos de RTTY)</h2>
+
+  <ul>
+    <li><strong>Alt+T</strong> – Alterna TX/RX</li>
+    <li><strong>Alt+G</strong> – Pega o indicativo (grab)</li>
+    <li><strong>Ctrl+K</strong> – Alterna TX/RX e exibe a janela CW/Digital Keyboard para enviar manualmente pelo teclado</li>
+    <li><strong>Ctrl+setas</strong> – Alterna entre as duas janelas DI ativas. DI1 acompanha a Entry window 1; DI2 acompanha a Entry window 2</li>
+    <li><strong>Esc</strong> – Para o envio</li>
+  </ul>
+
+  <h2 id="gridsquare-key-assignments-vhf-and-up">Gridsquare Key Assignments (VHF and up) (Atalhos de Gridsquare)</h2>
+
+  <ul>
+    <li><strong>Alt+igual (=)</strong> – Busca o texto digitado tanto no campo de Indicativo quanto no campo de Gridsquare, na tabela de Call History
+      <ul><li>Os resultados aparecem na janela Check</li></ul>
+    </li>
+    <li><strong>Alt+menos (-)</strong> – Alterna entre os dois gridsquares do Call History no campo de gridsquare
+      <ul><li>Se não houver grids encontrados no Call History, não há nada para alternar</li></ul>
+    </li>
+  </ul>
+
+  <h2 id="rotator-key-assignments">Rotator Key Assignments (Atalhos de Rotor)</h2>
+
+  <ul>
+    <li><strong>Alt+J</strong> – Gira o rotor para o rumo do indicativo na Entry window, ou do quadro de chamada (quando o campo de indicativo está vazio)</li>
+    <li><strong>Alt+L</strong> – Gira o rotor para o rumo de caminho longo (long path) do indicativo na Entry window</li>
+    <li><strong>Ctrl+Alt+J</strong> – Para o giro do rotor, quando girando e sem rumo no campo de indicativo</li>
+  </ul>
+
+  <h2 id="window-key-assignments">Window Key Assignments (Atalhos de Janela)</h2>
+
+  <ul>
+    <li><strong>Ctrl+Tab</strong> – Alterna entre a Entry window e a janela Packet</li>
+    <li><strong>Ctrl+K</strong> – Exibe a janela CW/Digital Keyboard para enviar manualmente pelo teclado</li>
+    <li><strong>Ctrl+L</strong> – Exibe a janela Log (alterna entre aberta e minimizada)</li>
+  </ul>
+
+  <h2 id="lookup-table-edit">Lookup Table Edit (Edição de Tabela de Consulta)</h2>
+
+  <ul>
+    <li><strong>Ctrl+D</strong> – apaga uma linha da tabela, ou use o menu de botão direito</li>
+    <li><strong>Scroll Lock</strong> – seleciona a linha atual para edição</li>
+  </ul>
+
+  <h2 id="qtc-keys-for-wae-contests">QTC Keys (for WAE contests) (Teclas de QTC, para contests WAE)</h2>
+
+  <ul>
+    <li><strong>Ctrl+Z</strong> – em CW/SSB, entra ou sai do modo QTC; em RTTY, alterna entre Send, Receive e QTC Off
+      <ul><li>Se Ctrl+Z for pressionado antes de o QSO com a estação ser logado, loga o QSO</li></ul>
+    </li>
+    <li><strong>Enter</strong> – loga o próximo QTC (recebendo), ou envia o próximo QTC do lote (enviando)</li>
+    <li><strong>F3</strong> (End of QSO Key) – envia a mensagem de TU e sai do modo QTC</li>
+    <li><strong>Alt+W</strong> – limpa a linha atual</li>
+    <li><strong>Esc</strong> – encerra o envio (CW ou RTTY), ou, se o programa não estiver enviando, sai da janela QTC (equivale ao botão Cancel)</li>
+    <li><strong>Alt+Enter, tecla + do teclado numérico</strong> (só ao enviar QTCs) – reenvia a última string enviada</li>
+    <li><strong>Alt+Enter, Alt+Tab, Alt+Space</strong> (só ao receber QTCs) – força o log do QTC atual, ignorando a checagem de erros</li>
+    <li><strong>Ctrl+A</strong> (só ao receber QTCs) – remove a última linha em branco de QTCs recebidos e reduz a contagem no cabeçalho do QTC
+      <ul><li>Usado, por exemplo, quando o número no cabeçalho foi copiado errado e menos QTCs foram recebidos do que o esperado</li></ul>
+    </li>
+    <li><strong>Alt+A</strong> (só ao receber QTCs) – adiciona uma nova linha de QTC (se houver menos de 10) e aumenta a contagem no cabeçalho
+      <ul><li>Como acima, quando mais QTCs são recebidos do que o esperado</li></ul>
+    </li>
+    <li><strong>1, 2, 3</strong> (só ao enviar QTCs) – se pressionado com o botão Agn destacado, reenvia a hora (<strong>1</strong>), o indicativo (<strong>2</strong>) ou o número serial (<strong>3</strong>) do QTC anterior</li>
+    <li><strong>Shift+1, Shift+2, Shift+3</strong> (só ao receber QTCs) – pede a repetição da hora (<strong>1</strong>), do indicativo (<strong>2</strong>) ou do número serial (<strong>3</strong>)</li>
+  </ul>
+
+  <h2 id="key-mapping">Key Mapping (Mapeamento de Teclas)</h2>
+
+  <p>O N1MM+ permite mapear teclas para uma ou mais outras teclas e ações. Esse recurso é acessado na Entry Window pelo menu <strong>Tools &gt; Keyboard Key Remapper</strong>. Ao selecioná-lo, abre a janela Key Remapper, onde você escolhe uma tecla para remapear e as teclas/ações a executar ao pressioná-la.</p>
+
+  <img src="../../assets/img/keyboard-key-mapper.png" alt="Janela do Key Remapper do N1MM+">
+
+  <p>A captura de tela acima mostra a interface do key mapper. Você pode inserir os mapeamentos ali, ou editá-los no Notepad. Note que a interface salva o conjunto atualizado de mapeamentos em [opcall].map após cada edição, ao trocar de operador e ao fechar o programa — tome cuidado para não sobrescrever alterações, nem ter as suas sobrescritas. Criar e editar arquivos de mapa no Notepad, bem como copiar mapas de um indicativo de operador para outro, é mais seguro fazer com o N1MM+ fechado, para evitar sobreposição de alterações.</p>
+
+  <p>Para adicionar um novo mapeamento nesta janela, clique no botão <strong>Add/Append</strong>, depois pressione a tecla (incluindo os modificadores Shift, Ctrl ou Alt) que você quer usar. Na parte inferior da janela, aparece uma lista junto com três caixas de seleção para Shift, Ctrl e Alt. Use-as para escolher, na lista, uma tecla de destino combinada com os modificadores marcados. Também é possível digitar diretamente na lista a tecla, combinação de teclas ou texto desejado.</p>
+
+  <ul>
+    <li>Notas sobre a criação de mapas de teclas:
+      <ul>
+        <li>Mapas simples, um-para-um, são criados selecionando a tecla a mapear e depois o nome da tecla de destino. Especifique os modificadores — Alt, Ctl ou Shift — que correspondem ao atalho do N1MM+ que você quer substituir pela nova tecla</li>
+        <li>É possível mapear uma única tecla para uma sequência de teclas de destino. Múltiplos mapeamentos para uma tecla são separados pelo símbolo de pipe "|", como no exemplo do NumPadPlus na captura de tela acima, que envia Alt+Y seguido de Enter</li>
+        <li>Texto e/ou macros do programa podem ser usados no lugar de combinações de tecla. Use o mesmo formato das mensagens de tecla de função, por exemplo:
+          <ul>
+            <li>{Wipe} limpa os campos da Entry window</li>
+            <li>PREC? envia 'prec?' em modo CW</li>
+            <li>assist.wav toca o arquivo assist.wav em SSB</li>
+            <li>{CAT1HEX FEFE94E0271001FD} liga o scope em um Icom IC7300</li>
+            <li>"/P" insere os caracteres '/P' no ponto de inserção (cursor) da caixa de texto com foco no momento</li>
+            <li>"https://www.wm7d.net/" abre a página wm7d.net no navegador</li>
+            <li>"notepad.exe C:\contestnotes.txt" abre o arquivo C:\contestnotes.txt no Notepad</li>
+          </ul>
+        </li>
+        <li>Strings entre aspas, como nos três últimos exemplos acima, podem ser usadas em qualquer lugar onde macros são aceitas. Dependendo do conteúdo, elas podem: inserir texto no cursor do Windows; abrir o navegador padrão em uma página específica; ou executar um comando .bat ou .exe. Veja a descrição de Quoted Strings na página Function Keys, Messages and Macros</li>
+        <li>Ao digitar texto para enviar em CW, um texto idêntico ao nome de uma tecla não pode ser usado dessa forma. Para definir um mapeamento que envie o caractere único R, é preciso adicionar um espaço (ou um meio-espaço ~) antes ou depois do R</li>
+        <li>O mapa é montado pelo Remapper usando algumas regras de sintaxe. Há quatro modificadores: Alt+, Ctl+, Shift+ e Other+. Os três primeiros se referem às teclas modificadoras. O Other+ indica ao remapeador que o comando deve ser executado pela Outra Entry Window (SO2R ou SO2V)</li>
+        <li>Todos os atalhos "mapeados para" são processados pela Entry Window onde o usuário digitou a tecla remapeada. Se você pressionar uma tecla mapeada com a 2ª Entry Window em foco, ela será processada por aquela janela. O modificador Other+ é usado quando você quer que a ação seja executada pela outra Entry Window</li>
+        <li>Existem duas macros de espera, usadas quando é preciso um atraso. O teclado fica destravado durante essas macros, então digitar algo enquanto um mapa está esperando pode atrapalhar o mapa em execução
+          <ul>
+            <li><strong>{Wait}</strong> espera até o envio parar. Em SO2R/SO2V, verifica o envio nos dois rádios</li>
+            <li><strong>{Wait nnn}</strong> espera nnn milissegundos antes de executar a próxima ação do mapa</li>
+          </ul>
+        </li>
+        <li>É possível editar os mapas de teclas manualmente. Há um item de menu e um botão para isso. Você pode adicionar linhas de comentário nos seus mapas, prefixando a linha com algo que não seja um nome de tecla; "!!" é o marcador de comentário sugerido, como na captura de tela acima</li>
+        <li>O foco normalmente volta para a Entry Window de onde veio a tecla pressionada. Em SO2R e SO2V, se Pause for usado em um mapeamento, o foco muda para a outra Entry Window (desde que não haja outras teclas no mapeamento que também mudem o foco, como Ctrl+seta direita ou Ctrl+seta esquerda)</li>
+        <li>Os atalhos dos botões do bandmap são difíceis de usar, pois exigem uma combinação de quatro teclas. É possível definir um botão do bandmap como destino marcando as três caixas (Shift, Ctrl e Alt) e escolhendo o dígito ou letra correspondente ao botão desejado (0 para o primeiro botão, 1 para o segundo, ..., 9 para o décimo, A para o 11º, ..., Z para o 36º botão do bandmap). Em SO2R e SO2V, cada janela Bandmap tem seu próprio conjunto de botões — use o modificador Other+ para acionar um botão do bandmap do rádio/VFO não ativo</li>
+      </ul>
+    </li>
+  </ul>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/setup/keyboard-shortcuts/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../assets/js/protect.js" defer></script>
+</body>
+</html>
