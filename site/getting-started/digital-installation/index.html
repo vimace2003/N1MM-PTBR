@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Downloading Digital Software — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre o que saber antes de configurar modos digitais no N1MM Logger+.">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="icon" href="../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/favicon.jpg">
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="https://n1mm.gg52floripadx.com/">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Getting Started</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/getting-started/digital-installation/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/getting-started/digital-installation</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="https://n1mm.gg52floripadx.com/">Início</a> &raquo;
+    <a href="../index.html">Getting Started</a> &raquo;
+    Downloading Digital Software
+  </nav>
+
+  <h1>Downloading Digital Software <span class="tag-en">EN: Downloading Digital Software</span></h1>
+
+  <p><strong>Baixando e Configurando o Software Digital</strong></p>
+
+  <h3 id="need-to-know">Need-to-Know about Setting Up for Digital Modes (O que você precisa saber antes de configurar os modos digitais)</h3>
+
+  <p>Para se comunicar em modos digitais (RTTY, PSK ou outros modos digitais de placa de som), o N1MM Logger+ pode usar tanto a placa de som do computador quanto um dispositivo externo chamado "terminal unit" (TU) ou um TNC multimodo. Terminal units e TNCs são relativamente raros hoje em dia, e a maioria das comunicações digitais atualmente usa a placa de som do computador.</p>
+
+  <p>O Logger usa a placa de som para modos digitais por meio de um processo separado chamado "digital engine" (motor digital). Um digital engine, o MMVARI, já vem pré-carregado quando o N1MM Logger+ é instalado pela primeira vez. O MMVARI consegue operar em RTTY, PSK31, PSK63 e alguns outros modos digitais pouco usados em contests. O Logger também suporta vários outros digital engines, incluindo MMTTY, 2Tone, Fldigi, WSJT-X ou JTDX, mas esses engines não vêm pré-instalados; precisam ser baixados e instalados separadamente. O MMTTY e o 2Tone só podem ser usados para RTTY, enquanto o Fldigi suporta uma ampla gama de modos digitais, a maioria não usada em contest. O N1MM Logger+ também pode usar os programas WSJT-X e JTDX para fazer e logar contatos em FT8 e outros modos suportados por esses programas.</p>
+
+  <p>A configuração de um digital engine é feita dentro do N1MM Logger+ em alguns lugares, incluindo o Configurer (<strong>Config &gt;Configure Mode Control, Audio, Other</strong>), além da janela Digital Interface. Os digital engines (MMVARI, MMTTY, 2Tone, Fldigi, WSJT-X e JTDX) também têm seus próprios menus de configuração que precisam ser ajustados. Se você já conhece modos digitais e está migrando de outro programa para o Logger, talvez prefira ir direto para as instruções de configuração nas subseções abaixo. Se você é novo em modos digitais, encontra mais informações sobre RTTY e PSK na página <strong><a href="../../setup/index.html">General RTTY and PSK Information</a></strong> do manual (seção Digital Modes, ainda não traduzida). RTTY é particularmente complexo para quem está começando agora; há uma excelente introdução ao RTTY nas <a href="https://www.aa5au.com/rtty/" target="_blank" rel="noopener"><strong>páginas do AA5AU</strong></a> (em inglês), leitura recomendada para quem está começando em RTTY.</p>
+
+  <p>Seguem algumas notas sobre conexões de hardware para modos digitais de placa de som (usando MMTTY, 2Tone, MMVARI, Fldigi ou WSJT-X/JTDX). Elas dependem do rádio, da placa de som e da interface (se houver) em uso, sendo impossível cobrir todas as possibilidades em detalhes, mas os comentários gerais a seguir se aplicam:</p>
+
+  <p>Primeiro, você precisa de algum meio de conectar a saída de áudio do rádio à entrada da placa de som. A conexão ideal seria de uma saída de nível fixo ("line out") no rádio para uma entrada "line in" na placa de som. Se o seu rádio tiver um receptor, isso provavelmente vai usar o canal esquerdo da placa de som; com receptores duplos, o segundo receptor pode usar o canal direito. Se a sua placa de som não tiver uma entrada de nível de linha, talvez seja necessário usar uma entrada de microfone, e nesse caso pode ser preciso um atenuador para reduzir o nível de saída de linha do rádio ao nível mais baixo exigido pela entrada de microfone da placa de som.</p>
+
+  <p>Para transmitir, precisa haver algum meio de transmitir a modulação do computador para o rádio. Para FSK RTTY, isso é um sinal de chaveamento liga/desliga, normalmente gerado por uma porta serial conectada à entrada de chaveamento FSK do rádio por meio de um circuito simples de chaveamento. Essa porta serial não pode ser a mesma usada para controle de rádio ou para um Winkeyer ou outro dispositivo serial. Se for um adaptador USB-serial padrão, o FSK do MMTTY vai exigir o plugin EXTFSK ou EXTFSK64. Se você estiver usando o MMVARI para RTTY com chaveamento FSK, selecione o plugin apropriado (FSK8250 para portas seriais reais, EXTFSK ou EXTFSK64 para adaptadores USB-serial) no Configurer, na aba Digital Modes. O Fldigi só consegue fazer chaveamento FSK com a ajuda de um circuito externo que converte os sinais de áudio desses programas em um sinal de chaveamento liga/desliga.</p>
+
+  <p>Para AFSK RTTY e para todos os outros modos digitais de placa de som (por exemplo, PSK31), precisa haver uma conexão da saída da placa de som ("line out", ou saída de alto-falante/fone) para a entrada de áudio do rádio. Se a única entrada de áudio do rádio for uma entrada de microfone, pode ser necessária atenuação para reduzir o nível e evitar sobrecarregar o transmissor.</p>
+
+  <p>Você também precisa de algum meio de controlar a comutação TX/RX (PTT). O método mais comum é usar controle de PTT por hardware, a partir de uma porta serial ou paralela, por meio de um circuito simples de chaveamento. O PTT por hardware pode ser controlado pelo próprio digital "engine" (MMTTY, MMVARI, Fldigi, WSJT-X ou JTDX), ou pelo próprio N1MM Logger+ (esse método pode ser usado com qualquer digital engine, incluindo WSJT-X e JTDX). Para usar PTT por porta serial a partir do digital engine, você precisa usar uma porta diferente daquela usada pelo Logger para controle de rádio. Se você tiver uma porta serial configurada para chaveamento FSK, pode usar uma linha de controle (RTS ou DTR) nessa mesma porta para controle de PTT a partir do digital engine.</p>
+
+  <p>Se, como costuma acontecer, você não tiver uma porta serial ou paralela separada disponível para PTT em modos digitais, pode controlar o PTT diretamente pelo Logger. Por exemplo, se a sua interface de controle de rádio suporta PTT usando RTS ou DTR na porta serial de controle de rádio, você pode configurar o Logger para usar esse método. Se nenhum método de controle de PTT por hardware estiver disponível e o seu rádio suportar PTT via comando de rádio, você pode usar controle de PTT por software a partir do Logger. Atenção: usar controle de PTT por software e por hardware ao mesmo tempo pode causar problemas; recomenda-se não usar os dois métodos em paralelo.</p>
+
+  <p>Como alternativa ao controle de PTT por hardware e por software, você pode usar VOX. Isso não funciona com todos os rádios, não pode ser usado para FSK RTTY, e o ajuste dos níveis de áudio e dos níveis de disparo do VOX pode ser complicado, mas alguns usuários acham esse o método mais simples de controle de PTT, já que não exige conexões de hardware adicionais. Algumas interfaces externas (por exemplo, SignaLink) realizam uma função de VOX externa ao rádio, ou seja, geram um sinal de PTT por hardware com base na presença de um sinal de áudio, sem qualquer conexão a uma porta serial do computador. Se você estiver usando uma interface assim, ou o VOX interno do rádio, não é necessário configurar nenhum PTT no Logger nem no digital engine, já que o controle de PTT nesses casos é externo ao software.</p>
+
+  <h3 id="setting-up">Setting up N1MM Logger+ for Digital Modes (Configurando o N1MM Logger+ para modos digitais)</h3>
+
+  <p>Primeiro, certifique-se de já conhecer a operação básica do N1MM Logger+ em CW e SSB. Não é uma boa ideia tentar usar o programa em modos digitais sem estar familiarizado ao menos com a operação básica do programa. Para FT8 e modos semelhantes, recomenda-se se familiarizar com a operação desses modos rodando o programa WSJT-X ou JTDX sozinho, antes de tentar a interoperação com o N1MM+, já que a operação nesses modos é feita de dentro do programa JT-mode, e não diretamente dentro do N1MM+ como nos modos digitais mais antigos.</p>
+
+  <p>Quando estiver pronto para começar, decida qual(is) digital engine(s) você quer usar — um TU/TNC externo, MMTTY, 2Tone, MMVARI, Fldigi, WSJT-X ou JTDX. Um deles (MMVARI) já vem embutido no Logger, mas os demais precisam ser baixados. Para os modos teclado-a-teclado (RTTY, PSK31 etc.), cada digital engine usado pelo Logger armazena suas informações de configuração no diretório de onde o engine é executado (isso não se aplica ao WSJT-X e ao JTDX). Por isso, você deve criar um diretório separado para cada cópia, diferente do diretório usado quando você o executa de forma independente ou a partir de outro programa de log. Se você usar mais de uma cópia de um digital engine (por exemplo, para SO2V ou SO2R, ou para janelas adicionais somente de recepção), precisa de um diretório separado para cada cópia. Para informações mais detalhadas, consulte as seções sobre Downloading and Installing MMTTY, 2Tone e fldigi no manual (seção Digital Modes, ainda não traduzida).</p>
+
+  <p>Depois desses preparativos, inicie o N1MM Logger+ e abra o Configurer (<strong>Config &gt; Configure Ports, Audio, Mode Control, Other</strong>). Certifique-se de que a aba <strong>Hardware</strong> esteja selecionada (é a aba com que o Configurer abre por padrão).</p>
+
+  <p>Os parágrafos a seguir tratam da configuração para modos digitais como RTTY e PSK. Para a configuração de operação com WSJT-X ou JTDX, veja a documentação do manual sobre a janela WSJT Decode List (ainda não traduzida).</p>
+
+  <p>No que segue, presume-se que você já tenha o controle de rádio, o chaveamento de CW e o controle de PTT configurados e funcionando, e que o que você está tentando fazer é adicionar a capacidade de modos digitais.</p>
+
+  <p>Em muitos casos, especialmente se você planeja usar AFSK, você já terá o controle de PTT configurado a partir do Logger. Se o mesmo método usado nos outros modos for aceitável para os modos digitais, não é necessário fazer nada de especial com o PTT para modos digitais. Se você planeja usar FSK para RTTY, vai configurar uma porta serial para chaveamento FSK dentro do digital engine, e pode usar essa mesma porta serial para controle de PTT em RTTY. Se você estiver usando VOX (ou um VOX externo como o SignaLink), não é necessário configurar controle de PTT no Configurer.</p>
+
+  <p>Dito isso, há dois casos em que você precisa fazer algo em relação ao controle de PTT para modos digitais no Configurer. O primeiro é se você planeja usar o MMVARI como digital engine e quiser usar uma linha de controle de uma porta serial para o controle de PTT. Nesse caso, você deve designar essa porta serial no Configurer, marcar a caixa <strong>Digital</strong> para essa porta, definir a linha de controle apropriada (DTR ou RTS) para PTT, e definir o <strong>DigWndNr</strong> como 1 (ou 2, para a segunda janela DI em SO2R/SO2V). O segundo caso ocorre quando você usa uma única interface de porta serial tanto para chaveamento CW/PTT em CW/SSB quanto para chaveamento FSK em RTTY. Nesse caso, você deve marcar as caixas <strong>Digital</strong> e <strong>CW/Other</strong> para essa porta, configurar DTR e RTS para CW/SSB, e definir o <strong>DigWndNr</strong> como 1 (2 para a segunda janela DI em SO2R e SO2V).</p>
+
+  <p>Em seguida, você precisa selecionar a aba <strong>Digital Modes</strong> no Configurer. Primeiro, defina o <strong>TU Type</strong> como Soundcard (a menos que você esteja usando um TU/TNC de hardware). Se o seu digital engine principal for o MMTTY ou o 2Tone, então em <strong>DI-1 MMTTY Setup</strong>, selecione AFSK ou FSK conforme a sua configuração e defina o MMTTY Path apontando para a cópia do MMTTY.exe ou 2Tone.exe que você vai usar com o Logger. Se for usar SO2V ou SO2R, repita o processo para uma cópia separada do digital engine em <strong>DI-2 MMTTY Setup</strong>. Se você for usar o Fldigi, há campos separados para inserir os caminhos até o Fldigi.exe. Para todos esses casos, recomenda-se não tentar digitar o caminho diretamente. Em vez disso, clique no botão <strong>Select</strong>, que abre uma janela de diálogo padrão do Windows para abrir arquivos, e navegue até encontrar e selecionar o arquivo .exe desejado.</p>
+
+  <p>Depois que os caminhos para os digital engines estiverem configurados, selecione a aba <strong>Mode Control</strong> no Configurer. Do lado direito, ao lado de RTTY, defina o <strong>Mode sent to radio</strong> — deve ser RTTY se você estiver usando FSK, mas se estiver usando AFSK, deve ser AFSK (se o seu rádio oferecer um modo separado para AFSK RTTY), LSB (para a maioria dos rádios com MMTTY ou 2Tone), ou USB (para o Fldigi).</p>
+
+  <p>Isso completa os passos básicos no Configurer do N1MM Logger+. Para uma explicação mais detalhada das várias opções disponíveis, veja a seção <strong>Configurer</strong> do manual.</p>
+
+  <p>De volta à Entry Window principal, se ainda não tiver feito isso, escolha um tipo de contest que permita modos digitais (ou seja, não um contest só de CW ou só de SSB), e defina o <strong>Mode Category</strong> na janela <strong>Contest Setup</strong> para uma opção que inclua RTTY ou Digital (não escolha SSB+CW — essa é só para CW+SSB; escolha SSB+CW+DIG). Digite RTTY na caixa de indicativo e pressione Enter. Isso deve abrir a janela Digital Interface. Se não abrir, use o item de menu Window &gt; Digital Interface para abrir a janela Digital Interface (em SO2R/SO2V, cada Entry Window tem sua própria janela Digital Interface, aberta a partir do menu daquela Entry Window). Se o seu digital engine preferido não abrir (por exemplo, se você ver a janela do MMVARI quando queria o MMTTY), use o item de menu <strong>Interface</strong> na janela Digital Interface para trocar para o digital engine que você quer usar (use a opção de menu MMTTY tanto para MMTTY quanto para 2Tone).</p>
+
+  <p>Selecione o item de menu <strong>Setup &gt; Settings</strong> na janela Digital Interface. Em Preferred RTTY Interface, selecione o seu digital engine preferido. Em Alignment Frequency, informe a sua frequência de áudio Mark preferida (por exemplo, 2125 Hz). Se você estiver usando o MMTTY, em <strong>MMTTY Window Settings</strong>, selecione Normal ou Control Menus, para ter acesso fácil à janela de configuração do MMTTY. Ao concluir a configuração na janela Digital Setup, clique em <strong>Save Configuration</strong>.</p>
+
+  <p>Há uma série de outras opções nas janelas Digital Interface e Digital Setup. Um manual de referência completo para as opções de menu da janela DI, da janela Digital Setup e da janela DI principal está disponível na seção Digital Modes do manual (ainda não traduzida).</p>
+
+  <p>Você ainda não terminou. Agora você precisa completar a configuração dentro do próprio digital engine. Isso é especialmente importante para FSK, já que a configuração da porta FSK é feita dentro do digital engine, não no programa N1MM Logger+. Há capítulos separados no manual para MMTTY, MMVARI, Fldigi e TNCs/TUs (seção Digital Modes, ainda não traduzida). Há possibilidades demais para cobrir aqui, então consulte o(s) capítulo(s) apropriado(s) à sua situação e complete a configuração conforme descrito lá. Para instruções sobre como configurar o WSJT-X para interoperação com o N1MM+, veja a seção da janela WSJT Decode List do manual (ainda não traduzida).</p>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/getting-started/digital-installation/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../assets/js/protect.js" defer></script>
+</body>
+</html>
