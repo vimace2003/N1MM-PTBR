@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  <img alt="Status" src="https://img.shields.io/badge/status-setup%20completo-3c9bed?style=for-the-badge">
-  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-10-366d9d?style=for-the-badge">
+  <img alt="Status" src="https://img.shields.io/badge/status-setup%20%2B%20getting%20started-3c9bed?style=for-the-badge">
+  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-14-366d9d?style=for-the-badge">
   <img alt="Deploy" src="https://img.shields.io/badge/deploy-github%20actions-3c9bed?style=for-the-badge&logo=githubactions&logoColor=white">
   <img alt="Stack" src="https://img.shields.io/badge/stack-html%20%2F%20css%20%2F%20js-366d9d?style=for-the-badge">
 </p>
@@ -40,8 +40,7 @@ totalmente localizada.
 
 ## ✅ O que já está traduzido
 
-A seção **Setup** do manual está **100% completa** — 10 páginas traduzidas na íntegra, com todas
-as imagens originais:
+A seção **Setup** do manual está **100% completa** (10 páginas) e a seção **Getting Started** está em andamento (4 de 9 páginas traduzidas):
 
 | | Página | Conteúdo |
 |---|---|---|
@@ -56,8 +55,21 @@ as imagens originais:
 | 🌐 | Localization | Como traduzir a própria interface do N1MM+ |
 | 🕘 | Call History | Histórico de indicativos e consulta reversa |
 
-As demais seções do manual completo (Getting Started, contests e rádios suportados, modos de
-operação, apêndices e FAQs) ainda não foram traduzidas.
+**Getting Started** (em tradução — 4 de 9 páginas):
+
+| | Página | Status |
+|---|---|---|
+| 📚 | Introduction | ✅ Completo |
+| ⬇️ | Downloading the Software | ✅ Completo |
+| 🔧 | Downloading Digital Software | ✅ Completo |
+| 🆘 | Finding Help | ✅ Completo |
+| ⚙️ | Installing and Upgrading N1MM Logger+ | ⏳ Em progresso |
+| 🔌 | Interfacing Basics | ⏳ Em progresso |
+| 🧭 | Learning Your Way Around | ⏳ Em progresso |
+| 📋 | Setting up for a Contest | ⏳ Em progresso |
+| 🎙️ | Operating a Contest | ⏳ Em progresso |
+
+As demais seções do manual completo (Supported Contests Setup, Operating Modes, Appendices e FAQ) ainda não foram traduzidas.
 
 ## ✨ Recursos do site
 
@@ -66,6 +78,8 @@ operação, apêndices e FAQs) ainda não foram traduzidas.
 - 📊 **Analytics** via Microsoft Clarity
 - ⚡ **Zero build step** — HTML/CSS/JS puro, sem dependências, sem framework
 - 🚀 **Deploy automático** para a HostGator via GitHub Actions a cada push
+- 📱 **Open Graph + Twitter Cards** — preview otimizado ao compartilhar no WhatsApp, Telegram, redes sociais
+- 💰 **Monetização** — preparado para Google AdSense (temporariamente desabilitado, será ativado quando a conta for desbloqueada)
 
 ## 🚀 Deploy automático (GitHub Actions → HostGator)
 

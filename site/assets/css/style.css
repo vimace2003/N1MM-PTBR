@@ -204,3 +204,55 @@ body {
     padding: 40px;
   }
 }
+
+/* Google AdSense Banners */
+.ad-container-horizontal {
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px 0;
+  max-width: 100%;
+  overflow-x: auto;
+  background: var(--fundo-alt);
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+}
+
+.ad-container-horizontal ins {
+  display: inline-block !important;
+}
+
+.ad-container-vertical {
+  margin: 20px 0;
+  padding: 10px;
+  background: var(--fundo-alt);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 1024px) {
+  .ad-container-horizontal {
+    margin: 15px auto;
+    padding: 8px 0;
+  }
+  
+  .ad-container-horizontal ins {
+    max-width: 100%;
+    width: auto !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .ad-container-horizontal {
+    display: none; /* Esconde banner horizontal em mobile muito pequenos */
+  }
+}
+
+/* Impressão: esconder ads */
+@media print {
+  .ad-container-horizontal,
+  .ad-container-vertical {
+    display: none !important;
+  }
+}
