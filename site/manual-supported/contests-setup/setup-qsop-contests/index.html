@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9KJ7E1B84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T9KJ7E1B84');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup QSO Parties — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial sobre como configurar QSO Parties no N1MM Logger+.">
+<meta property="og:title" content="Setup QSO Parties — Manual N1MM+ em Português">
+<meta property="og:description" content="Tradução não-oficial sobre como configurar QSO Parties no N1MM Logger+.">
+<meta property="og:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<meta property="og:url" content="https://n1mm.gg52floripadx.com/manual-supported/contests-setup/setup-qsop-contests/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manual N1MM+ em Português">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setup QSO Parties — Manual N1MM+ em Português">
+<meta name="twitter:description" content="Tradução não-oficial sobre como configurar QSO Parties no N1MM Logger+.">
+<meta name="twitter:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+<link rel="icon" href="../../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../../assets/favicon.jpg">
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="https://n1mm.gg52floripadx.com/">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Setup</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/manual-supported/contests-setup/setup-qsop-contests/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/manual-supported/contests-setup/setup-qsop-contests</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="https://n1mm.gg52floripadx.com/">Início</a> &raquo;
+    <a href="../index.html">Setup</a> &raquo;
+    Setup QSO Parties
+  </nav>
+
+  <h1>Setup QSO Parties <span class="tag-en">EN: Setup QSO Parties</span></h1>
+
+  <h2 id="setup-qso">Setup QSO Parties – CW and SSB (Setup QSO Parties – CW e SSB)</h2>
+
+  <p>O programa suporta muitos QSO parties dos EUA e Canadá. Dependendo da complexidade das regras, pode haver anomalias de pontuação menores. Por exemplo, alguns QSO parties oferecem pontos de bônus para rovers ou estações móveis para ativar múltiplos condados; esses pontos de bônus podem não estar incluídos na pontuação calculada pelo programa.</p>
+
+  <p><strong>É MUITO importante</strong> para operação adequada do programa em QSO parties que o programa "saiba" se você é um participante in-area (estado ou província) ou out-of-area. Todos os QSO parties exigem operação de programa e regras de pontuação diferentes para participantes in-area e out-of-area.</p>
+
+  <p>O programa determina isso a partir da ARRL Section que você inseriu no diálogo Station Data (em Config menu). Ao criar um novo log para um QSO party, uma message box informará se o programa pensa que você é um participante in-state ou out-of-state, com base em sua seção ARRL, para que você possa corrigir se houver algo errado.</p>
+
+  <p>Estações não-US/VE devem inserir "DX" no campo ARRL SECTION. Se você inserir uma seção ARRL com um call sign não-US/VE, você será avisado para corrigir seus Station Data antes de continuar.</p>
+
+  <p><strong>O N1MM Logger+ oferece suporte aprimorado para operações de county-line, seja você o Rover in-state em uma county line ou uma estação out-of-state querendo uma maneira fácil de registrar um QSO com um rover de county line. Detalhes completos estão na seção Mobile/Rover Support abaixo.</strong></p>
+
+  <ul>
+    <li><strong>Janela:</strong> Select Log type
+      <ul>
+        <li><strong>Log Type:</strong> QSOPARTY
+          <ul>
+            <li>Após selecionar QSO Party, uma list box aparece na parte direita da caixa de diálogo de seleção de contest, com botões abaixo dela para importar e editar a lista de seções. Clique na seta para baixo para escolher o QSO Party que você deseja (a imagem de exemplo mostra Hawaii HI). Quando em dúvida, faça a importação, para ter certeza de que pega quaisquer mudanças nas abreviações oficiais desde a última execução.</li>
+            <li>Exemplo: A entrada na lista de QSO Parties para o New England QSO Party é "NEWE" ("NE" é para o Nebraska QSO Party). A maioria das entradas nesta lista são estados ou províncias, com exceções que incluem 7QP (7º call area), AC (Atlantic Canada), CP (Canadian Prairies), MAQP (Mid-Atlantic), MARAC (county hunter contest), MCC (Maritimes) e NEWE (New England) assim como a entrada especial IN7QPNE descrita abaixo.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><strong>Mode Category:</strong> MIXED</li>
+
+    <li><strong>Sent Exchange:</strong>
+      <ul>
+        <li>O exchange depende do QSO party. A maioria usa county para participantes in-area e state para os out-of-area. Alguns também usam números de série.</li>
+        <li>Dentro do State/Province selecionado — Ver instruções do contest</li>
+        <li>Fora do State/Province selecionado — Ver instruções do contest</li>
+        <li>Se você precisar enviar um número de série, insira 001 e a abreviação para sua localização no campo Sent Exchange, para incrementar automaticamente o número de série para cada QSO.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="bonus">QSO Party Bonus Station Support (Suporte de Estação Bonus QSO Party)</h3>
+
+  <p>Alguns QSO parties estaduais têm "estações bonus", que você pode trabalhar para crédito de pontos extras. Quando o state party tem estação(ões) bonus, o programa exibirá a lista de callsign de estação bonus na inicialização do programa e ao sair do diálogo de contest.</p>
+
+  <p>Esta lista de estações bonus pode ser modificada pelo usuário inserindo o comando BONUS + Enter na caixa call sign da Entry Window. Isso abrirá uma janela onde você pode inserir uma lista revisada.</p>
+
+  <p><strong>Cada</strong> call sign, e cada variação (CALL, CALL/M, CALL/CTY) deve estar na lista para obter crédito para a estação(ões) bonus.</p>
+
+  <h3 id="call-history">Simple Call History Procedure (Procedimento Simples de Call History)</h3>
+
+  <p>Os passos para gerar um arquivo Call History a partir de um QSO party anterior são os seguintes:</p>
+
+  <ul>
+    <li>Abra o log do contest QSO party do ano passado</li>
+    <li>Clique em Tools, Clear Call History depois Update with Current Log</li>
+    <li>Clique em File, Export Call History e exporte os dados para um arquivo</li>
+    <li>Usando NotePad adicione qualquer estação nova ao final deste arquivo</li>
+    <li>Abra o novo log de contest QSO party para o ano atual. Associar o arquivo de call history salvo com este state party é possível usando a aba Associated Files</li>
+    <li>Clique em Config e coloque uma marca em Call History Lookup</li>
+  </ul>
+
+  <h3 id="rover">Rover, Mobile, and County Line Support (Suporte Rover, Mobile e County Line)</h3>
+
+  <p>O N1MM Logger oferece suporte a operação Rover/Mobile e County Line e para contests QSO party, o software contém recursos permitindo à estação home registrar rapidamente a estação County Line.</p>
+
+  <p><strong>Rover/Mobile Operation:</strong> N1MM logger oferece suporte a operação Rover ou Mobile nos contests VHF ARRL e todos os QSO parties. Dá a um participante Rover uma maneira rápida e fácil de mudar de condados, reprogramar mensagens F-key em um passo e produzir um único log composto para todo o evento.</p>
+
+  <p><strong>County Line Operation:</strong> A operação de county line é popular com operadores in-state em QSO parties porque você pode dar mais de um designador de county de um único local. Os operadores out-of-state recebem dois ou mais condados — muitas vezes raros — em um único QSO e ganham crédito de multiplicador para cada condado.</p>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/manual-supported/contests-setup/setup-qsop-contests/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../../assets/js/protect.js" defer></script>
+</body>
+</html>

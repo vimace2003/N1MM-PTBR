@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9KJ7E1B84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T9KJ7E1B84');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setup DX, DXpedition and General Purpose Contests — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial sobre como configurar contests DX, DXpedition e propósito geral no N1MM Logger+.">
+<meta property="og:title" content="Setup DX, DXpedition and General Purpose Contests — Manual N1MM+ em Português">
+<meta property="og:description" content="Tradução não-oficial sobre como configurar contests DX, DXpedition e propósito geral no N1MM Logger+.">
+<meta property="og:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<meta property="og:url" content="https://n1mm.gg52floripadx.com/manual-supported/contests-setup/setup-dx-contests/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manual N1MM+ em Português">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setup DX, DXpedition and General Purpose Contests — Manual N1MM+ em Português">
+<meta name="twitter:description" content="Tradução não-oficial sobre como configurar contests DX, DXpedition e propósito geral no N1MM Logger+.">
+<meta name="twitter:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<link rel="stylesheet" href="../../../assets/css/style.css">
+<link rel="icon" href="../../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../../assets/favicon.jpg">
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="https://n1mm.gg52floripadx.com/">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Setup</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/manual-supported/contests-setup/setup-dx-contests/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/manual-supported/contests-setup/setup-dx-contests</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="https://n1mm.gg52floripadx.com/">Início</a> &raquo;
+    <a href="../index.html">Setup</a> &raquo;
+    DX, DXpedition e Contests de Propósito Geral
+  </nav>
+
+  <h1>Setup DX, DXpedition e Contests de Propósito Geral <span class="tag-en">EN: Setup DX, DXpedition, and General Purpose Contests</span></h1>
+
+  <div class="caixa-info">
+    <strong>Leia as Instruções do Contest!</strong>
+    <p>Sempre leia as instruções do comitê do contest antes do contest. Então você saberá como configurar o programa, qual exchange fornecer e o que esperar em retorno, quais horas operar, etc.</p>
+  </div>
+
+  <h2 id="generic-types">Generic Contest Types (Tipos de Contest Genéricos)</h2>
+
+  <h3 id="dx-log">DX Log (Log DX)</h3>
+
+  <p><strong>Janela:</strong> Select Log type (Selecionar Tipo de Log)</p>
+
+  <ul>
+    <li><strong>Log Type:</strong> DX</li>
+    <li><strong>Mode Category:</strong> MIXED se você quer registrar contatos SSB e CW, MIXED+DIG para adicionar modos digitais também</li>
+  </ul>
+
+  <p>Para logging geral ou DX.</p>
+
+  <ul>
+    <li>QSOs inseridos em log geral (ou log DX) não precisam ter um exchange</li>
+    <li>Dupes são mostrados pela palavra <strong>Dupe!</strong> mas o QSO pode ser registrado</li>
+  </ul>
+
+  <h3 id="dxpedition">DXpedition</h3>
+
+  <p><strong>Janela:</strong> Select Log type</p>
+
+  <ul>
+    <li><strong>Log Type:</strong> DXPEDITION</li>
+    <li><strong>Mode Category:</strong> MIXED se você quer registrar contatos SSB e CW, MIXED+DIG para adicionar modos digitais também</li>
+  </ul>
+
+  <p>Para logging de DXpedition.</p>
+
+  <ul>
+    <li>QSOs inseridos no log DXPEDITION não precisam ter um exchange</li>
+    <li>Dupes são mostrados pela palavra <strong>Dupe!</strong> mas o QSO pode ser registrado</li>
+  </ul>
+
+  <div class="caixa-info">
+    <strong>Trabalhando com split VFOs em uma DXpedition — Rx em VFOa, Tx em VFOb</strong>
+    <p>A maioria dos operadores de DXpedition deixará VFOb em uma frequência de transmissão estacionária enquanto sintoniza a pile-up com VFOa em recepção. Para resultados otimizados no N1MM+ execute os seguintes três passos: Defina &gt;Config &gt;Hardware para operação SO2V (Single Op 2 VFO). Coloque o programa e o rádio em modo Split digitando ctrl+S. Desative auto-toggle Run/S&P pressionando alt+F11.</p>
+  </div>
+
+  <h3 id="dx-serial">DX Serial (DX Serial)</h3>
+
+  <p><strong>Janela:</strong> Select Log type</p>
+
+  <ul>
+    <li><strong>Log Type:</strong> DXSERIAL</li>
+    <li><strong>Mode Category:</strong> MIXED se você quer registrar contatos SSB e CW, MIXED+DIG para adicionar modos digitais também</li>
+  </ul>
+
+  <p>Para logging geral de contests de Número de Série.</p>
+
+  <ul>
+    <li>QSOs inseridos em DXSERIAL não precisam ter um comentário</li>
+    <li>Dupes são mostrados pela palavra <strong>Dupe!</strong> mas o QSO pode ser registrado</li>
+    <li>Cálculo de pontos 'Standard'; 1 ponto por QSO, países DXCC são contados
+      <ul>
+        <li>Todos os outros tipos de cálculos de multiplicador e pontos têm que ser feitos à mão</li>
+        <li>Isso para todos os contests de número de série não suportados</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="dx-satellite">DX Satellite (DX Satélite)</h3>
+
+  <p><strong>Janela:</strong> Select Log type</p>
+
+  <ul>
+    <li><strong>Log Type:</strong> DXSATELLIT</li>
+    <li><strong>Mode Category:</strong> MIXED se você quer registrar contatos SSB e CW, MIXED+DIG para adicionar modos digitais também</li>
+  </ul>
+
+  <p>Para logging de satélite.</p>
+
+  <ul>
+    <li>QSOs inseridos no log DXSATELLIT não têm um exchange e não precisam ter um grid</li>
+    <li>Quando um grid é inserido, ele precisa ter 4 ou 6 caracteres de comprimento</li>
+    <li>Dupes são mostrados pela palavra <strong>Dupe!</strong> mas o QSO pode ser registrado</li>
+  </ul>
+
+  <h3 id="vhf-dx">VHF DX (VHF DX)</h3>
+
+  <p><strong>Janela:</strong> Select Log type</p>
+
+  <ul>
+    <li><strong>Log Type:</strong> VHFDX</li>
+    <li><strong>Mode Category:</strong> MIXED se você quer registrar contatos SSB e CW, MIXED+DIG para adicionar modos digitais também</li>
+  </ul>
+
+  <p>Para logging de VHF e acima.</p>
+
+  <ul>
+    <li>QSOs inseridos em VHFDX não precisam ter um grid</li>
+    <li>Quando um grid é inserido, ele precisa ter 4 ou 6 caracteres de comprimento</li>
+    <li>Dupes são mostrados pela palavra <strong>Dupe!</strong> mas o QSO pode ser registrado</li>
+    <li>Informações de bearing são mostradas na janela de log e salvas no campo Misc</li>
+    <li>Informações de distância são mostradas em km na janela de log e salvas no campo Points</li>
+  </ul>
+
+  <h3 id="vhf-serial">VHF Serial (VHF Serial)</h3>
+
+  <p><strong>Janela:</strong> Select Log type</p>
+
+  <ul>
+    <li><strong>Log Type:</strong> VHFSERIAL</li>
+    <li><strong>Mode Category:</strong> MIXED se você quer registrar contatos SSB e CW, MIXED+DIG para adicionar modos digitais também</li>
+  </ul>
+
+  <p>Comentários precisam ser adicionados usando <strong>Ctrl+N</strong>. Não há espaço deixado na Entry Window para adicionar um campo separado. Comentários serão mostrados na janela de log e adicionados aos relatórios Cabrillo e de saída genéricos.</p>
+
+  <p>Para logging de VHF e acima.</p>
+
+  <ul>
+    <li>QSOs inseridos em VHFSERIAL não precisam ter um grid</li>
+    <li>Quando um grid é inserido, ele precisa ter 4 ou 6 caracteres de comprimento</li>
+    <li>Dupes são mostrados pela palavra <strong>Dupe!</strong> mas o QSO pode ser registrado</li>
+    <li>Informações de bearing são mostradas na janela de log e salvas no campo Misc</li>
+    <li>Informações de distância são mostradas em km na janela de log e salvas no campo Points</li>
+  </ul>
+
+  <h2 id="deleted-qsos">Deleted QSOs (QSOs Deletados)</h2>
+
+  <p><strong>DELETEDQS "contest"</strong></p>
+
+  <p>QSOs que são deletados de outros logs usando 'Edit Contact' são movidos para este 'contest'. Isso é especialmente importante para suporte multi-usuário. Os QSOs movidos podem ser exportados.</p>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/manual-supported/contests-setup/setup-dx-contests/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../../assets/js/protect.js" defer></script>
+</body>
+</html>
