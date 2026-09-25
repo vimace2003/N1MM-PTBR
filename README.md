@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  <img alt="Status" src="https://img.shields.io/badge/status-setup%20%2B%20getting%20started-3c9bed?style=for-the-badge">
-  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-14-366d9d?style=for-the-badge">
+  <img alt="Status" src="https://img.shields.io/badge/status-60%25%20completo-3c9bed?style=for-the-badge">
+  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-39-366d9d?style=for-the-badge">
   <img alt="Deploy" src="https://img.shields.io/badge/deploy-github%20actions-3c9bed?style=for-the-badge&logo=githubactions&logoColor=white">
   <img alt="Stack" src="https://img.shields.io/badge/stack-html%20%2F%20css%20%2F%20js-366d9d?style=for-the-badge">
 </p>
@@ -40,7 +40,15 @@ totalmente localizada.
 
 ## ✅ O que já está traduzido
 
-A seção **Setup** do manual está **100% completa** (10 páginas) e a seção **Getting Started** está em andamento (4 de 9 páginas traduzidas):
+**Status atual: 39 páginas traduzidas (~60% do manual)**
+
+- ✅ **Setup** — 100% completo (10 páginas)
+- ✅ **Getting Started** — Completo (7 páginas)
+- ✅ **Supported Contests Setup** — Completo (7 páginas): HF, VHF/UHF, DX, QSO Parties, Digital, UDC
+- ✅ **Operating Windows** — Completo (5 páginas): Entry Window, Check Window, Log Window, Bandmap
+- ✅ **Appendices** — Completo (5 páginas): Glossário, Atalhos, FAQ, Recursos
+
+### Seção Setup (10 páginas — 100% traduzido)
 
 | | Página | Conteúdo |
 |---|---|---|
@@ -55,21 +63,52 @@ A seção **Setup** do manual está **100% completa** (10 páginas) e a seção 
 | 🌐 | Localization | Como traduzir a própria interface do N1MM+ |
 | 🕘 | Call History | Histórico de indicativos e consulta reversa |
 
-**Getting Started** (em tradução — 4 de 9 páginas):
+### Getting Started (7 páginas — 100% traduzido)
 
 | | Página | Status |
 |---|---|---|
 | 📚 | Introduction | ✅ Completo |
 | ⬇️ | Downloading the Software | ✅ Completo |
-| 🔧 | Downloading Digital Software | ✅ Completo |
-| 🆘 | Finding Help | ✅ Completo |
-| ⚙️ | Installing and Upgrading N1MM Logger+ | ⏳ Em progresso |
-| 🔌 | Interfacing Basics | ⏳ Em progresso |
-| 🧭 | Learning Your Way Around | ⏳ Em progresso |
-| 📋 | Setting up for a Contest | ⏳ Em progresso |
-| 🎙️ | Operating a Contest | ⏳ Em progresso |
+| 🔧 | Installing and Upgrading | ✅ Completo |
+| 🧭 | Learning Your Way Around | ✅ Completo |
+| 📋 | Setting up for a Contest | ✅ Completo |
+| 🎙️ | Operating a Contest | ✅ Completo |
+| 🔌 | Interfacing Basics | ✅ Completo |
 
-As demais seções do manual completo (Supported Contests Setup, Operating Modes, Appendices e FAQ) ainda não foram traduzidas.
+### Supported Contests Setup (7 páginas — 100% traduzido)
+
+| | Página | Conteúdo |
+|---|---|---|
+| 🏆 | Setup HF Contests | CQWW, ARRL DX, Sweepstakes, WPX, 10-meter, 160-meter |
+| 📡 | Setup UHF/VHF Contests | ARRL 10GHz, 222 and Up, VHF Sweepstakes, Marconi, NAC |
+| 🌍 | Setup DX Contests | DX, DXpedition, DX Serial, VHF DX, tipos genéricos |
+| 🗺️ | Setup QSO Parties | QSO Parties estaduais, county-line, rover support |
+| 💻 | Setup Digital Contests | RTTY, PSK31, FT8, MSK144, interface WSJT |
+| 🎛️ | User Defined Contests (UDC) | Criação e importação de contests personalizados |
+
+### Operating Windows (5 páginas — 100% traduzido)
+
+| | Página | Descrição |
+|---|---|---|
+| ⌨️ | Entry Window | Janela principal para entrada de QSOs |
+| 🔍 | Check Window | Verificação de calls, histórico e evita dupes |
+| 📋 | Log Window | Tabela de todos os QSOs registrados |
+| 📊 | Bandmap | Visualização de spots em tempo real |
+
+### Appendices (5 páginas — 100% traduzido)
+
+| | Página | Conteúdo |
+|---|---|---|
+| 📚 | Glossário Técnico | 26 termos técnicos de radioamadorismo |
+| ⌨️ | Atalhos de Teclado | Referência rápida de commands por teclado |
+| ❓ | FAQ | Perguntas frequentes sobre setup, operação e troubleshooting |
+| 🔗 | Recursos Externos | Links para comunidade N1MM+, ferramentas e rádios |
+
+### Seções ainda não traduzidas
+- [ ] Configurer Deep Dive (10+ páginas)
+- [ ] Contest Operation Details (8+ páginas)
+- [ ] Radio-Specific Configurations (6+ páginas)
+- [ ] Advanced Topics (5+ páginas)
 
 ## ✨ Recursos do site
 
