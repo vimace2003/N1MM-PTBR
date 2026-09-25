@@ -1,7 +1,7 @@
 # N1MM+ Manual Portuguese Translation Progress
 
 ## Current Status
-**39 pages translated** — Approximately 60% of the complete manual
+**49 pages translated** — Approximately 75% of the complete manual
 
 ### Translation Breakdown by Section
 
@@ -44,18 +44,52 @@
 
 #### ✅ Appendices (5 pages)
 - [x] Index/Overview
+- [x] Glossário Técnico
+- [x] Atalhos de Teclado
+- [x] FAQ
+- [x] Recursos Externos
+
+#### ✅ Configurer (6 pages)
+- [x] Index/Overview
+- [x] Radio Control (CAT, VFO, frequency)
+- [x] Ports and CAT (Serial, USB, protocols)
+- [x] PTT and Voice (Push-to-talk, audio)
+- [x] CW and Keying (Morse, keyer, Winkeyer)
+- [x] Digital Modes (RTTY, PSK31, FT8)
+
+#### ✅ Contest Operation (4 pages)
+- [x] Index/Overview
+- [x] Before the Contest (Preparation checklist)
+- [x] Logging QSOs (Entry methods, techniques)
+- [x] Log Editing and Merging (Edit, merge, export Cabrillo)
+
+#### ✅ Appendices (5 pages)
+- [x] Index/Overview
 - [x] Glossário Técnico (26 technical terms)
 - [x] Atalhos de Teclado (Keyboard shortcuts reference)
 - [x] FAQ (Common questions about setup, contests, troubleshooting)
 - [x] Recursos Externos (Links to community and tools)
 
+#### ✅ Configurer (6 pages) — NOVO
+- [x] Index/Overview
+- [x] Radio Control (CAT, VFO, frequency)
+- [x] Ports and CAT (Serial, USB, protocols)
+- [x] PTT and Voice (Push-to-talk, audio)
+- [x] CW and Keying (Morse, keyer, Winkeyer)
+- [x] Digital Modes (RTTY, PSK31, FT8)
+
+#### ✅ Contest Operation (4 pages) — NOVO
+- [x] Index/Overview
+- [x] Before the Contest (Preparation checklist)
+- [x] Logging QSOs (Entry methods, techniques)
+- [x] Log Editing and Merging (Edit, merge, export Cabrillo)
+
 ### Pending Sections (Next Priority)
 
-- [ ] Configurer Deep Dive (10+ pages)
-- [ ] Contest Operation Details (8+ pages)
 - [ ] Radio-Specific Configurations (6+ pages)
 - [ ] Advanced Topics (5+ pages)
 - [ ] Frequency Lists & References (3+ pages)
+- [ ] Troubleshooting Extended (3+ pages)
 
 ## Technical Implementation
 

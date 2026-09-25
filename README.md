@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  <img alt="Status" src="https://img.shields.io/badge/status-60%25%20completo-3c9bed?style=for-the-badge">
-  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-39-366d9d?style=for-the-badge">
+  <img alt="Status" src="https://img.shields.io/badge/status-75%25%20completo-3c9bed?style=for-the-badge">
+  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-49-366d9d?style=for-the-badge">
   <img alt="Deploy" src="https://img.shields.io/badge/deploy-github%20actions-3c9bed?style=for-the-badge&logo=githubactions&logoColor=white">
   <img alt="Stack" src="https://img.shields.io/badge/stack-html%20%2F%20css%20%2F%20js-366d9d?style=for-the-badge">
 </p>
