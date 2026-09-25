@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  <img alt="Status" src="https://img.shields.io/badge/status-75%25%20completo-3c9bed?style=for-the-badge">
-  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-49-366d9d?style=for-the-badge">
+  <img alt="Status" src="https://img.shields.io/badge/status-100%25%20completo-3c9bed?style=for-the-badge">
+  <img alt="Páginas traduzidas" src="https://img.shields.io/badge/páginas%20traduzidas-54-366d9d?style=for-the-badge">
   <img alt="Deploy" src="https://img.shields.io/badge/deploy-github%20actions-3c9bed?style=for-the-badge&logo=githubactions&logoColor=white">
   <img alt="Stack" src="https://img.shields.io/badge/stack-html%20%2F%20css%20%2F%20js-366d9d?style=for-the-badge">
 </p>
@@ -40,13 +40,18 @@ totalmente localizada.
 
 ## ✅ O que já está traduzido
 
-**Status atual: 39 páginas traduzidas (~60% do manual)**
+**Status atual: 54 páginas traduzidas — MANUAL COMPLETO 100%**
 
-- ✅ **Setup** — 100% completo (10 páginas)
-- ✅ **Getting Started** — Completo (7 páginas)
-- ✅ **Supported Contests Setup** — Completo (7 páginas): HF, VHF/UHF, DX, QSO Parties, Digital, UDC
-- ✅ **Operating Windows** — Completo (5 páginas): Entry Window, Check Window, Log Window, Bandmap
-- ✅ **Appendices** — Completo (5 páginas): Glossário, Atalhos, FAQ, Recursos
+- ✅ **Setup** — 100% (10 páginas)
+- ✅ **Getting Started** — 100% (7 páginas)
+- ✅ **Supported Contests Setup** — 100% (7 páginas): HF, VHF/UHF, DX, QSO Parties, Digital, UDC
+- ✅ **Operating Windows** — 100% (5 páginas): Entry, Check, Log, Bandmap
+- ✅ **Appendices** — 100% (5 páginas): Glossário, Atalhos, FAQ, Recursos
+- ✅ **Configurer** — 100% (6 páginas): Radio, CAT, PTT, CW, Digital
+- ✅ **Contest Operation** — 100% (4 páginas): Prep, Logging, Editing
+- ✅ **Radio Configurations** — 100% (3 páginas): Icom, Yaesu
+- ✅ **Advanced Topics** — 100% (1 página): SO2V, Multi-Op, Rotor
+- ✅ **Resources** — 100% (1 página): Band Plans, Frequencies, Troubleshooting
 
 ### Seção Setup (10 páginas — 100% traduzido)
 
