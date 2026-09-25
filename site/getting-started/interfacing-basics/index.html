@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9KJ7E1B84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T9KJ7E1B84');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interfacing Basics — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre os fundamentos de interfaceamento entre N1MM Logger+ e o rádio.">
+<meta property="og:title" content="Interfacing Basics — Manual N1MM+ em Português">
+<meta property="og:description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre os fundamentos de interfaceamento entre N1MM Logger+ e o rádio.">
+<meta property="og:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<meta property="og:url" content="https://n1mm.gg52floripadx.com/getting-started/interfacing-basics/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manual N1MM+ em Português">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Interfacing Basics — Manual N1MM+ em Português">
+<meta name="twitter:description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre os fundamentos de interfaceamento entre N1MM Logger+ e o rádio.">
+<meta name="twitter:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="icon" href="../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/favicon.jpg">
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="https://n1mm.gg52floripadx.com/">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Getting Started</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/getting-started/interfacing-basics/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/getting-started/interfacing-basics</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="https://n1mm.gg52floripadx.com/">Início</a> &raquo;
+    <a href="../index.html">Getting Started</a> &raquo;
+    Interfacing Basics
+  </nav>
+
+  <h1>Interfacing Basics <span class="tag-en">EN: Interfacing Basics</span></h1>
+
+  <h2 id="operating-without">Operating without an Interface – Manual Mode (Operando sem Interface — Modo Manual)</h2>
+
+  <p>Há muitas razões pelas quais você pode se ver operando em modo manual. Talvez você esteja apenas começando e não tenha tido tempo para instalar e configurar uma interface? Talvez seu rádio não suporte integração com PC, ou você tenha um computador mas ele não tenha as portas de E/S necessárias para conectar um rádio? Ou talvez você esteja operando de um local portátil temporário e não tenha tempo ou equipamento para conectar o rádio ao computador? Seja qual for a razão, há keystroke especiais que você precisa inserir na Entry Window para informar o N1MM Logger+ da banda e modo em que você está operando.</p>
+
+  <p>Configure sua frequência digitando-a no textbox Callsign e pressionando Enter. Se você quiser que o log apenas indique a banda, e não informações de frequência específica, insira a frequência do fundo da banda em kHz (note que alguns administradores de contests solicitam que entradas de frequência manual sejam sempre na base da banda). Se você quiser que o log inclua a frequência real, insira a frequência completa em kHz. Por exemplo 14025.1 (ou 14025,1 se seu computador usa vírgula como separador decimal). A nova frequência aparecerá na barra de título da Entry Window.</p>
+
+  <p>Insira mudanças de modo similarmente. As entradas reconhecidas são CW, RTTY, PSK e SSB, USB ou LSB. Se você inserir SSB, o programa substituirá a faixa de frequência costumeira (por exemplo, LSB em 40-160) USB e LSB podem ser usados para inserir a faixa de frequência oposta, caso você precisar. O modo a ser registrado no log é exibido na barra de título da Entry Window.</p>
+
+  <p>Para mais detalhes sobre esses comandos, veja <a href="../../manual-windows/entry-window/">Entry Window Text Commands</a> (Comandos de Texto da Entry Window) no manual.</p>
+
+  <h2 id="basic-radio">Basic Radio Control Interfacing (Interfaceamento Básico de Controle de Rádio)</h2>
+
+  <p>Independentemente de você querer operar fonia, CW ou modos digitais, a interface mais útil e importante é a que existe entre seu computador, N1MM Logger+ e seu rádio. Felizmente, praticamente todos os rádios modernos incorporam uma porta serial para permitir que eles troquem informações e comandos com o computador.</p>
+
+  <p>Um primeiro passo é procurar seu transceptor na seção do manual intitulada <a href="../../manual-supported/supported-radios/">Supported Radios</a> (Rádios Suportados). Assumindo que você o encontrar lá, procure quaisquer configurações específicas ou peculiaridades que precisem ser abordadas e anote-as.</p>
+
+  <p>USB praticamente eliminou tanto as portas seriais RS-232 quanto as portas paralelas LPT. Se seu rádio tiver uma porta serial RS-232 padrão, uma vez que você tenha comprado um adaptador USB-para-serial e instalado os drivers para ele, o N1MM Logger pode funcionar com seu rádio sem problemas. Se seu rádio usar o padrão CI-V da Icom ou outra porta serial que não seja RS-232, você precisará de um cabo conversor apropriado para ir de USB ou RS-232 para seu rádio.</p>
+
+  <p>Alguns adaptadores USB, particularmente aqueles que usam chipset Prolific, são erráticos com alguns programas, particularmente programas escritos em Visual Basic (como o N1MM Logger Classic). Se você encontrar desempenho instável ou um erro 8020, essa pode ser a razão. Veja <a href="../../setup/interfacing/">USB Interface Devices</a> (Dispositivos de Interface USB) para uma análise completa da experiência do usuário com vários adaptadores específicos.</p>
+
+  <p>Muitos rádios agora têm portas USB. Se o seu é um deles, verifique a entrada <a href="../../manual-supported/supported-radios/">Supported Radios</a> (Rádios Suportados) do seu rádio (e o manual do rádio) para encontrar detalhes de interfaceamento USB.</p>
+
+  <p>Veja <a href="../../setup/interfacing/">esta seção anterior</a> para informações sobre como evitar problemas com portas USB entrando em modo de suspensão.</p>
+
+  <p>Uma vez que você tenha o hardware conectado entre seu computador e seu rádio, inicie o N1MM Logger+ e abra o menu Config (Configuração) na Entry Window. Escolha Configure Ports, Mode Control, Audio, Other (Configurar Portas, Controle de Modo, Áudio, Outros). Ignore todo o resto por enquanto.</p>
+
+  <p>Isso traz um diálogo bastante intimidador. Não se preocupe, vamos guiá-lo pela parte que você precisa agora.</p>
+
+  <p>Você pode querer selecionar SO1V se esta for sua primeira experiência com N1MM. SO1V permite que o N1MM controle VFO A em seu transceptor. Se você é um contestador experiente e entende como operar em modo split (por exemplo, trabalhando DX em faixa lateral de 40 metros), e especialmente se você tiver um rádio com receptores duplos, você pode querer selecionar SO2V. Isso permite que o N1MM controle simultaneamente VFO A e VFO B em seu transceptor. Se você é um contestador avançado, cuja estação está configurada com DOIS transceptores (um para executar contatos e o outro para procurar novos multiplicadores), então você desejará selecionar SO2R. Um dos avanços no N1MM+ é que você pode usar qualquer porta COM numerada de 1-99. Clique na seta suspensa à direita da coluna Port (Porta), e você verá todas as portas seriais, hardware ou USB/virtual, que estão ativas no seu PC. Selecione a que está conectada ao seu rádio. Agora clique na seta suspensa à direita da coluna Radio (Rádio) e selecione seu modelo de rádio específico. Praticamente todos os modelos Kenwood usam uma configuração de rádio comum, enquanto os rádios Yaesu e Icom geralmente são designados pelo número do modelo específico — consulte o manual em <a href="../../manual-supported/supported-radios/">supported radios</a> (rádios suportados) para mais informações. Os rádios Icom também exigem um Radio Address (Hex Code) (Endereço de Rádio - Código Hex) — está no mesmo lugar.</p>
+
+  <p>Agora clique no botão "Set" (Configurar) ao lado da porta que você escolheu.</p>
+
+  <p>Isso traz um diálogo com detalhes de conexão. Normalmente, o N1MM Logger escolhe os parâmetros nas primeiras duas linhas para você, e faz um bom trabalho. Você pode querer verificá-los com o manual do seu rádio, por via das dúvidas. Radio/VFO number (Número de Rádio/VFO) deve ser 1, para que seu VFO principal seja exibido na janela de entrada principal (primeira). O resto das coisas neste diálogo não é importante agora, então apenas clique OK para voltar ao diálogo anterior e, em seguida, OK novamente para retornar à Entry Window.</p>
+
+  <p>Se tudo correr bem (você ligou seu rádio, certo?), quando esse grande diálogo com várias abas fechar e a Entry Window reaparecer, a barra de título da Entry Window exibirá a frequência e o modo do rádio. É mágica. O "+0.00" simplesmente significa que RIT está ligado, mas definido para zero (sem offset).</p>
+
+  <p>Agora que você tem controle de rádio, você pode fazer muitas coisas legais, mas uma das mais básicas é que você nunca mais terá que se preocupar em acidentalmente registrar QSOs na banda ou modo errado.</p>
+
+  <h2 id="interfacing-phone">Interfacing for Phone, CW and PTT (Interfaceamento para Fonia, CW e PTT)</h2>
+
+  <p>É claro que controlar seu rádio através de uma porta serial não é a única forma de interfacear o N1MM Logger+ e seu rádio — na verdade, muito antes de haver rádios controláveis por computador, os autores de softwares de logging pioneiros desenvolveram vários padrões para interfaceamento de CW e PTT, usando portas seriais ou LPT (impressora).</p>
+
+  <p>Começaremos, porém, com uma discussão sobre interfaceamento de fonia, com a teoria de que isso será do maior interesse para novos usuários. Uma vez que você esteja interfaceado, você poderá armazenar mensagens de voz e reproduzi-las através do seu rádio, para economizar sua voz durante contests de fonia.</p>
+
+  <h3 id="phone-interfacing">Phone Interfacing (Interfaceamento de Fonia)</h3>
+
+  <p>Este tópico é coberto em forma introdutória aqui e em mais detalhes em duas partes do manual. Esta organização um tanto estranha é necessária porque o N1MM Logger+ está fazendo a transição da configuração de função de áudio do Classic, na aba Audio do Configurer, para uma nova opção melhorada atualmente no menu Config, Logger+ Audio.</p>
+
+  <p>A versão da aba Audio funciona com todas as versões do sistema operacional Windows a partir do Windows XP. Logger+ Audio funciona com Windows Vista e posteriores. Se você marcar Logger+ Audio no menu Config e estiver executando um sistema operacional posterior ao XP, a aba Audio no Configurer não será visível. Se você estiver executando Windows XP, a opção do menu Config está desabilitada.</p>
+
+  <h3 id="interface-hardware">Interface Hardware (Hardware de Interface)</h3>
+
+  <p>É claro que você sempre pode usar uma das muitas interfaces de áudio comerciais projetadas principalmente para modos digitais. No entanto, se você tiver uma placa de som que permita alimentar entrada de microfone através dela para saída de linha (a maioria permite), e tiver um mixer que permita definir independentemente o nível do microfone, reprodução de .wav e áudio gerado internamente (como para AFSK), você realmente não precisa de uma interface. Em SSB, simplesmente conecte seu microfone à entrada do microfone da placa de som. Cabo da saída de linha da placa de som para a entrada de linha ou entrada de patch telefônico de seu transceptor, e você terminou.</p>
+
+  <p>Você pode encontrar hum, resultante de diferença no potencial AC entre o chassis do seu computador e o do seu transceptor. Nesse caso, um transformador de isolamento de 600 ohms no cabo entre placa de som e transceptor é uma provável cura. Outra abordagem é ligar o chassis do transceptor e computador com um fio pesado. Muitas pessoas fazem ambos.</p>
+
+  <p>Se você absolutamente deve alimentar a saída de áudio de sua placa de som no jack de microfone de seu transceptor, o nível será muito alto. Nesse caso, um simples divisor de voltagem resistivo 10:1 é a solução, colocado no cabo de áudio antes do jack de microfone.</p>
+
+  <h3 id="troubleshoot-phone">Trouble-shooting Phone Interfacing (Solução de Problemas de Interfaceamento de Fonia)</h3>
+
+  <p>A discussão a seguir é baseada quase literalmente em notas de solução de problemas de áudio por David Robbins, K1TTT. Se algum erro se infiltrou, culpe a equipe do manual, não a ele. Assume que você está executando Windows XP, usando a aba Audio do Configurer, e todas as capturas de tela abaixo são dessa versão.</p>
+
+  <p>Para começar, verifique se você fechou Windows Media Player, RealPlayer, Audacity ou qualquer outro programa de reprodução/gravação de som que você possa ter aberto. Inicie o N1MM Logger. No menu Config, abra "Configure Ports, Mode Control, Audio, Other" (Configurar Portas, Controle de Modo, Áudio, Outros), também conhecido como o Configurer.</p>
+
+  <p>Agora selecione a aba Audio (Áudio):</p>
+
+  <p>Selecione a opção 1 "Only use Radio 1 Output Device. Output on both channels." (Use apenas Dispositivo de Saída do Rádio 1. Saída em ambos os canais.)</p>
+
+  <p>Escolhendo na lista suspensa no canto superior esquerdo em "Tx Sound Card Setup" (Configuração da Placa de Som Tx), certifique-se de que o Dispositivo de Saída do Rádio 1 está correto para sua placa de som. Normalmente, o nome aparecerá como "Speakers" (Alto-falantes) com o nome do dispositivo de som associado entre parênteses. Você pode selecionar Default (Padrão) como seu Dispositivo de Saída, se você o tiver definido como tal no Windows, mas dependendo de sua versão do Windows isso pode impedi-lo de silenciar seu microfone enquanto mensagens de voz armazenadas estão sendo reproduzidas.</p>
+
+  <p>Se você fizer uma escolha explícita de Dispositivo de Saída, você será apresentado com opções em "Select Port to Mute" (Selecionar Porta para Silenciar). Selecione Microphone (Microfone). Em seguida, verifique se o Message Recording Device (Dispositivo de Gravação de Mensagens) (placa de som) está correto (normalmente o mesmo que seu Dispositivo de Saída) e se o Message Recording Port (Porta de Gravação de Mensagens) está definido como Microphone (Microfone). Verifique se a Recording Sample Rate (Taxa de Amostra de Gravação) e os números Recording Bits (Bits de Gravação) estão definidos para valores suportados pela sua placa de som.</p>
+
+  <p>Agora OK para sair e salvar essas configurações e feche o N1MM Logger. É hora de testar.</p>
+
+  <p>Conecte seu microfone diretamente no jack de microfone em sua placa de som. Conecte seus fones de ouvido diretamente em sua saída de alto-falante. Abra o Windows Volume Control (Controle de Volume do Windows). Deve abrir com um conjunto de controles deslizantes. No Windows XP, eles se parecem com isso:</p>
+
+  <p>Ou assim, no Windows 7, depois que você finalmente perfura as opções no Painel de Controle, em "Sound" (Som):</p>
+
+  <div class="caixa-info">
+    <strong>Sound Cards are weird (Placas de Som são Estranhas)</strong>
+    <p>Infelizmente, fabricantes de placas de som adicionaram um número deslumbrante de adições nos últimos anos, incluindo portas de entrada e saída configuráveis por software e outros gadgets que afetam a gravação. Temos que deixá-lo um pouco por sua conta aqui. O importante é encontrar o controle de volume de gravação do microfone, certificar-se de que está selecionado e que o nível está em torno de 50%.</p>
+  </div>
+
+  <p>No Windows XP, você pode ter que ir para Options>Properties para marcar a caixa para permitir que você veja o controle de volume do microfone e aqueles para outras fontes de som. Em Options>Properties, clique no botão de rádio 'Recording' (Gravação) e certifique-se de que o microfone está marcado na lista de controles:</p>
+
+  <p>No Windows XP, certifique-se de que o controle deslizante do Microphone está no meio da faixa e que há uma marca na caixa Select (Selecionar). Se você estiver usando um microfone típico de rádio amador, como um Heil, e tiver o botão "Advanced" (Avançado), clique nele e selecione Mic Boost (Ampliação de Mic) se essa opção estiver disponível, porque fornece um pré-amplificador de 20-30 dB. Agora OK para sair.</p>
+
+  <p>Agora, quando você falar no microfone, você deve ser capaz de se ouvir nos fones de ouvido. Se você não conseguir, algo está errado com suas configurações, hardware ou drivers. Tente reproduzir arquivos .wav existentes usando a opção Sounds do Painel de Controle do Windows. Verifique novamente as configurações de volume e silenciamento, verifique se o microfone está conectado à porta certa, tente um microfone diferente, tente um fone de ouvido diferente. NÃO PASSE DESTE PONTO ATÉ PODER SE OUVIR!</p>
+
+  <p>Agora abra o Windows Sound Recorder (Gravador de Som do Windows), que geralmente é encontrado na categoria Accessories (Acessórios) em sua lista de programas. NÃO abra Audacity, nenhuma das ferramentas de áudio que vieram com sua placa de som, ou sua outra ferramenta favorita. Alguns deles mexem nas configurações do mixer e não queremos isso agora que elas estão configuradas. Estas são para Windows XP e Windows 7, respectivamente.</p>
+
+  <p>Clique no botão Record (Gravar) ou Start Recording (Iniciar Gravação) no Sound Recorder e fale algumas palavras no microfone. Você deve ver o indicador de nível se mover em sincronia com sua voz. Agora pressione Stop (Parar). Pressione o botão Play (Reproduzir) e você deve ouvir o que acabou de dizer. Se você não ouvir, há algo errado com seu hardware ou drivers. Verifique as configurações de controle de gravação, ajuste o volume, verifique se o microfone está selecionado como fonte de gravação e chame aquele garoto de 8 anos de volta para ajudar novamente! NÃO PASSE DESTE PONTO ATÉ PODER GRAVAR E REPRODUZIR. Se o Windows Sound Recorder não funcionar, o N1MM provavelmente também não funcionará e como o N1MM é muito mais complicado é mais difícil solucionar.</p>
+
+  <p>Se está funcionando bem, feche o Sound Recorder e inicie o N1MM Logger. Coloque o programa em modo Run (Alt+U ou clique na caixa Running [Executando]) e seu rádio em USB ou LSB, e certifique-se de que a barra de título da Entry Window especifique USB ou LSB (se você não tiver um rádio conectado, digite o modo apropriado na caixa callsign e pressione [Enter]).</p>
+
+  <p>Clique com o botão direito em qualquer um dos botões de mensagem na janela de entrada. Isso abrirá o editor de mensagem de Function Key (Chave de Função):</p>
+
+  <p>Não se assuste — estamos apenas indo usar esta tela para configurar uma única tecla de função para enviar uma única mensagem, para que possamos verificar todo o fluxo de pressionar uma Function Key para ter uma mensagem de áudio corretamente enviada para seu rádio. Os nomes de arquivo e comentários que você vê no editor agora são os nomes de arquivo padrão que são colocados na tabela quando você instala o MM pela primeira vez. Se esta não for sua primeira vez usando o N1MM Logger, estes podem não ser os primeiros que você vê. Para a história completa sobre o editor de mensagens, veja <a href="../../setup/function-keys/">esta página</a> no manual.</p>
+
+  <p>Para fins de teste, vamos usar apenas uma mensagem, no slot para Run F1. Esta é a mensagem que será enviada quando o programa estiver em modo Run e F1 for pressionada. Destina-se a ser o local para sua Mensagem CQ. Se o editor mostra "F1 CQ,CQ.wav" na primeira linha da seção Run Messages (Mensagens de Execução), você está pronto para começar. Apenas feche a janela com o X em seu canto superior direito.</p>
+
+  <div class="caixa-alerta">
+    <strong>A Diferença Entre "Save" e "Export"</strong>
+    <p>Há uma diferença crítica entre os botões "Save" (Salvar) e "Export" (Exportar) no quadro inferior do Function Key Message Editor (Editor de Mensagem de Function Key). Se você clicar "Save", o conteúdo atualmente exibido (incluindo quaisquer alterações que você tenha feito) será salvo em seu banco de dados atual, para uso na próxima vez que você pressionar uma tecla de função. <strong>Eles também são escritos no nome de arquivo mostrado no quadro superior do editor.</strong> Para salvar uma alteração na hora e voltar rapidamente ao uso do programa, tudo que você precisa fazer é clicar Save e depois X no canto superior para sair do editor e retornar à Entry Window. No entanto, se você quiser reter o arquivo que foi carregado no editor <strong>em sua forma original</strong> — como você pode querer com os arquivos padrão, por exemplo — você deve primeiro clicar Export (Exportar), selecionar um nome de arquivo na caixa de diálogo Save Macros to File (Salvar Macros para Arquivo) que abre e, em seguida, clicar Save. <strong>Então, você deve clicar Save no Function Key Message Editor para carregar as function keys editadas no banco de dados atual.</strong></p>
+  </div>
+
+  <p>Agora, certifique-se de que você está em modo Run — isto é, que a caixa de seleção Run na Entry Window está marcada. Agora observe a linha inferior da Entry Window (chamada de Status Line) e pressione Ctrl+Shift+F1. Você deve ver:</p>
+
+  <p>Uma coisa importante a notar aqui. Se você não inseriu seu indicativo em Change Station Data no menu Config, você não verá seu indicativo na linha de status. Isso é importante — pare, vá fazer isso e repita este passo.</p>
+
+  <p>Se você falar no microfone neste ponto, tudo o que você disser será gravado no arquivo CQ.WAV sob WAV\seu_indicativo... Pressione Ctrl+Shift+F1 novamente (ou ESC) para parar a gravação e procure por este relatório no mesmo local:</p>
+
+  <p>Agora pressione F1. Você deve ouvir o que acabou de gravar no alto-falante. Se você não ouvir, verifique se você ainda está em modo Run e procure por uma mensagem de erro na Status Line (Linha de Status). Sugerimos usar o processo Ctrl+Shift+Fx para gravar dentro do N1MM Logger, pelo menos até ficar verdadeiramente confortável com arquivos de áudio, porque muitos dos problemas que as pessoas encontram resultam de gravar com programas diferentes ou em nomes de arquivo que são diferentes do que o programa espera ver.</p>
+
+  <p>Agora que você tem as coisas funcionando, você precisa programar pelo menos as primeiras chaves de função. É melhor seguir a ordem no exemplo acima, pelo menos para F1-F8, porque um pouco depois, quando falamos sobre modo ESM (Enter Sends Messages), a ordem é importante. Certifique-se de que cada linha de mensagem de Function Key comece com o número da Function Key, um breve rótulo (como CQ), <strong>uma vírgula</strong> e o conteúdo da mensagem.</p>
+
+  <p>OK, então agora você tem tudo que precisa para reproduzir mensagens de áudio "enlatadas" no ar. Se você está satisfeito em usar VOX para alternar seu transmissor e não está interessado em CW, você pode parar por aqui, por enquanto.</p>
+
+  <h3 id="cw-ptt">CW Keying and PTT Control (Transmissão CW e Controle PTT)</h3>
+
+  <div class="caixa-alerta">
+    <strong>Unsupported Methods of CW Keying (Métodos Não Suportados de Transmissão CW)</strong>
+    <p>O N1MM Logger+ suporta vários métodos de transmissão CW, mas dois não são suportados. O primeiro desses métodos não suportados é CW por tom de áudio, ou MCW, como é feito por software como FLDIGI. A razão para isso é que se não for configurado cuidadosamente, esse método pode produzir sinais desnecessariamente amplos ou mesmo, em alguns casos, dois sinais closely-spaced de um transmissor.</p>
+
+    <p>O segundo método não suportado envolve enviar caracteres ASCII para o rádio, que então os converte em CW. Apenas alguns rádios têm essa capacidade e em a maioria ou todos esses o CW resultante é muito menos adequado para uso em contests do que o próprio do Logger. O N1MM Logger+ não suporta este método diretamente, embora seja possível que os usuários usem essa capacidade por meio de comandos macro de controle de rádio incorporados em mensagens de function key, desde que estejam dispostos a aceitar alguma perda de funcionalidade em comparação com os métodos suportados diretamente.</p>
+
+    <p>Uma discussão completa de interfaceamento está na seção <a href="../../setup/interfacing/">Interfacing</a> do manual.</p>
+  </div>
+
+  <p>Na sua forma mais simples, CW é enviado e PTT é controlado alternando linhas em uma porta COM ou LPT. Esta técnica permite a interface mais simples possível, mas uma <strong>é</strong> obrigatória. Aqui está um diagrama em blocos da configuração de porta COM. Para transmissão CW de porta LPT, um adaptador USB não funcionará. Seu computador deve ter uma porta LPT de hardware:</p>
+
+  <p>Por favor, note que apenas alguns poucos rádios permitem CW e PTT através de suas portas seriais embutidas. O resto requer que a interface seja conectada ao CW key jack do transceptor. As exceções a isso são abordadas em <a href="../../manual-supported/supported-radios/">Supported Radios</a> (Rádios Suportados).</p>
+
+  <p>A interface pode ser qualquer coisa, desde a mais simples — um resistor e um transistor — até uma das muitas unidades no mercado que lidam tanto com CW quanto com vários modos digitais.</p>
+
+  <p>Vamos assumir que você vai usar este método para começar. Comece abrindo o menu Config para o diálogo Ports, other (Portas, outro):</p>
+
+  <p>Para este exemplo, nossa porta CW será na segunda porta que configuramos (a primeira porta, COM6, será usada para controle de rádio). Vamos escolher COM2 como nossa porta CW/PTT. Após selecionar COM2 na lista suspensa de portas disponíveis, coloque uma marca na caixa CW/Other e você notará que o botão Set (Configurar) não está mais acinzentado. Clique nele e abra o diálogo para essa porta:</p>
+
+  <p>Você pode configurar o pino DTR como CW ou PTT. Clique na seta para baixo e você verá a lista de possibilidades:</p>
+
+  <p>Destaque aquele que você deseja, dependendo de sua interface. Agora faça o mesmo com o pino RTS:</p>
+
+  <p>Você pode usar qualquer uma das linhas de sinal (DTR ou RTS) para qualquer função (CW ou PTT); apenas certifique-se de que sua escolha corresponda à forma como o hardware está fiado.</p>
+
+  <p>Defina o Radio Nr (Número de Rádio) para 1. A configuração PTT Delay (Atraso de PTT) é para proteger os relés em um amplificador, certificando-se de que o relé T/R está fechado antes que o programa comece a enviar CW. O valor padrão de 30 ms é adequado mesmo se você não tiver um amplificador.</p>
+
+  <p>OK, agora para interfacear ao rádio. A interface imaginável mais simples funcionará muito bem para qualquer uma das funções CW ou PTT com qualquer rádio moderno; novamente, há muitas opções comerciais, mas aqui está a solução de peças da Radio Shack:</p>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/getting-started/interfacing-basics/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../assets/js/protect.js" defer></script>
+</body>
+</html>

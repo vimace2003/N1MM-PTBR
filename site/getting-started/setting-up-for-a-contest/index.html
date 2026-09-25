@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9KJ7E1B84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T9KJ7E1B84');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Setting up for a Contest — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre como preparar e configurar um contest no N1MM Logger+.">
+<meta property="og:title" content="Setting up for a Contest — Manual N1MM+ em Português">
+<meta property="og:description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre como preparar e configurar um contest no N1MM Logger+.">
+<meta property="og:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<meta property="og:url" content="https://n1mm.gg52floripadx.com/getting-started/setting-up-for-a-contest/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manual N1MM+ em Português">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Setting up for a Contest — Manual N1MM+ em Português">
+<meta name="twitter:description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre como preparar e configurar um contest no N1MM Logger+.">
+<meta name="twitter:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="icon" href="../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/favicon.jpg">
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="https://n1mm.gg52floripadx.com/">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Getting Started</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/getting-started/setting-up-for-a-contest/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/getting-started/setting-up-for-a-contest</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="https://n1mm.gg52floripadx.com/">Início</a> &raquo;
+    <a href="../index.html">Getting Started</a> &raquo;
+    Setting up for a Contest
+  </nav>
+
+  <h1>Setting up for a Contest <span class="tag-en">EN: Setting up for a Contest</span></h1>
+
+  <h2 id="preparing">Preparing for a Particular Contest (Preparando-se para um Contest em Particular)</h2>
+
+  <p>Agora que você configurou as interfaces de hardware do seu rádio, incluindo controle de rádio (frequentemente chamado CAT), PTT, CW, etc., vamos passar para a configuração para um contest em particular.</p>
+
+  <p>Note que o primeiro banco de dados que o programa cria é chamado ham.s3db por padrão — você pode ter quantos bancos de dados quiser e nomeá-los como desejar. Algumas pessoas preferem criar um banco de dados para cada contest, enquanto outras criam um para um período, como cada ano. Se você quiser criar um novo banco de dados, por exemplo "2020.s3db", apenas clique em Files (Arquivos) para abrir o menu e depois clique em "New Database" (Novo Banco de Dados).</p>
+
+  <p>Isso abrirá um diálogo padrão de criação de arquivo no diretório de bancos de dados do N1MM Logger+ (dentro da área de arquivos de usuário):</p>
+
+  <p>Nomeie seu novo banco de dados e clique em Save (Salvar). Você será alterado para o novo banco de dados e estará pronto para começar.</p>
+
+  <p>Voltando ao menu Files (Arquivos) novamente. Desta vez clique em "New Log in Database: XXXXXX" (Novo Log no Banco de Dados: XXXXXX). Um novo diálogo abre, chamado de Contest Setup Dialog (Diálogo de Configuração do Contest).</p>
+
+  <p>Este diálogo tem dois recursos importantes para completá-lo corretamente, os botões rotulados "Show Rules" (Mostrar Regras) e "Show Setup" (Mostrar Configuração). Show Rules leva você (via Internet) à página web do patrocinador, enquanto Show Setup leva você (novamente via Internet) à página de Contest Setup do site do N1MM, localizada <a href="../../setup/contest-setup/">nesta seção</a> do manual. Normalmente, o último oferecerá o que você precisa para preencher o diálogo de Contest Setup.</p>
+
+  <p>A primeira coisa a fazer é clicar na seta apontando para baixo no campo Log Type (Tipo de Log). Isso abrirá uma lista de nomes de contests abreviados. Você pode usar seu mouse para rolar pela lista, ou digitar a primeira letra do contest para pular para a área geral correta. Uma vez que encontrou o contest que deseja e destacou-o, clique novamente no campo original e a lista suspensa fechará.</p>
+
+  <p>Ao configurar um novo contest, a Start Date (Data de Início) tem como padrão o sábado (geralmente) após a data atual. Isso pode ser útil se você tiver várias versões de um determinado contest em seu banco de dados. De ano para ano, as datas dos contests mudam, mas o dia da semana geralmente permanece o mesmo. <strong>Por esta razão, o programa assume que o contest realmente começará no dia correto da semana (e hora do dia) seguindo a data quando o novo contest foi configurado.</strong> Por exemplo, se você configurar um novo contest em quarta-feira, e esse contest normalmente começa às 0000Z no sábado, o programa assume que 0000Z no sábado seguinte será a hora real de início, para fins de computar o tempo no ar ou fora do ar, e para exibir quaisquer metas que você tenha definido na janela Info.</p>
+
+  <p>Para evitar confusão, é melhor configurar o log que você realmente usará dentro de uma semana antes do início do contest. Você sempre pode usar uma versão de prática anterior. Contanto que esteja no mesmo banco de dados, você poderá definir metas, configurar suas function keys e outros arquivos associados, e tudo isso estará disponível para uso quando configurar o log "real". Apenas crie um novo log para esse contest com a data e hora de início corretas e você estará pronto para começar. Você pode deletar o log de prática ou não, como preferir.</p>
+
+  <p>Em seguida, preencha as informações nos próximos campos, denotando a classe e categoria em que você pretende entrar no contest. Em cada caso, você tem listas suspensas disponíveis. "Overlay category" (Categoria de Sobreposição) refere-se a contests como WPX, que têm classes regulares e categorias como Rookie ou "Tri-bander plus wires" (Tri-banda mais fios). Na maioria dos casos, "N", para não aplicável, é a resposta que você deseja lá.</p>
+
+  <p>A partir de 2011, alguns contests adotaram o padrão Cabrillo 3.0 para seus envios de log, enquanto outros continuaram a exigir Cabrillo 2.0. O novo padrão (abraçado pela ARRL, IARU e outros) exigia uma divisão diferente de informações no diálogo de Contest Setup. O mostrado acima é para Cabrillo 3.0. Ambos os diálogos são autoexplicativos, mas você pode encontrar mais informações sobre o diálogo de Contest Setup para Cabrillo 3.0 <a href="../../setup/contest-setup/">aqui</a>.</p>
+
+  <p>A seguir, vem a parte mais importante deste diálogo, o campo Sent Exchange (Exchange Enviado). Este campo especifica o que será inserido em seu arquivo Cabrillo como seu exchange enviado e o que é inserido na macro {EXCH} em suas definições de function keys:</p>
+
+  <p>Para muitos contests, o programa adivinha o que você desejará, com base no tipo de contest e no conteúdo do seu diálogo Station Information (Informações da Estação). Por exemplo, neste caso, como o contest CQWW usa zonas CQ como exchange, ele já inseriu a zona, com base na zona já inserida em minhas Informações da Estação. É claro que isso pode ser substituído se estiver incorreto. Observe o aviso "Omit RST" (Omitir RST) — não inclua 59 ou 599 no exchange enviado. Se o contest que você escolher tiver números de série, como WPX ou o NA Sprint, você precisa colocar "001" no início do campo Sent Exchange, separado do que segue por um único espaço se houver mais no exchange. Portanto, para WPX, o Sent Exchange seria 001. Uma exceção importante é o ARRL Sweepstakes. O número de série é <em>assumido</em> apenas para este contest, portanto, por exemplo, o Sent Exchange de SS de N4ZR seria B 54 WV. Mais informações sobre o Sent Exchange para contests individuais está na seção <a href="../../manual-supported/contests-setup/">Supported Contests</a> (Contests Suportados) do manual.</p>
+
+  <p>Assim que preencher o Sent Exchange, você terminou por enquanto. Apenas clique OK e pressione Enter.</p>
+
+  <h2 id="trying-it-out">Trying It Out (Experimentando)</h2>
+
+  <p>Portanto, realmente, tudo que você precisa para operar contests com o N1MM Logger controlando seu rádio são a Entry Window, a Check Window, a Log Window e a Bandmap.</p>
+
+  <p>Para fins deste guia, vamos assumir que você está operando no contest CQWW SSB. Nesse caso, a Entry Window se parecerá com isto:</p>
+
+  <p>Estou assumindo que você vai operar em fonia para começar, então digitei USB no campo call-sign (indicativo) e pressionei [Enter]. Deixei a frequência padrão (20M phone/fonia) no lugar, mas se quisesse mostrar outra banda, seria necessário digitar uma frequência (em KHz) nessa banda (como 21200, por exemplo) no campo call-sign e pressionar [Enter] para mudar de banda.</p>
+
+  <p>Quando fiz essas coisas, digitei um call-sign no campo call-sign. Mesmo antes de olhar para a Check Window, vejo que o call sign está codificado por cores em verde. Isso significa que é um novo contato e um multiplicador duplo (neste caso, tanto o novo país de Martinique quanto a nova Zone 8). Se eu já tivesse trabalhado Zone 8 nesta banda, o call sign seria codificado em vermelho, significando apenas um novo país. Se tanto o país quanto a zona tivessem sido trabalhados antes, mas a estação não, o código de cor seria azul. Se for um dupe (duplicado), o call sign será codificado em cinza, e o aviso "Dupe!" aparece à direita dos campos de entrada. Há também uma coluna de botões de banda à esquerda, todos os quais também estão codificados em verde neste exemplo, indicando que esta estação também seria um multiplicador duplo em cada uma das outras bandas. O beam heading (azimute do feixe) é exibido abaixo, assim como o país, sua zona e continente (que afeta pontos por QSO).</p>
+
+  <p>Então, você o chama e ele responde. Neste ponto, apenas pressione [Space] para preencher os relatórios de sinal esperados e mover o cursor para o campo Zone. O N1MM Logger usa a barra de [Space] como um "smart tab" (tabulação inteligente). A ideia é que ele pulará campos que você provavelmente não desejará alterar e se moverá imediatamente para aquele que você possa precisar. Observe também que a zona está destacada. Isso significa que se você precisar alterá-la ... por exemplo, se FM5BH realmente estivesse em Zone 9 (ele não está) ... você apenas digitaria "9" e o "8" seria substituído.</p>
+
+  <p>Ok, mas suponha que ele lhe dê um relatório de "57" em vez de "59". Sem problema — você apenas usa a tecla [Tab] duas vezes, e o cursor estará no segundo dígito do relatório de sinal recebido, pronto para você digitar sobre ele. As teclas [Tab] e Shift+Tab funcionam exatamente como você esperaria no Windows, movendo para frente ou para trás um campo. Veja como fica:</p>
+
+  <p>Se você precisar corrigir o call-sign, use a barra de [Space] para chegar lá rapidamente e edite conforme necessário. Então, uma vez que tudo esteja como você quer (e o QSO esteja feito), tudo que você faz é pressionar [Enter], e o QSO será registrado.</p>
+
+  <p>Uma coisa que confunde todos pelo menos uma vez é que o programa verifica se você inseriu tudo e se tudo está corretamente formatado. Por exemplo, se você acidentalmente digitar incorretamente o número da zona, como "89", o programa não o deixará inserir o QSO. Isso pode ser desconcertante no início — você recebe uma mensagem de erro na linha de status, assim:</p>
+
+  <p>Se o programa o bloqueou de registrar o QSO, apenas use a barra de [Space] para mover para o campo apropriado, corrija-o e pressione Enter para registrar. Se você absolutamente não conseguir descobrir qual deve ser a correção (por exemplo, com uma seção ARRL em Sweepstakes), você pode pressionar Ctrl+Alt+Enter para contornar a verificação de exchange e registrar o QSO "como está". ou você pode apenas pressionar Enter novamente, o que dará o seguinte diálogo de aviso e permitirá que você registre o contato apesar do erro:</p>
+
+  <p>Apenas por precaução, se você quiser colocar uma nota no log, quando usar Ctrl+Alt+Enter para registrar um contato inválido, uma janela de nota abre. Digite a nota que desejar e pressione Enter, ou apenas pressione Enter para pular e voltar ao contest.</p>
+
+  <p>Suponha que você tenha copiado mal um call sign, ou ele realmente não respondeu à sua chamada, então agora você tem um erro em seu log. Se você precisar deletar o QSO completamente, apenas pressione Ctrl+D. O programa perguntará se você realmente deseja mover o QSO para um arquivo de Deleted QSOs (QSOs Deletados). Apenas pressione [Enter] para fazer isso, ou digite N para Não.</p>
+
+  <p>Se você precisar editar o QSO, pressione Ctrl+Q e coloque o programa em modo QuickEdit (Edição Rápida):</p>
+
+  <p>Você notará as palavras QuickEdit acima do campo call-sign. Você pode se mover pelos campos como antes e fazer suas correções. Depois pressione Enter e o QSO será corrigido no log, ou pressione [Esc] para voltar ao modo de logging normal e cancelar quaisquer mudanças. Tenha cuidado para não deixar o programa em modo QuickEdit para seu próximo QSO, ou você estragar dois QSOs de uma vez!</p>
+
+  <p>Conforme você registra mais QSOs, notará que o call-sign do seu QSO anterior aparecerá no espaço logo acima do campo call-sign. Esta área, chamada de Call-Frame (Moldura de Indicativo), será muito importante assim que você tiver interfaceado o programa com seu rádio, mas por enquanto é apenas um lembrete de quem foi o último cara.</p>
+
+  <div class="caixa-info">
+    <strong>Lembre-se</strong>
+    <p>Lembre-se: a menos que você tenha interfaceado seu rádio, cada vez que muda de banda, você precisa inserir a frequência dessa banda no campo call-sign, e, se mudar de modo, inserir isso também. Por exemplo, se você mudar para 40M CW, você precisaria inserir 7000 e depois inserir CW (separadamente) antes de começar a registrar QSOs nessa banda.</p>
+  </div>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/getting-started/setting-up-for-a-contest/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../assets/js/protect.js" defer></script>
+</body>
+</html>

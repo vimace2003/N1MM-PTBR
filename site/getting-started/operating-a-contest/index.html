@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yn210flvy6");
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T9KJ7E1B84"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T9KJ7E1B84');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operating a Contest — Manual N1MM+ em Português</title>
+<meta name="description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre como operar um contest usando N1MM Logger+.">
+<meta property="og:title" content="Operating a Contest — Manual N1MM+ em Português">
+<meta property="og:description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre como operar um contest usando N1MM Logger+.">
+<meta property="og:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<meta property="og:url" content="https://n1mm.gg52floripadx.com/getting-started/operating-a-contest/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Manual N1MM+ em Português">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Operating a Contest — Manual N1MM+ em Português">
+<meta name="twitter:description" content="Tradução não-oficial, feita pela comunidade brasileira de radioamadorismo, sobre como operar um contest usando N1MM Logger+.">
+<meta name="twitter:image" content="https://n1mm.gg52floripadx.com/assets/img/og-image.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="icon" href="../../assets/favicon-32.jpg" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../../assets/favicon.jpg">
+</head>
+<body>
+
+<div class="topo">
+  <div class="marca">
+    <a href="https://n1mm.gg52floripadx.com/">Manual N1MM+ em Português</a>
+    <a href="../index.html">&larr; Voltar para Getting Started</a>
+  </div>
+</div>
+
+<div class="aviso-traducao">
+  <div class="conteudo">
+    📖 <strong>Tradução não-oficial</strong>, mantida pela comunidade brasileira de radioamadorismo.
+    Página original em inglês: <a href="https://n1mmwp.hamdocs.com/getting-started/operating-a-contest/" target="_blank" rel="noopener">n1mmwp.hamdocs.com/getting-started/operating-a-contest</a>.
+    Direitos autorais do conteúdo original: N1MM Logger+ Team.
+  </div>
+</div>
+
+<main>
+  <nav class="trilha">
+    <a href="https://n1mm.gg52floripadx.com/">Início</a> &raquo;
+    <a href="../index.html">Getting Started</a> &raquo;
+    Operating a Contest
+  </nav>
+
+  <h1>Operating a Contest <span class="tag-en">EN: Operating a Contest</span></h1>
+
+  <h2 id="before">Before the Contest (Antes do Contest)</h2>
+
+  <p>Esta seção aborda, de forma breve e informal, passos que você deve tomar para se preparar para uma temporada de contests e para cada contest. Vale a pena ler. Quando apropriado, links são incluídos para apontá-lo para informações mais extensas.</p>
+
+  <h3 id="update-data">Update Your Data Files (Atualize Seus Arquivos de Dados)</h3>
+
+  <p>Certifique-se de ter importado o arquivo <strong>wl_cty.dat</strong> mais recente e baixado o arquivo Super Check Partial (<strong>master.scp</strong>) mais recente antes do contest. As opções de menu para fazer isso podem ser encontradas no menu <a href="../../manual-windows/entry-window/">Tools (Ferramentas)</a> da Entry Window.</p>
+
+  <p>Se você estiver usando um arquivo Call History, importe esse também no banco de dados e certifique-se de que Call History Lookup está ligado. Mais informações sobre Call History podem ser encontradas <a href="../../setup/call-history/" target="_blank" rel="noopener">nesta seção</a>. Carregue também o arquivo de definição de function key que você pretende usar no banco de dados. Se você fizer alterações durante o teste, exporte suas function keys para certificar-se de que suas alterações são salvas. Uma explicação de como criar definições de function key é encontrada <strong><a href="../../setup/function-keys/">AQUI</a></strong>, com informações adicionais específicas para mensagens de function key de fonia <a href="../../setup/function-keys/">AQUI</a>. <strong>Arquivos de Function Key de amostra</strong> para os contests principais podem ser encontrados nas pastas <em>&gt;Downloads &gt;Function Key Files</em> para modos CW, SSB e Digital. Clique aqui para <strong><a href="../../support/how-to-videos/">assistir a vídeos sobre download e configuração</a></strong> de seus arquivos de dados.</p>
+
+  <p>Se você for operar em um local remoto sem acesso à Internet, vá para a pasta <em>&gt;Downloads &gt;Documentation Downloads (PDF)</em> para uma versão em PDF do manual. Armazene uma cópia local da documentação em caso de precisar consultá-la quando desconectado do site.</p>
+
+  <h3 id="test">Test (Teste)</h3>
+
+  <p>Hoje, o programa suporta CW, SSB e múltiplos modos digitais, perto de 300 contests e uma grande variedade de rádios e equipamentos auxiliares. As regras de contests mudam o tempo todo, e organizadores muitas vezes esquecem de deixar os desenvolvedores de softwares de logging saberem. Se este fosse um projeto de software convencional, qualquer programador sensato declararia "não testável".</p>
+
+  <p>Desde seus primeiros dias, o projeto N1MM Logger tem dependido dos usuários para fazer a maioria do teste. Lançando rapidamente atualizações relativamente pequenas, com a opção de recuar uma versão ou duas se necessário, isso torna uma abordagem relativamente baixo-risco, <strong>contanto que os usuários testem cada uma tempo suficiente antes do próximo contest que querem entrar.</strong></p>
+
+  <p>Se você está planejando operar em um contest algumas semanas a partir de agora, carregue a última atualização AGORA, crie uma instância de contest conforme descrito <a href="../../setup/contest-setup/">aqui</a>, sente-se com seu rádio, computador, conexão de cluster DX, keyers e tudo mais que você usa, e simule o logging de uma dúzia de contatos como se estivesse executando (insira um call imaginário, digite e pressione teclas de função o mais rápido que puder). Em seguida, registre mais alguns em modo S&P. Verifique se suas mensagens e macros funcionam como esperado, verifique se você pode gravar e reproduzir mensagens SSB na hora, certifique-se de que os multiplicadores que você acha que deveriam ser contados são pontuados corretamente, registre alguns contatos que <strong>não deveriam</strong> ser multiplicadores ou pontos e certifique-se de que são tratados adequadamente. Se operando Assisted (Assistido), pegue alguns spots, faça alguns spots, verifique a codificação de cores dos spots contra as regras do contest. Faça notas detalhadas de problemas, se houver.</p>
+
+  <p>Muitos problemas são resultado de uma questão local — configurações de hardware, opções de usuário ou semelhante. Dedique tempo para verificar a documentação primeiro, mas não hesite em pedir ajuda no <a href="https://groups.io/g/N1MMLoggerPlus">reflector N1MM</a>. 4000 usuários e a equipe N1MM estão lá para ajudar. <em>Com agradecimentos a David Robbins K1TTT, de cuja entrada esta seção foi adotada.</em></p>
+
+  <h2 id="during">During the Contest (Durante o Contest)</h2>
+
+  <h3 id="making-qsos">Making Contest QSOs (Fazendo QSOs em Contest)</h3>
+
+  <p>Certifique-se de ter suas definições de function key CW ou SSB ou digital configuradas como você deseja, configuradas conforme descrito em <a href="#before">Before the Contest</a>.</p>
+
+  <p>Agora vamos começar. Existem várias maneiras de fazer e registrar um QSO em contest com N1MM Logger+, dependendo de quanto você quer automatizar o processo. Os detalhes são os mesmos para fonia ou CW. As 4 principais maneiras que você pode usar as mensagens armazenadas estão listadas aqui em ordem crescente de velocidade e conveniência.</p>
+
+  <p><strong>1. One key at a time (Uma chave por vez)</strong> — pressione uma função key quando quiser enviar a mensagem associada. Use a barra de [Espaço] para mover seu cursor. Quando tiver tudo preenchido, pressione [Enter] e o QSO será registrado. Feito assim, um QSO típico de Run (CQ) seria assim:</p>
+
+  <ol>
+    <li>F1 (CQ)</li>
+    <li>Estação responde — copie call na caixa callsign</li>
+    <li>Diga seu call sign (fonia) ou pressione F5 para enviá-lo (CW)</li>
+    <li>Pressione F2 para enviar o exchange (mensagem de voz armazenada ou CW)</li>
+    <li>Pressione [Espaço] para mover o cursor para o campo de exchange</li>
+    <li>Digite o exchange recebido</li>
+    <li>Pressione F3 para enviar seu reconhecimento</li>
+    <li>Pressione [Enter] para registrar o QSO</li>
+  </ol>
+
+  <p><strong>2. Semi-CT Style</strong> — CT era o programa de logging DOS que praticamente iniciou tudo isso. Usava a seguinte convenção para economizar keystrokes:</p>
+
+  <p>Digite o call sign da estação que o está chamando. Pressione a tecla [Ins] para enviar seu call e seu exchange (CW), ou fale seu call e depois pressione [Ins]. Depois de copiar seu exchange, pressione F3 (TU) e [Enter] para Registrar. Se você está chamando outras estações (Search and Pounce, ou S&P), você pressionaria primeiro F4 para enviar seu call, e quando a estação responder, siga a sequência como acima.</p>
+
+  <p><strong>3. Early N1MM style (Estilo N1MM antigo)</strong> — Digite o call sign da estação que o está chamando. Pressione a tecla [;] para enviar seu call e seu exchange. Copie seu exchange e pressione a tecla "[']" (logo ao lado de ; em teclados dos EUA). O programa envia a mensagem F3 (TU) e registra o QSO. Em S&P, você pressionaria F4 primeiro, depois [;] e depois ['].</p>
+
+  <p>Isso economiza alguns keystrokes, mas há uma maneira mais fácil. Algumas décadas atrás, N6TR desenvolveu a ideia de tornar o TR Log "modal". Com isso, ele quis dizer que o programa se comportaria diferentemente dependendo de você estar em modo Run ou S&P. Fazer essa distinção lhe permitiu simplificar e encurtar maciçamente a sequência de keystrokes necessárias para completar um QSO.</p>
+
+  <p><strong>4. Enter Sends Messages (Enter Envia Mensagens)</strong> — O N1MM Logger agora evoluiu a invenção de N6TR para o que é chamado Enter Sends Messages, ou ESM para abreviar. Você encontrará uma explicação completa desse modo <a href="../../setup/function-keys/">nesta seção</a>.</p>
+
+  <p>Em resumo, ESM permite que você digite um call sign e depois passe pelos próximos passos no logging de um QSO, simplesmente pressionando a tecla Enter. O programa antecipa o que você desejará fazer a seguir, move o cursor e destaca qual mensagem enlatada será enviada se você pressionar Enter na próxima vez. Observe que, se desejar, você ainda pode pressionar function keys individuais a qualquer momento para enviar uma repetição ou contornar o ESM de outra forma.</p>
+
+  <p>Uma vez que você tenha usado ESM, nós pensamos que você nunca voltará à velha maneira novamente.</p>
+
+  <h3 id="bugs-during">Bugs Encountered During a Contest (Bugs Encontrados Durante um Contest)</h3>
+
+  <p>Quando um bug foi perdido durante o teste e aparece durante o contest, reporte-o no reflector logo após o contest ou, durante o contest se for um show stopper. Tom e os desenvolvedores participam de muitos contests, mas também lêem e-mail durante contests e podem sugerir workarounds ou às vezes trazer uma nova versão. Além disso, existem muitos outros rádioamadores disponíveis lá que podem ajudar.</p>
+
+  <p>Em vez de anotar problemas durante o contest, tente o seguinte:</p>
+
+  <ol>
+    <li>Use Ctrl+N para escrever uma Nota que será anexada como comentário ao QSO</li>
+    <li>No final do contest, use a opção de menu &gt;View &gt;Notes para ver todas as notas que você fez durante o contest</li>
+  </ol>
+
+  <h2 id="after">After the Contest (Depois do Contest)</h2>
+
+  <h3 id="protecting">First, a Word on Protecting Your Data (Primeiro, uma Palavra sobre Proteção de Seus Dados)</h3>
+
+  <p>Após quase todo contest, ouvimos de um novo usuário (ou às vezes até um experiente) que tem medo de ter perdido o log do contest que acabou de completar. Felizmente, geralmente não é verdade, mas aqui estão algumas coisas a lembrar:</p>
+
+  <ul>
+    <li><strong>Backup</strong> — isso é tão importante com softwares de logging como com qualquer outra aplicação de computador. Dados não copiados podem ser dados perdidos se algo acontecer ao seu hardware ou você cometer um erro ao manipular o banco de dados de log <strong>se você não tiver feito backup dele</strong>. O N1MM Logger+ armazena todos os seus dados QSO em um arquivo com a extensão <strong>.s3db</strong>. O nome do arquivo é seja qual for o nome que você atribuiu quando primeiro configurou o programa. Existem outros bancos de dados também usados pelo programa — N1MM Admin.s3db, N1MM Packet Spots.s3db e Do_Not_Use_Or_Erase.s3db, mas todos os dados QSO estão naquele primeiro. A maneira mais fácil de fazer backup realmente seguro é usar um programa de backup gratuito como Syncback SE para fazer backup do seu banco de dados QSO ativo para um "pendrive" USB. Qualquer drive desses que você possa comprar hoje é bastante grande, baratíssimo e seguro de praticamente qualquer coisa, exceto um martelo de pé de pato.</li>
+  </ul>
+
+  <ul>
+    <li><strong>Save A Copy (Salve uma Cópia)</strong> — Antes de fazer qualquer coisa, mesmo que queira apenas espreitar seu banco de dados QSO com um visualizador SQLite, salve uma cópia manualmente em um local seguro. Você é, afinal, apenas humano; todos nós podemos cometer erros, então é sábio fazer o que puder para se proteger contra eles.</li>
+  </ul>
+
+  <ul>
+    <li><strong>Transaction TRN Files (Arquivos TRN de Transação)</strong> — Durante a operação normal, o N1MM Logger+ salva as informações sobre cada QSO em um arquivo de texto simples. Esses arquivos são armazenados em uma subpasta na pasta Databases na área de arquivos de usuário e podem ser usados para recuperar no caso do arquivo de banco de dados ser corrompido.</li>
+  </ul>
+
+  <ul>
+    <li><strong>Aqui está uma explicação de como você pode usar esses arquivos para recuperar seus dados rapidamente, durante um contest, ou no seu próprio tempo se você não tiver feito um dos dois passos sugeridos acima:</strong>
+      <ul>
+        <li>O transaction log é criado para cada contest que você faz log</li>
+        <li>O arquivo é fechado após cada transação e reaberto para forçar os dados a serem escritos em disco</li>
+        <li>Para manter as coisas simples e à prova de erros, você não pode mudar o nome do transaction log</li>
+        <li>O nome é usado para garantir que você está carregando corretamente e para evitar misturar logs de dois contests. Nome de exemplo: 'CQWWCW – 2005-09-19 – 14.TRN' ou seja: Nome do contest – data do log criado – um número de índice interno</li>
+        <li>Para Recuperar seu log, você DEVE importar o transaction log em um NOVO banco de dados (vazio) e um NOVO log de contest. Veja <a href="../../manual-windows/entry-window/">ESTE LINK</a></li>
+        <li>O novo log de contest deve ser do mesmo contest que o arquivo de transação (Exemplo: se restaurando CQWPXCW, o novo contest deve também ser CQWPXCW). Por quê? Para evitar que um usuário que se recupere de um problema de banco de dados pior o agrave. Isso impedirá quaisquer problemas de contatos duplicados e vários outros problemas</li>
+        <li>Conforme você carrega o transaction log, um novo transaction log é automaticamente feito com as transações do primeiro log. Assim, você nunca deve ter que mesclar logs. Você sempre usa o último</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="editing">Editing Individual QSOs (Editando QSOs Individuais)</h3>
+
+  <p>A maneira mais fácil de editar um QSO é clicando duas vezes na janela Log nos dados que deseja alterar. Em casos raros, você pode precisar selecionar o QSO na Log Window e clicar com o botão direito. Selecione "Edit Contact" (Editar Contato). A janela Edit Contact aparecerá — para detalhes completos, veja a explicação <a href="../../manual-windows/log-window/">aqui</a>.</p>
+
+  <div class="caixa-alerta">
+    <strong>Crackdown on Post-Contest Logging Changes (Repressão em Mudanças de Logging Pós-Contest)</strong>
+    <p>Os patrocinadores de contests estão reprimindo "massageamento" de log pós-contest que usa recursos que você acessa depois que o contest termina. O Comitê de Contest CQWW foi recentemente particularmente explícito sobre isso, dizendo que o "...Comitê considera falta de espírito esportivo 'limpar' seu log pós-contest usando fontes de dados como gravações, bancos de dados de call sign, etc." Este tipo de restrição <strong>não</strong> se destina a se aplicar a mudanças de log pós-contest baseadas em coisas que você anotou durante o contest, como problemas com o arquivo CTY.DAT, abreviações ruins para condados, estados ou províncias, etc. Se você capturou durante o contest, você deveria se sentir livre para corrigi-lo depois.</p>
+  </div>
+
+  <p>Às vezes, você pode precisar recuperar um QSO que deletou por engano durante o contest. Quando um QSO é deletado, ele não é completamente removido do banco de dados; em vez disso, é movido para um log especial chamado DELETEDQS, do qual pode ser recuperado da seguinte forma:</p>
+
+  <ul>
+    <li>Primeiro, exporte o log de contest para ADIF (File &gt; Export &gt; Export ADIF to file). Abra esse arquivo ADIF com Notepad e procure por uma entrada que se pareça com &lt;CONTEST_ID:nn&gt;contest-name em cada registro QSO. Anote o que são nn e contest-name — você precisará usá-los na próxima etapa (nn é uma contagem do número de caracteres em contest-name). Mantenha essa janela do Notepad aberta.</li>
+
+    <li>Abra o log DELETEDQS de dentro do N1MM+ (File &gt; Open Log in Database... — será a entrada de log inferior na lista), encontre o QSO em questão, clique com o botão direito nele e selecione Copy &gt; Copy ADIF string. Em seguida, você pode colar isso na janela do Notepad com o arquivo ADIF do log de contest principal nele. Edite o campo &lt;CONTEST_ID:8&gt;DELETEDQS no registro QSO recuperado para alterá-lo para corresponder aos outros QSOs no arquivo. Salve o arquivo.</li>
+
+    <li>No N1MM+, crie um novo banco de dados (File &gt; New Database...). Nesse novo banco de dados, crie um novo log de contest do tipo correto. A data e hora de início não estarão corretas, mas você pode editá-las para alterá-las para a data real do contest. Agora importe o arquivo ADIF editado no log (File &gt; Import &gt; Import ADIF from File...) e use Tools &gt; Rescore Current Contest para recalcular a pontuação.</li>
+  </ul>
+
+  <h3 id="entering-multiple">Entering Multiple QSOs After the Contest (Inserindo Múltiplos QSOs Depois do Contest)</h3>
+
+  <p>Problema de computador? Fez um log em papel durante (parte do) contest? O programa tem alguns recursos agradáveis que permitirão entrada rápida de QSO. Você pode inserir a hora para cada QSO, ou há recursos para permitir que você defina a data e hora via interpolação. (Lembre-se, os tempos exatos de QSO não são críticos para os patrocinadores de contests, apenas dentro da razão).</p>
+
+  <ul>
+    <li>Digite a banda de frequência (frequência numérica de 4 ou 5 dígitos, por exemplo, 7000, 14000) na caixa de texto do call-sign da Entry Window e pressione Enter. Em seguida, digite o modo (CW, USB, LSB, etc.) e pressione Enter.</li>
+
+    <li>Insira calls e exchanges e registre-os, contanto que estejam na mesma banda. Não se preocupe com data e hora agora.</li>
+
+    <li>Quando você precisar mudar de banda, insira a nova banda de frequência e continue.</li>
+  </ul>
+
+  <h3 id="change-single">Change Time/Date for a Single Hand-Entered QSO (Altere Hora/Data para um QSO Inserido Manualmente Único)</h3>
+
+  <p>Atualizar a data e/ou hora de um único QSO é melhor feito clicando duas vezes no time stamp para esse QSO e depois usando a caixa de data-hora que aparece para editar a data e hora. Alternativamente, você pode usar a opção Edit Contact no menu de clique direito associado à Log Window e editar a data e/ou hora na janela Edit Contact.</p>
+
+  <h3 id="change-multiple">Change Time for Multiple Hand-Entered QSOs (Altere Hora para Múltiplos QSOs Inseridos Manualmente)</h3>
+
+  <p>Este método pode ser usado para interpolar tempos aproximados para uma série de contatos. Este recurso de interpolação de tempo é mais útil se você tiver vários QSOs para inserir. Se você tiver um ou dois QSOs cujos tempos precisam ser alterados, é mais fácil fazer isso editando no <a href="../../manual-windows/log-window/">Log</a></p>
+
+  <div class="caixa-info">
+    <strong>Make a Copy of Your Log (Faça uma Cópia de Seu Log)</strong>
+    <p>Faça uma cópia de backup do seu banco de dados de log. Você não pode (automaticamente) reverter o processo de interpolação de tempo abaixo. Você foi avisado!</p>
+  </div>
+
+  <ul>
+    <li>Na Log Window, clique uma única vez no <strong>primeiro QSO</strong> cuja hora e data você deseja alterar. para destacar a linha</li>
+    <li>Com o mouse sobre a Log Window, clique com o botão direito</li>
+    <li>Selecione &gt;Set Start Interpolation Time Row</li>
+    <li>Insira o novo time stamp para o primeiro QSO e clique [OK]</li>
+    <li>Agora, clique no <strong>último QSO</strong> cuja hora/data você deseja alterar, para destacar a linha</li>
+    <li>Com mouse sobre Log Window, clique com o botão direito</li>
+    <li>Selecione &gt;Set Stop Interpolation Time Row</li>
+    <li>Insira a hora desejada para esse último QSO e clique [OK]</li>
+  </ul>
+
+  <div class="caixa-info">
+    <strong>Changing QSO Time and Date (Alterando Hora e Data do QSO)</strong>
+    <p>O utilitário fará a média e interpolará a hora para cada QSO no grupo de QSOs selecionados. <strong>Lembre-se de que não há recurso "desfazer"</strong>. Se você tiver uma grande lacuna de tempo em seu log manual, insira o primeiro lote de QSOs e faça a interpolação. Em seguida, insira o segundo grupo de QSOs e faça uma segunda interpolação.</p>
+  </div>
+
+  <div class="caixa-info">
+    <strong>Single Computer Mode Only (Modo Computador Único Apenas)</strong>
+    <p>Se você tiver mais de um computador em rede no N1MM+, este recurso não funciona. A opção está desabilitada sempre que o Networked Computer Mode está ligado.</p>
+  </div>
+
+  <h3 id="change-all">Change All QSO Times/Dates by a Fixed Amount (Altere Todas as Horas/Datas do QSO por um Montante Fixo)</h3>
+
+  <div class="caixa-info">
+    <strong>Back Up Your Log Database (Faça Backup do Seu Banco de Dados de Log)</strong>
+    <p>Embora você pudesse facilmente se recuperar de um erro durante o ajuste a seguir realizando outro offset, ainda é uma boa ideia ser seguro.</p>
+  </div>
+
+  <p>Isso corrigirá um log onde todos os QSOs estão desligados por um montante fixo de tempo (por exemplo, quando as horas estão corretas mas as datas estão erradas por um ou mais dias porque os QSOs foram inseridos após o contest).</p>
+
+  <ul>
+    <li>Clique com o botão direito na Log Window</li>
+    <li>Selecione &gt;Change timestamps of the entire log by a fixed amount</li>
+    <li>Uma caixa de diálogo abrirá e insira o tempo de offset (+ ou -) em minutos</li>
+  </ul>
+
+  <p>A data se ajustará automaticamente se o offset rolar um QSO para um dia diferente. O tempo é inserido em minutos e pode ser tempo negativo para retroceder. (Você pode precisar de uma calculadora para determinar os minutos de offset se sua data estiver errada por muitos dias, meses ou anos). Por exemplo, inserir +1440 deslocará um dia completo para frente; -2880 dois dias para trás.</p>
+
+  <h3 id="cabrillo">How to Create Cabrillo Files (Como Criar Arquivos Cabrillo)</h3>
+
+  <p>Para enviar seu log, você precisa exportá-lo do banco de dados no formato adequado. Cabrillo é usado por todos os contests principais.</p>
+
+  <ul>
+    <li>Selecione File &gt;Generate Cabrillo File.</li>
+
+    <li>Certifique-se de que suas informações de Estação (Config &gt;Change Your Station Data) e a configuração geral de contest estão corretas (no diálogo Contest Setup, acessível através de File &gt;Open Log in Database...). Por exemplo, sua classe de entrada está correta? Sua classificação de potência? Assistido ou não? Seu Estado e Seção ARRL estão ambos inseridos corretamente em seus dados de estação?</li>
+
+    <li>Você colocou as informações corretas no campo Sent Exchange e nada mais? Por exemplo, quando o exchange em um contest é 5NN WV, pode ser tentador colocar o tudo nele. Isso estragar o arquivo Cabrillo com vários relatórios de sinal para cada QSO, portanto, tenha o hábito de colocar o relatório de sinal em suas mensagens armazenadas, <strong>não</strong> neste campo.</li>
+
+    <li>Um arquivo Cabrillo será criado chamado seu_call.LOG. Por padrão, isso é colocado na subpasta ExportFiles no diretório de arquivos de usuário do N1MM Logger+, mas você recebe as opções de escolher um nome diferente e/ou salvar o arquivo em qualquer outro lugar que desejar.</li>
+  </ul>
+
+  <p>É uma boa ideia rescorar seu log (Tools &gt;Rescore Current Contest) antes de gerar o arquivo Cabrillo.</p>
+
+  <h3 id="merging">How to Merge Contest Logs (Como Mesclar Logs de Contest)</h3>
+
+  <p>Se você executou uma estação multi-op, mas não fez rede de seus computadores de logging, você precisará combinar os logs de cada computador em um envio de log único para os patrocinadores do contest.</p>
+
+  <h4 id="merge-adif">Using N1MM Logger+ and ADIF Files to Merge Logs (Usando N1MM Logger+ e Arquivos ADIF para Mesclar Logs)</h4>
+
+  <p>Este método de mesclagem é o mais automatizado e não deve exigir edição manual de log, mas só funcionará se os tipos de contest em cada computador de logging fossem idênticos. Se os tipos de contest não fossem idênticos, pode ser possível se recuperar com a ajuda de um editor de texto e um pouco de investigação, mas provavelmente não será fácil. É melhor evitar esta situação usando os tipos de contest idênticos durante o contest.</p>
+
+  <ol>
+    <li>Examine os logs para garantir que os tipos de contest sejam idênticos em cada computador: &gt;File &gt;Open Log in Database</li>
+    <li>Exporte um arquivo ADIF de cada computador de logging: &gt;File &gt;Export &gt;Export ADIF to file. Atribua um nome único a cada arquivo ADIF para distingui-lo de outros ao importar. Antes de continuar, garanta que os tipos de contest de cada computador eram idênticos abrindo cada arquivo ADIF com um editor de texto (como Notepad) e procurando pela expressão ADIF CONTEST_ID. Eles devem ser do mesmo comprimento e nome do contest. Por exemplo: &lt;CONTEST_ID:14&gt;ARRL-FIELD-DAY</li>
+    <li>Copie todos os arquivos ADIF exportados para o computador que criará o log mesclado</li>
+    <li>Inicie o N1MM Logger+ no computador de mesclagem. Se o computador de mesclagem for um dos que foi usado durante o contest, você precisará criar um novo banco de dados para o log mesclado: &gt;File &gt;New Database. Agora no novo banco de dados ou no novo computador, crie um novo log de contest para os registros mesclados: &gt;File &gt;New Log in Database. Tenha cuidado para tornar o tipo de contest idêntico ao tipo de contest que foi usado durante o contest</li>
+    <li>Importe os arquivos ADIF extraídos um após outro no novo log de contest: &gt;File &gt;Import &gt;Import ADIF from file</li>
+    <li>Use &gt;Tools &gt;Rescore Current Contest para rescorar o contest</li>
+    <li>Extraia o novo log de contest mesclado para envio ao patrocinador do contest: &gt;File &gt;Generate Cabrillo File</li>
+  </ol>
+
+  <h4 id="merge-excel">Using Excel and Cabrillo Files to Merge Logs (Usando Excel e Arquivos Cabrillo para Mesclar Logs)</h4>
+
+  <p>Em algumas circunstâncias, pode ser mais fácil combinar logs fora do N1MM Logger+ importando os arquivos Cabrillo em um programa de planilha como Excel. Como com o método ADIF, funciona melhor se os tipos de contest forem idênticos ou pelo menos usem o mesmo formato Cabrillo (ou seja, exchanges de contest semelhantes, mesmas colunas).</p>
+
+  <ol>
+    <li>Crie um arquivo Cabrillo de cada log: &gt;File &gt;Generate Cabrillo file. Atribua um nome único a cada arquivo de log para distingui-lo de outros ao importar</li>
+    <li>Copie todos os arquivos de log Cabrillo exportados para o computador que criará o log mesclado</li>
+    <li>Combine os registros QSO de cada log Cabrillo em um único arquivo de texto usando um editor de texto (como Notepad). Abra cada arquivo Cabrillo e copie apenas os registros QSO — deixe de fora as informações de header no início e a declaração END-OF-LOG no final. Cole essas informações de QSO em um novo documento de texto (um arquivo .TXT) com os QSOs de cada log.</li>
+    <li>Inicie o Excel no computador de mesclagem e importe o arquivo .TXT combinado em uma planilha. No Excel: &gt;File &gt;Open, defina o tipo de arquivo para TXT e selecione o arquivo de log QSO mesclado. No assistente de importação de texto do Excel, declare o tipo de dados original como largura fixa. Na caixa de diálogo Data Preview, ajuste os delimitadores de campo conforme necessário para iniciar cada coluna do Excel no início de um campo de log. Pressione [Finish] (Concluir). Examine as colunas QSO na planilha para garantir que sua importação foi bem-sucedida</li>
+    <li>Selecione a planilha inteira usando seu mouse ou [Ctrl]A, depois classifique a planilha por data e hora: &gt;Data &gt;Sort, coluna D (data) e coluna E (hora)</li>
+    <li>Exporte os dados de log classificados para um arquivo delimitado por espaço: &gt;File &gt;Save as &gt;FORMATTED TEXT (Space Delimited) .PRN</li>
+    <li>Usando um editor, copie/cole as informações de header do Cabrillo e a declaração END-OF-LOG de um dos logs Cabrillo originais no arquivo de dados classificados. Renomeie este arquivo como um tipo de arquivo .LOG e envie-o para o patrocinador do contest.</li>
+  </ol>
+
+  <h4 id="print-log">How to Print the Log (Como Imprimir o Log)</h4>
+
+  <p>Não há opção específica para imprimir um log diretamente. No entanto, se você Clicar em Export no menu File, há uma variedade de opções que podem ser usadas para criar um arquivo que você pode então imprimir uma cópia de:</p>
+
+  <p>A razão mais provável para querer um log impresso é para inscrições de prêmios ou arquivamento. Como o N1MM Logger+ não é destinado como um programa de logging de propósito geral, ele não oferece funções de rastreamento de prêmios. No entanto, a opção de arquivo ADIF fornecerá a você um arquivo que pode ser facilmente importado em qualquer registrador de propósito geral popular. Se você apenas quer algo para um caderno, a exportação genérica fornecerá a você um arquivo de texto que pode ser impresso a partir do Notepad.</p>
+
+  <h3 id="statistics">How to Get Statistics (Como Obter Estatísticas)</h3>
+
+  <p>No item de menu View da Entry Window, escolha Statistics (Estatísticas). Esta ferramenta permite que você selecione quaisquer dois pontos de dados de interesse. Por exemplo, você pode selecionar horas para a Row (Linha) e Zones (Zonas) para a Column (Coluna), e o programa exibirá uma tabela de quantos QSOs em quais zonas foram trabalhadas em quais horas do relógio. Isso é muito mais fácil de usar do que é de explicar em palavras, então tente.</p>
+
+</main>
+
+<footer class="rodape">
+  <div class="conteudo">
+    Conteúdo original: <a href="https://n1mmwp.hamdocs.com/getting-started/operating-a-contest/" target="_blank" rel="noopener">N1MM Logger+ Documentation</a>,
+    Copyright &copy; N1MM Logger+ Team. Tradução para PT-BR: comunidade brasileira de radioamadorismo.
+    Esta é uma tradução não-oficial, sem vínculo com os autores originais.<br>
+    Projeto do <a href="https://gg52floripadx.com/" target="_blank" rel="noopener">GG52 Floripa DX</a> — iniciativa de <a href="https://pp5kj.com" target="_blank" rel="noopener">PP5KJ</a>.
+  </div>
+</footer>
+
+<script src="../../assets/js/protect.js" defer></script>
+</body>
+</html>
